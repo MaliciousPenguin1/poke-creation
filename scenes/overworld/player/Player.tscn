@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bualplka5bvtp"]
+
+[ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_tm114"]
+[ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="2_xr2sg"]
+[ext_resource type="PackedScene" uid="uid://cbhfrjgf12xsc" path="res://scenes/state_machine/states/player_states/idle/idle.tscn" id="3_63hjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
+size = Vector2(16, 16)
+
+[node name="Player" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 25
+script = ExtResource("1_tm114")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yukce")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_xr2sg")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" parent="StateMachine" instance=ExtResource("3_63hjy")]
