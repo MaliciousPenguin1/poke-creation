@@ -14,3 +14,5 @@ const TILES_SIZED : int = 16
 const WALKING_SPEED : int = 100
 ##The speed at which the player and some interactables run.
 const RUNNING_SPEED : int = 200
+##The delay before transitionning from Turning to Walking
+const DELAY_BEFORE_WALKING : int = 1
