@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bualplka5bvtp"]
+[gd_scene load_steps=5 format=3 uid="uid://bualplka5bvtp"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_tm114"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="2_xr2sg"]
 [ext_resource type="PackedScene" uid="uid://cbhfrjgf12xsc" path="res://scenes/state_machine/states/player_states/idle/idle.tscn" id="3_63hjy"]
-[ext_resource type="PackedScene" uid="uid://der2rfbrb3c88" path="res://scenes/state_machine/states/player_states/turn/turn.tscn" id="4_4eii7"]
-[ext_resource type="PackedScene" uid="uid://cuk2da2uvf3sq" path="res://scenes/state_machine/states/player_states/walk/walk.tscn" id="5_ygfs3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
 size = Vector2(16, 16)
@@ -21,7 +19,3 @@ shape = SubResource("RectangleShape2D_yukce")
 initial_state = NodePath("Idle")
 
 [node name="Idle" parent="StateMachine" instance=ExtResource("3_63hjy")]
-
-[node name="Turn" parent="StateMachine" instance=ExtResource("4_4eii7")]
-
-[node name="Walk" parent="StateMachine" instance=ExtResource("5_ygfs3")]

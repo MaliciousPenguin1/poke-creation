@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0hrrl1f3xqt"
-path="res://.godot/imported/tileset_outdoor.png-936dc8c4ba1abe3ec20fbb34bc703763.ctex"
+uid="uid://c3fx1deb6xlm4"
+path="res://.godot/imported/girl_run_ow.png-5e6f3bb0b966549be9dc139303189d90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/overworld/tilesets/tileset_outdoor.png"
-dest_files=["res://.godot/imported/tileset_outdoor.png-936dc8c4ba1abe3ec20fbb34bc703763.ctex"]
+source_file="res://assets/graphics/overworld/characters/girl_run_ow.png"
+dest_files=["res://.godot/imported/girl_run_ow.png-5e6f3bb0b966549be9dc139303189d90.ctex"]
 
 [params]
 

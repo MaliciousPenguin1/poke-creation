@@ -16,3 +16,16 @@ const WALKING_SPEED : int = 100
 const RUNNING_SPEED : int = 200
 ##The delay before transitionning from Turning to Walking
 const DELAY_BEFORE_WALKING : int = 1
+
+#======================================================
+#POKEMON
+#======================================================
+##The maximum level that can be reached by a Pokémon.
+const MAX_LEVEL : int = 100
+
+
+#======================================================
+#OTHER
+#======================================================
+##The maximum amount of a singular item that can be held in a bag.
+const MAX_ITEM_QUANTITY : int = 999

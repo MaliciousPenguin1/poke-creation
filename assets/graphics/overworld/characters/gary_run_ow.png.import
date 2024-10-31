@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0hrrl1f3xqt"
-path="res://.godot/imported/tileset_outdoor.png-936dc8c4ba1abe3ec20fbb34bc703763.ctex"
+uid="uid://bjmfd5m86a4gs"
+path="res://.godot/imported/gary_run_ow.png-9da0c8fa0cd6e7db52751cbd8ad8ebdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/overworld/tilesets/tileset_outdoor.png"
-dest_files=["res://.godot/imported/tileset_outdoor.png-936dc8c4ba1abe3ec20fbb34bc703763.ctex"]
+source_file="res://assets/graphics/overworld/characters/gary_run_ow.png"
+dest_files=["res://.godot/imported/gary_run_ow.png-9da0c8fa0cd6e7db52751cbd8ad8ebdc.ctex"]
 
 [params]
 
