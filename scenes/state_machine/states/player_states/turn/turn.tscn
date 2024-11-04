@@ -4,3 +4,4 @@
 
 [node name="Turn" type="Node"]
 script = ExtResource("1_my2dy")
+animation_name = "Idle"

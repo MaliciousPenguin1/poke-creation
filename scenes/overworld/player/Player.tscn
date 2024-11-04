@@ -1,11 +1,197 @@
-[gd_scene load_steps=5 format=3 uid="uid://bualplka5bvtp"]
+[gd_scene load_steps=29 format=3 uid="uid://bualplka5bvtp"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_tm114"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="2_xr2sg"]
 [ext_resource type="PackedScene" uid="uid://cbhfrjgf12xsc" path="res://scenes/state_machine/states/player_states/idle/idle.tscn" id="3_63hjy"]
+[ext_resource type="Texture2D" uid="uid://cw4kl5ibae4tq" path="res://assets/graphics/overworld/characters/boy_run_ow.png" id="4_b7aps"]
+[ext_resource type="PackedScene" uid="uid://der2rfbrb3c88" path="res://scenes/state_machine/states/player_states/turn/turn.tscn" id="4_wm32j"]
+[ext_resource type="PackedScene" uid="uid://bsogv35cyc2nu" path="res://scenes/state_machine/states/player_states/walk/walk.tscn" id="5_1ny70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ed8"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6ykq"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrjtb"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fro3n"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wyag"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dylgn"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejase"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0uxg"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbm8p"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5tu2"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8och"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3fn0"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(48, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odr54"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjl13"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(16, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d0te"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(32, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idmd4"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(48, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yurws"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvs7a"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(16, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46643"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(32, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orvw8"]
+atlas = ExtResource("4_b7aps")
+region = Rect2(48, 72, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kppul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ed8")
+}],
+"loop": true,
+"name": &"IdleDown",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6ykq")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrjtb")
+}],
+"loop": true,
+"name": &"IdleRight",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fro3n")
+}],
+"loop": true,
+"name": &"IdleUp",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wyag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dylgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejase")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0uxg")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbm8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5tu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8och")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3fn0")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odr54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjl13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d0te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idmd4")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yurws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvs7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46643")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orvw8")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 4.0
+}]
 
 [node name="Player" type="StaticBody2D"]
 collision_layer = 2
@@ -19,3 +205,13 @@ shape = SubResource("RectangleShape2D_yukce")
 initial_state = NodePath("Idle")
 
 [node name="Idle" parent="StateMachine" instance=ExtResource("3_63hjy")]
+
+[node name="Turn" parent="StateMachine" instance=ExtResource("4_wm32j")]
+
+[node name="Walk" parent="StateMachine" instance=ExtResource("5_1ny70")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kppul")
+animation = &"WalkUp"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

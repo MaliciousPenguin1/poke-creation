@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctdpqnelcj70n"]
+[gd_scene load_steps=3 format=3 uid="uid://ctdpqnelcj70n"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_hmgtg"]
+[ext_resource type="PackedScene" uid="uid://bualplka5bvtp" path="res://scenes/overworld/player/Player.tscn" id="2_h5kkj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hmgtg")
 
 [node name="WorldParent" type="Node2D" parent="."]
+
+[node name="Player" parent="WorldParent" instance=ExtResource("2_h5kkj")]
 
 [node name="UIParent" type="Control" parent="."]
 layout_mode = 3

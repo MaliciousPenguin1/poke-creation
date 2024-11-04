@@ -25,6 +25,7 @@ func _ready() -> void:
 	await owner.ready
 	player = owner as Player
 	assert(player != null, "The owner of this state isn't of type \"Player\".")
+	player.current_state = self
 
 
 func enter(_message : Dictionary = {}) -> void:
