@@ -3,7 +3,7 @@ extends PlayerState
 var currentDir : Vector2i
 var next_dir : Vector2i
 
-func unhandled_input(event: InputEvent) -> void:
+func unhandled_input(_event: InputEvent) -> void:
 		var direction_pressed : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		next_dir = Vector2i(direction_pressed.sign())
 

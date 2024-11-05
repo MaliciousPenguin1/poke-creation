@@ -22,7 +22,7 @@ func add_scene(scene_path : String, scene_type : SceneType) -> void:
 
 
 ##Removes a scene from the main one. Providing a scene type isn't necessary but it is recommended.
-func remove_scene(scene_name : String, scene_type : SceneType = -1) -> void:
+func remove_scene(scene_name : String, scene_type : SceneType) -> void:
 	match scene_type:
 		SceneType.SCENE_2D:
 			var node_to_remove : Node2D = main.world_parent.find_child(scene_name, false)

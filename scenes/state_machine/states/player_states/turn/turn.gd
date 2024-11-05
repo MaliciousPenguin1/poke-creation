@@ -3,7 +3,7 @@ extends PlayerState
 var pressedSince : float
 var currentDir : Vector2i
 
-func unhandled_input(event: InputEvent) -> void:
+func unhandled_input(_event: InputEvent) -> void:
 	var direction_pressed : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var new_dir : Vector2i = Vector2i(direction_pressed.sign())
 	if new_dir != currentDir:
