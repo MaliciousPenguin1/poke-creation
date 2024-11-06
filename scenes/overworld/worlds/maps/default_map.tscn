@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh36f4xifmbpe"]
+
+[ext_resource type="Script" path="res://scenes/overworld/worlds/maps/default_map.gd" id="1_rtee8"]
+
+[node name="DefaultMap" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_rtee8")
+
+[node name="Tilemap" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Interactables" type="Node2D" parent="."]
+y_sort_enabled = true
