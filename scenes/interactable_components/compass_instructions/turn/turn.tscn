@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8dj8qarpluwh"]
+
+[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/turn/turn.gd" id="1_uv4y4"]
+
+[node name="Turn" type="Node"]
+script = ExtResource("1_uv4y4")
