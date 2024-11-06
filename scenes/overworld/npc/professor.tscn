@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsx1orntit7q7"]
+
+[ext_resource type="Script" path="res://scenes/interactable_components/moveable.gd" id="1_yg3ys"]
+[ext_resource type="PackedScene" uid="uid://kfm6rmwglkj4" path="res://scenes/interactable_components/compass.tscn" id="3_n2b1e"]
+[ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="3_oaiaq"]
+[ext_resource type="PackedScene" uid="uid://b8dj8qarpluwh" path="res://scenes/interactable_components/compass_instructions/turn/turn.tscn" id="3_tuauh"]
+[ext_resource type="PackedScene" uid="uid://cj4w461wryk2f" path="res://scenes/state_machine/states/npc_states/idle/idle.tscn" id="4_85snw"]
+
+[node name="Professor" type="CharacterBody2D"]
+
+[node name="Moveable" type="Node" parent="."]
+script = ExtResource("1_yg3ys")
+
+[node name="Compass" parent="." node_paths=PackedStringArray("instructions") instance=ExtResource("3_n2b1e")]
+instructions = [NodePath("Turn")]
+wait_between_instructions = 1.0
+
+[node name="Turn" parent="Compass" instance=ExtResource("3_tuauh")]
+direction = Vector2i(0, 1)
+duration = 4.0
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
+initial_state = NodePath("Ildle")
+
+[node name="Ildle" parent="StateMachine" instance=ExtResource("4_85snw")]
