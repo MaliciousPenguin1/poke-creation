@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bualplka5bvtp"]
+[gd_scene load_steps=30 format=3 uid="uid://bualplka5bvtp"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_tm114"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="2_xr2sg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw4kl5ibae4tq" path="res://assets/graphics/overworld/characters/boy_run_ow.png" id="4_b7aps"]
 [ext_resource type="PackedScene" uid="uid://der2rfbrb3c88" path="res://scenes/state_machine/states/player_states/turn/turn.tscn" id="4_wm32j"]
 [ext_resource type="PackedScene" uid="uid://bsogv35cyc2nu" path="res://scenes/state_machine/states/player_states/walk/walk.tscn" id="5_1ny70"]
+[ext_resource type="PackedScene" uid="uid://bg1f7bmmd0mv8" path="res://scenes/interactable_components/moveable.tscn" id="7_xkm55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
 size = Vector2(16, 16)
@@ -193,7 +194,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Player" type="StaticBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 25
 script = ExtResource("1_tm114")
@@ -215,3 +216,5 @@ sprite_frames = SubResource("SpriteFrames_kppul")
 animation = &"WalkUp"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Moveable" parent="." instance=ExtResource("7_xkm55")]
