@@ -9,7 +9,7 @@ func unhandled_input(_event: InputEvent) -> void:
 	var new_dir : Vector2i = Vector2i(direction_pressed.sign())
 	if new_dir != current_dir:
 		if (new_dir.x == current_dir.x and current_dir.x != 0) or (new_dir.y == current_dir.y and current_dir.y != 0):
-			player.facing_direction = new_dir
+			player.moveable_component.turn(new_dir)
 			state_machine.transition_to("Turn", {"counter" : pressed_since, "dir" : new_dir })
 		else:
 			state_machine.transition_to("Idle")

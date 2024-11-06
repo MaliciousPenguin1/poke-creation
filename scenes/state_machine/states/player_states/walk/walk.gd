@@ -23,5 +23,5 @@ func after_walk() -> void:
 	if next_dir == Vector2i.ZERO:
 		state_machine.transition_to("Idle")
 	elif next_dir != current_dir:
-		player.facing_direction = next_dir
+		player.moveable_component.turn(next_dir)
 		state_machine.transition_to("Walk", {"dir" : next_dir})
