@@ -12,7 +12,8 @@ var processing_instruction : bool = false
 func _ready() -> void:
 	await owner.ready
 	for child in get_children():
-		child.consumed.connect(_on_instruction_consumed)
+		if child is Compass_Instruction:
+			child.consumed.connect(_on_instruction_consumed)
 	
 	var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
 	timer.wait_time = wait_between_instructions

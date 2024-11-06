@@ -20,6 +20,7 @@ const DIRECTIONS : Dictionary = {
 func _ready() -> void:
 	await owner.ready
 	owner.current_state = self
+	print(owner)
 
 
 func enter(_message : Dictionary = {}) -> void:
