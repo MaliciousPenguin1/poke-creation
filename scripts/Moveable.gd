@@ -15,9 +15,11 @@ func move(direction : Vector2, movement_duration : float = DEFAULT_MOVEMENT_DURA
 	tween.tween_callback(finish_movement)
 	is_moving = true
 
+
 func finish_movement() -> void:
 	is_moving = false
 	self.current_state.after_walk()
+
 
 func can_move() -> bool:
 	return !is_moving

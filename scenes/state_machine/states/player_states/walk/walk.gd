@@ -12,10 +12,12 @@ func process(_delta: float) -> void:
 	if player.can_move():
 		player.move(currentDir)
 	
+	
 func enter(_message : Dictionary = {}) -> void:
 	super()
 	currentDir = _message["dir"]
 	next_dir = currentDir
+
 
 func after_walk() -> void:
 	if next_dir == Vector2i.ZERO:

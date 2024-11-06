@@ -3,6 +3,7 @@ extends PlayerState
 var pressedSince : float
 var currentDir : Vector2i
 
+
 func unhandled_input(_event: InputEvent) -> void:
 	var direction_pressed : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var new_dir : Vector2i = Vector2i(direction_pressed.sign())
@@ -13,10 +14,12 @@ func unhandled_input(_event: InputEvent) -> void:
 		else:
 			state_machine.transition_to("Idle")
 
+
 func process(_delta: float) -> void:
 	pressedSince += _delta
 	if pressedSince > GlobalConstants.DELAY_BEFORE_WALKING:
 		state_machine.transition_to("Walk", {"dir" : currentDir})
+
 
 func enter(_message : Dictionary = {}) -> void:
 	super()
