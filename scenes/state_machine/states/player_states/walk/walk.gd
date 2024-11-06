@@ -9,8 +9,8 @@ func unhandled_input(_event: InputEvent) -> void:
 
 
 func process(_delta: float) -> void:
-	if player.can_move():
-		player.move(current_dir)
+	if player.moveable_component.can_move():
+		player.moveable_component.move(current_dir)
 	
 	
 func enter(_message : Dictionary = {}) -> void:
