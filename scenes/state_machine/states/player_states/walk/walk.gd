@@ -1,6 +1,6 @@
 extends PlayerState
 
-var currentDir : Vector2i
+var current_dir : Vector2i
 var next_dir : Vector2i
 
 func unhandled_input(_event: InputEvent) -> void:
@@ -10,18 +10,18 @@ func unhandled_input(_event: InputEvent) -> void:
 
 func process(_delta: float) -> void:
 	if player.can_move():
-		player.move(currentDir)
+		player.move(current_dir)
 	
 	
 func enter(_message : Dictionary = {}) -> void:
 	super()
-	currentDir = _message["dir"]
-	next_dir = currentDir
+	current_dir = _message["dir"]
+	next_dir = current_dir
 
 
 func after_walk() -> void:
 	if next_dir == Vector2i.ZERO:
 		state_machine.transition_to("Idle")
-	elif next_dir != currentDir:
+	elif next_dir != current_dir:
 		player.facing_direction = next_dir
 		state_machine.transition_to("Walk", {"dir" : next_dir})
