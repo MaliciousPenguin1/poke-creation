@@ -211,26 +211,32 @@ initial_state = NodePath("Idle")
 script = ExtResource("1_yg3ys")
 
 [node name="Compass" parent="." node_paths=PackedStringArray("instructions") instance=ExtResource("3_n2b1e")]
-instructions = [NodePath("Walk"), NodePath("Walk2"), NodePath("Wait")]
+instructions = [NodePath("WalkDown"), NodePath("WalkRight"), NodePath("RandTurn"), NodePath("RandWalk")]
 periodical = true
-wait_between_instructions = 0.1
 
-[node name="Turn" parent="Compass" instance=ExtResource("3_tuauh")]
+[node name="TurnLeft" parent="Compass" instance=ExtResource("3_tuauh")]
 direction = Vector2i(-1, 0)
 duration = 2.0
 
-[node name="Turn2" parent="Compass" instance=ExtResource("3_tuauh")]
+[node name="TurnDown" parent="Compass" instance=ExtResource("3_tuauh")]
 direction = Vector2i(0, 1)
 duration = 2.0
 
-[node name="Walk" parent="Compass" instance=ExtResource("8_yvm5v")]
+[node name="WalkDown" parent="Compass" instance=ExtResource("8_yvm5v")]
 direction = Vector2i(0, 1)
 
-[node name="Walk2" parent="Compass" instance=ExtResource("8_yvm5v")]
+[node name="WalkRight" parent="Compass" instance=ExtResource("8_yvm5v")]
 direction = Vector2i(1, 0)
 
-[node name="Wait" parent="Compass" instance=ExtResource("9_hpsom")]
+[node name="Wait4" parent="Compass" instance=ExtResource("9_hpsom")]
 duration = 4.0
+
+[node name="RandTurn" parent="Compass" instance=ExtResource("3_tuauh")]
+duration = 0.5
+random_direction = true
+
+[node name="RandWalk" parent="Compass" instance=ExtResource("8_yvm5v")]
+random_direction = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2tb1d")
