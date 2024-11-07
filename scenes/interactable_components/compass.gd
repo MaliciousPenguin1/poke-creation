@@ -24,7 +24,6 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
-	print(instructions[current_instruction_index])
 	instructions[current_instruction_index].consume(owner)
 
 
