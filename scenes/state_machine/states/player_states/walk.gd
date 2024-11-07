@@ -14,7 +14,7 @@ func unhandled_input(_event: InputEvent) -> void:
 
 func process(_delta: float) -> void:
 	if player.moveable_component.can_move():
-		target_position = Vector2i(player.global_position) + current_dir
+		target_position = Vector2i(player.global_position) + (current_dir * GlobalConstants.TILES_SIZE)
 		if target_position in GlobalVar.reserved_tiles or player.raycast.is_colliding():
 			#TODO: play_thud_sound
 			state_machine.transition_to("PlayerStateIdle")

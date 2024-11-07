@@ -11,7 +11,7 @@ func enter(_message : Dictionary = {}) -> void:
 	callback = _message["callback"] if _message.has("callback") else null
 	direction = _message["direction"]
 	
-	target_position = Vector2i(owner.global_position) + direction
+	target_position = Vector2i(owner.global_position) + (direction * GlobalConstants.TILES_SIZE)
 	if target_position in GlobalVar.reserved_tiles or owner.raycast.is_colliding():
 		state_machine.transition_to("NpcStateIdle")
 	else:
