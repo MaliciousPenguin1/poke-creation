@@ -32,4 +32,4 @@ class_name Map
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	GlobalVar.reserved_tiles[self].clear()
+	GlobalVar.reserved_tiles.clear()

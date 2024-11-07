@@ -11,7 +11,13 @@ func unhandled_input(_event: InputEvent) -> void:
 
 func process(_delta: float) -> void:
 	if player.moveable_component.can_move():
-		player.moveable_component.move(current_dir)
+		var target_position : Vector2i = Vector2i(player.global_position) + current_dir
+		if target_position in GlobalVar.reserved_tiles:
+			#TODO: play_thud_sound
+			state_machine.transition_to("PlayerStateIdle")
+		else:
+			GlobalVar.reserved_tiles.append(target_position)
+			player.moveable_component.move(current_dir)
 	
 	
 func enter(_message : Dictionary = {}) -> void:
@@ -21,6 +27,8 @@ func enter(_message : Dictionary = {}) -> void:
 
 
 func after_walk() -> void:
+	GlobalVar.reserved_tiles.erase(Vector2i(player.global_position))
+	
 	if next_dir == Vector2i.ZERO:
 		state_machine.transition_to("PlayerStateIdle")
 	elif next_dir != current_dir:
