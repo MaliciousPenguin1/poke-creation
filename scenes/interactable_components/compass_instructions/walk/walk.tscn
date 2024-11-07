@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://j0h8y1ypkgj0"]
-
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/walk/walk.gd" id="1_dl0bd"]
-
-[node name="Walk" type="Node"]
-script = ExtResource("1_dl0bd")
