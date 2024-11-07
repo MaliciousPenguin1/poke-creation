@@ -20,9 +20,8 @@ const DIRECTIONS : Dictionary = {
 func _ready() -> void:
 	await owner.ready
 	owner.current_state = self
-	print(owner)
 
 
 func enter(_message : Dictionary = {}) -> void:
 	if animation_name:
-		owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
+		owner.sprite.play(animation_name + DIRECTIONS[owner.moveable_component.facing_direction])

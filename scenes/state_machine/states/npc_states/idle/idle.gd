@@ -1,16 +1,16 @@
 extends NpcState
 
 
-var duration : float = 0
 var timer : Timer
-var callback : Callable
+var callback
 
 func _ready() -> void:
+	super()
 	timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
 	timer.timeout.connect(_on_timer_timeout)
 
 
-func _on_timer_timeout(delta: float) -> void:
+func _on_timer_timeout() -> void:
 	if callback:
 		callback.call()
 
@@ -18,5 +18,6 @@ func _on_timer_timeout(delta: float) -> void:
 func enter(_message : Dictionary = {}) -> void:
 	super()
 	callback = _message["callback"] if _message.has("callback") else null
-	timer.wait_time = _message["duration"] if _message.has("duration") else duration
-	timer.start()
+	if _message.has("duration"):
+		timer.wait_time = _message["duration"]
+		timer.start()

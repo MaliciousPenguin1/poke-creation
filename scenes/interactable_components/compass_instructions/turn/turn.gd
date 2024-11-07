@@ -5,6 +5,6 @@ extends Compass_Instruction
 @export var duration : float
 
 
-func consume(object_to_instruct) -> void:
-	object_to_instruct.moveable_component.turn(direction)
-	object_to_instruct.current_state.transition_to("Idle", {"duration" : duration, "callback" : after_consumed_callback})
+func consume(_object_to_instruct) -> void:
+	_object_to_instruct.moveable_component.turn(direction)
+	_object_to_instruct.current_state.state_machine.transition_to("Idle", {"duration" : duration, "callback" : after_consumed_callback})

@@ -16,23 +16,23 @@ func _ready() -> void:
 			child.consumed.connect(_on_instruction_consumed)
 	
 	var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
-	timer.wait_time = wait_between_instructions
+	if wait_between_instructions > 0:
+		timer.wait_time = wait_between_instructions
 	timer.timeout.connect(_on_timer_timeout)
 	
 	instructions[0].consume(owner)
 
 
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_timer_timeout() -> void:
-	print("TIMER")
+	instructions[current_instruction_index].consume(owner)
 
 
 func _on_instruction_consumed() -> void:
 		current_instruction_index = current_instruction_index + 1
 		current_instruction_index = current_instruction_index % len(instructions) if periodical else current_instruction_index
 		if current_instruction_index < len(instructions):
-			var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
-			timer.start()
+			if wait_between_instructions > 0:
+				var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
+				timer.start()
+			else:
+				_on_timer_timeout()

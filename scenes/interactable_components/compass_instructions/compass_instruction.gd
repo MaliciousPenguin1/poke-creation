@@ -9,7 +9,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func consume(object_to_instruct) -> void:
+func consume(_object_to_instruct) -> void:
 	pass
 
 
