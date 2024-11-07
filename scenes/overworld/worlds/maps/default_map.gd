@@ -2,9 +2,6 @@ extends Node2D
 class_name Map
 
 
-##Resource used to handle the various data if individual maps.
-
-
 ##The name of the map (or its key in a csv translation file).
 @export var map_name : String = "Placeholder"
 ##The bgm of this map.
@@ -32,3 +29,7 @@ class_name Map
 @export var good_rod_encounters : Array[Encounters]
 ##The encounters that can happen when fishing with a super rod.
 @export var super_rod_encounters : Array[Encounters]
+
+
+func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+	GlobalVar.reserved_tiles[self].clear()

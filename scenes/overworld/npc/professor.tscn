@@ -199,6 +199,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Professor" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_nk18y")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
@@ -216,11 +217,11 @@ animation_name = "Walk"
 script = ExtResource("1_yg3ys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_2tb1d")
 animation = &"IdleLeft"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_w5x4o")
 
 [node name="Compass" type="Node" parent="." node_paths=PackedStringArray("instructions")]

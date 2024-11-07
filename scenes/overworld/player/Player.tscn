@@ -201,7 +201,6 @@ collision_mask = 25
 script = ExtResource("1_tm114")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_yukce")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_xr2sg")]
@@ -220,6 +219,7 @@ script = ExtResource("5_04j86")
 animation_name = "Walk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_kppul")
 animation = &"WalkUp"
 

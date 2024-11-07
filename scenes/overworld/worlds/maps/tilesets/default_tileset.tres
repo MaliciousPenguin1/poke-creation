@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://isw2m2qowklg"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://isw2m2qowklg"]
 
 [ext_resource type="Texture2D" uid="uid://dqichfjovdj7w" path="res://assets/graphics/overworld/tilesets/ground.png" id="1_7wgto"]
 [ext_resource type="Texture2D" uid="uid://cnxo0y1f3tbj7" path="res://assets/graphics/overworld/tilesets/ground_top.png" id="2_pg5ya"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkwx1qly621k2" path="res://assets/graphics/overworld/tilesets/props.png" id="4_sewig"]
 [ext_resource type="Texture2D" uid="uid://bj1eqm8gnexl4" path="res://assets/graphics/overworld/tilesets/animated_tiles.png" id="5_e3dwo"]
 [ext_resource type="Texture2D" uid="uid://dbhm8djgbh5ac" path="res://assets/graphics/overworld/tilesets/autotiles_props.png" id="6_xtedx"]
+[ext_resource type="Texture2D" uid="uid://pe67y0sua8mw" path="res://assets/graphics/overworld/tilesets/debug.png" id="7_meq1p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3yjo"]
 resource_name = "Floor"
@@ -1730,6 +1731,15 @@ texture = ExtResource("6_xtedx")
 4:1/0/terrains_peering_bit/top_side = 4
 4:1/0/terrains_peering_bit/top_right_corner = 4
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8375s"]
+texture = ExtResource("7_meq1p")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
@@ -1754,3 +1764,4 @@ sources/2 = SubResource("TileSetAtlasSource_vhcee")
 sources/4 = SubResource("TileSetAtlasSource_y8sew")
 sources/5 = SubResource("TileSetAtlasSource_5wurw")
 sources/6 = SubResource("TileSetAtlasSource_j8bs2")
+sources/999 = SubResource("TileSetAtlasSource_8375s")

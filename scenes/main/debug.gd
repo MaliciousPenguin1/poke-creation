@@ -6,6 +6,7 @@ extends Node
 
 
 func _ready() -> void:
-	await get_tree().physics_frame
-	ScenesManager.add_scene("res://scenes/overworld/player/Player.tscn", ScenesManager.SceneType.SCENE_2D)
-	ScenesManager.add_scene("res://scenes/overworld/npc/professor.tscn", ScenesManager.SceneType.SCENE_2D)
+	await owner.ready
+	ScenesManager.add_scene("res://scenes/overworld/player/Player.tscn", ScenesManager.SceneType.ENTITY, Vector2i(3,5))
+	ScenesManager.add_scene("res://scenes/overworld/npc/professor.tscn", ScenesManager.SceneType.ENTITY, Vector2i(6, 5))
+	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collisions_debug_map.tscn", ScenesManager.SceneType.WORLD)
