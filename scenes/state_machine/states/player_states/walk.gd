@@ -4,6 +4,9 @@ class_name PlayerStateWalk
 var current_dir : Vector2i
 var next_dir : Vector2i
 
+var target_position : Vector2i
+
+
 func unhandled_input(_event: InputEvent) -> void:
 		var direction_pressed : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		next_dir = Vector2i(direction_pressed.sign())
@@ -11,13 +14,13 @@ func unhandled_input(_event: InputEvent) -> void:
 
 func process(_delta: float) -> void:
 	if player.moveable_component.can_move():
-		var target_position : Vector2i = Vector2i(player.global_position) + current_dir
-		if target_position in GlobalVar.reserved_tiles:
+		target_position = Vector2i(player.global_position) + current_dir
+		if target_position in GlobalVar.reserved_tiles or player.raycast.is_colliding():
 			#TODO: play_thud_sound
 			state_machine.transition_to("PlayerStateIdle")
 		else:
-			GlobalVar.reserved_tiles.append(target_position)
 			player.moveable_component.move(current_dir)
+			GlobalVar.reserved_tiles.append(target_position)
 	
 	
 func enter(_message : Dictionary = {}) -> void:
@@ -27,7 +30,7 @@ func enter(_message : Dictionary = {}) -> void:
 
 
 func after_walk() -> void:
-	GlobalVar.reserved_tiles.erase(Vector2i(player.global_position))
+	GlobalVar.reserved_tiles.erase(target_position)
 	
 	if next_dir == Vector2i.ZERO:
 		state_machine.transition_to("PlayerStateIdle")
