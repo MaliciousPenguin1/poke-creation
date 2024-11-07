@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://der2rfbrb3c88"]
-
-[ext_resource type="Script" path="res://scenes/state_machine/states/player_states/turn/turn.gd" id="1_my2dy"]
-
-[node name="Turn" type="Node"]
-script = ExtResource("1_my2dy")
-animation_name = "Idle"

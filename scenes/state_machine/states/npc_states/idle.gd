@@ -1,13 +1,5 @@
 extends NpcState
-
-
-var timer : Timer
-
-
-func _ready() -> void:
-	super()
-	timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
-	timer.timeout.connect(_on_timer_timeout)
+class_name NpcStateIdle
 
 
 func _on_timer_timeout() -> void:
@@ -19,5 +11,5 @@ func enter(_message : Dictionary = {}) -> void:
 	super()
 	callback = _message["callback"] if _message.has("callback") else null
 	if _message.has("duration"):
-		timer.wait_time = _message["duration"]
-		timer.start()
+		await get_tree().create_timer(_message["duration"]).timeout
+		_on_timer_timeout()

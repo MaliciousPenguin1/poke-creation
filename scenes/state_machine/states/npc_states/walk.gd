@@ -1,5 +1,5 @@
 extends NpcState
-
+class_name NpcStateWalk
 
 var direction : Vector2i
 
@@ -12,6 +12,6 @@ func enter(_message : Dictionary = {}) -> void:
 
 
 func after_walk() -> void:
-	state_machine.transition_to("Idle")
+	state_machine.transition_to("NpcStateIdle")
 	if callback:
 		callback.call()

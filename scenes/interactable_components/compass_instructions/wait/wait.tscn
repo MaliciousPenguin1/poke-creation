@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bco7nrpyyf0pg"]
-
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/wait/wait.gd" id="1_fxgag"]
-
-[node name="Wait" type="Node"]
-script = ExtResource("1_fxgag")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true

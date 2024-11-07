@@ -1,4 +1,6 @@
 extends PlayerState
+class_name PlayerStateTurn
+
 
 var pressed_since : float
 var current_dir : Vector2i
@@ -10,15 +12,15 @@ func unhandled_input(_event: InputEvent) -> void:
 	if new_dir != current_dir:
 		if (new_dir.x == current_dir.x and current_dir.x != 0) or (new_dir.y == current_dir.y and current_dir.y != 0):
 			player.moveable_component.turn(new_dir)
-			state_machine.transition_to("Turn", {"counter" : pressed_since, "dir" : new_dir })
+			state_machine.transition_to("PlayerStateTurn", {"counter" : pressed_since, "dir" : new_dir })
 		else:
-			state_machine.transition_to("Idle")
+			state_machine.transition_to("PlayerStateIdle")
 
 
 func process(_delta: float) -> void:
 	pressed_since += _delta
 	if pressed_since > GlobalConstants.DELAY_BEFORE_WALKING:
-		state_machine.transition_to("Walk", {"dir" : current_dir})
+		state_machine.transition_to("PlayerStateWalk", {"dir" : current_dir})
 
 
 func enter(_message : Dictionary = {}) -> void:

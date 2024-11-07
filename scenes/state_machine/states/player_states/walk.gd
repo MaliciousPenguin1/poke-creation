@@ -1,4 +1,5 @@
 extends PlayerState
+class_name PlayerStateWalk
 
 var current_dir : Vector2i
 var next_dir : Vector2i
@@ -21,7 +22,7 @@ func enter(_message : Dictionary = {}) -> void:
 
 func after_walk() -> void:
 	if next_dir == Vector2i.ZERO:
-		state_machine.transition_to("Idle")
+		state_machine.transition_to("PlayerStateIdle")
 	elif next_dir != current_dir:
 		player.moveable_component.turn(next_dir)
-		state_machine.transition_to("Walk", {"dir" : next_dir})
+		state_machine.transition_to("PlayerStateWalk", {"dir" : next_dir})

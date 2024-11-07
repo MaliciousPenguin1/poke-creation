@@ -15,15 +15,10 @@ func _ready() -> void:
 		if child is Compass_Instruction:
 			child.consumed.connect(_on_instruction_consumed)
 	
-	var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
-	if wait_between_instructions > 0:
-		timer.wait_time = wait_between_instructions
-	timer.timeout.connect(_on_timer_timeout)
-	
-	instructions[0].consume(owner)
+	execute_next_instruction()
 
 
-func _on_timer_timeout() -> void:
+func execute_next_instruction() -> void:
 	instructions[current_instruction_index].consume(owner)
 
 
@@ -32,7 +27,5 @@ func _on_instruction_consumed() -> void:
 		current_instruction_index = current_instruction_index % len(instructions) if periodical else current_instruction_index
 		if current_instruction_index < len(instructions):
 			if wait_between_instructions > 0:
-				var timer : Timer = get_children(true).filter(func(n) : return n.name == 'Timer')[0]
-				timer.start()
-			else:
-				_on_timer_timeout()
+				await get_tree().create_timer(wait_between_instructions).timeout
+			execute_next_instruction()
