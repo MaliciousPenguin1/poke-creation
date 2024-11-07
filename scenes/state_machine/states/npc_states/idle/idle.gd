@@ -2,7 +2,7 @@ extends NpcState
 
 
 var timer : Timer
-var callback
+
 
 func _ready() -> void:
 	super()

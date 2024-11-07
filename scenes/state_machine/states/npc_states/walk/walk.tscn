@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxyurawh07hcv"]
+
+[ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/walk/walk.gd" id="1_tdprq"]
+
+[node name="Walk" type="Node"]
+script = ExtResource("1_tdprq")
+animation_name = "Walk"

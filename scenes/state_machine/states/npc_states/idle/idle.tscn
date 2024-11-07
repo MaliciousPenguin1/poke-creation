@@ -4,6 +4,7 @@
 
 [node name="Idle" type="Node"]
 script = ExtResource("1_wk1wh")
+animation_name = "Idle"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

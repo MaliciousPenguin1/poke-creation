@@ -17,6 +17,9 @@ const DIRECTIONS : Dictionary = {
 @export var animation_name : String
 
 
+var callback
+
+
 func _ready() -> void:
 	await owner.ready
 	owner.current_state = self
