@@ -9,7 +9,7 @@ script = ExtResource("1_rtee8")
 [node name="Tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Interactables" type="Node2D" parent="."]
+[node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

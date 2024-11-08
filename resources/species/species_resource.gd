@@ -76,9 +76,9 @@ class_name Species
 ##To learn more about it, go to [url]https://bulbapedia.bulbagarden.net/wiki/Egg_Group[/url][br]
 ##To see the egg groups of regular Pokémon, go to [url]https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles[/url][br]
 ##Mandatory. You [color=red]have[/color] to attribute an egg group here.
-@export_enum("Monster","Water1","Bug","Flying","Field","Fary","Grass","Human-Like","Water3","Mineral","Amorphous","Water2","Ditto","Dragon","NoEggsDiscovered") var egg_group1 : String = "NoEggsDiscovered"
+@export_enum("Monster","Water1","Bug","Flying","Field","Fairy","Grass","Human-Like","Water3","Mineral","Amorphous","Water2","Ditto","Dragon","NoEggsDiscovered") var egg_group1 : String = "NoEggsDiscovered"
 ##Optional secondary egg group.
-@export_enum("None","Monster","Water1","Bug","Flying","Field","Fary","Grass","Human-Like","Water3","Mineral","Amorphous","Water2","Ditto","Dragon","NoEggsDiscovered") var egg_group2 : String = "None"
+@export_enum("None","Monster","Water1","Bug","Flying","Field","Fairy","Grass","Human-Like","Water3","Mineral","Amorphous","Water2","Ditto","Dragon","NoEggsDiscovered") var egg_group2 : String = "None"
 ##The number of steps needed to complete a cycle.[br]
 ##To learn more about it, go to [url]https://bulbapedia.bulbagarden.net/wiki/Egg_cycle[/url]
 @export_range(1,999999) var hatch_steps : int = 5120

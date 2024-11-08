@@ -6,7 +6,7 @@ class_name Encounters
 
 
 ## The species of the Pokémon to encounter
-@export var species : String
+@export var species : Species
 ## The "weight" of the Pokémon, ie: the odds of ot appearing.\br
 ## The higher this number is, the more likely your Pokémon is to appear.\br
 ## This value [color = red]has[/color] to be positive.

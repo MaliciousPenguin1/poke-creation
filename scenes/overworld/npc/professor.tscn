@@ -200,8 +200,7 @@ size = Vector2(16, 16)
 
 [node name="Professor" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_layer = 4
-collision_mask = 31
+collision_mask = 27
 script = ExtResource("1_nk18y")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]

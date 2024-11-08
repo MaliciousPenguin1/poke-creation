@@ -21,7 +21,7 @@ class_name EvolutionData
 ##Wether the Pokémon needs to be friend with you.
 @export var friendship : bool = false
 ##The map in which you need to be for the evolution to happen.
-@export var map : Map
+@export var map_id : String
 ##The timeframe the evolution can happen.[br]
 ##x is the time after which it can happen and y is the time before which it can happen.[br]
 ##For example, a Pokémon that can only evolve between 8 pm (20h) and 4 am (4h) will have this value 
