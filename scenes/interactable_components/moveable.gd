@@ -2,7 +2,7 @@ extends Node
 class_name Moveable
 
 
-const DEFAULT_MOVEMENT_DURATION : float = 1.0
+const DEFAULT_MOVEMENT_DURATION : float = 0.25
 
 
 var is_moving : bool = false

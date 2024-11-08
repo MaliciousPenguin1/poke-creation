@@ -12,4 +12,5 @@ tile_set = ExtResource("2_rufci")
 
 [node name="Obstacles" type="TileMapLayer" parent="Tilemap" index="1"]
 z_index = -1
+tile_map_data = PackedByteArray("AAADAAEABAAAAAAAAAAHAAEABAAAABgAAAAKAAEABAADAA4AAAA=")
 tile_set = ExtResource("2_rufci")
