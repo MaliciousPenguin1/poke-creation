@@ -6,7 +6,6 @@ const DEFAULT_MOVEMENT_DURATION : float = 0.25
 
 
 var is_moving : bool = false
-var facing_direction : Vector2i = Vector2i(0, 1)
 
 
 func _ready() -> void:
@@ -21,7 +20,7 @@ func move(direction : Vector2, movement_duration : float = DEFAULT_MOVEMENT_DURA
 
 
 func turn(direction : Vector2i) -> void:
-	facing_direction = direction
+	owner.facing_direction = direction
 
 
 func finish_movement() -> void:

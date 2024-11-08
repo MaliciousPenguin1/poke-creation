@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dsx1orntit7q7"]
 
-[ext_resource type="Script" path="res://scenes/overworld/worlds/maps/collision_debug/npc1.gd" id="1_3gagu"]
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_11v0r"]
 [ext_resource type="Script" path="res://scenes/interactable_components/moveable.gd" id="1_yg3ys"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/idle.gd" id="3_b2a8t"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="3_oaiaq"]
@@ -199,7 +199,7 @@ size = Vector2(16, 16)
 [node name="NPC1" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 27
-script = ExtResource("1_3gagu")
+script = ExtResource("1_11v0r")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
 initial_state = NodePath("NpcStateIdle")

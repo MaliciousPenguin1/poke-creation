@@ -1,8 +1,7 @@
-extends CharacterBody2D
+extends Entity
 class_name Player
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
-@onready var raycast : RayCast2D = $RayCast2D
-@onready var moveable_component : Moveable = $Moveable
 
-var current_state : State
+var gender : bool
+var player_name : String
+var trainer_id : int
