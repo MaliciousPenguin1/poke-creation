@@ -1,11 +1,11 @@
 extends Node
 
 
-
 ##Temporaire, juste pour faire des tests.
 
-@onready var custom_camera: CustomCamera = $"../WorldParent/CustomCamera"
+
 @onready var world_parent: Node2D = $"../WorldParent"
+@onready var custom_camera: CustomCamera = $"../WorldParent/CustomCamera"
 
 
 func _ready() -> void:
