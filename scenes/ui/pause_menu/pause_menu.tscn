@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://y4w17hnjfl2r"]
+[gd_scene load_steps=15 format=3 uid="uid://y4w17hnjfl2r"]
 
 [ext_resource type="Script" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_db6wq"]
 [ext_resource type="PackedScene" uid="uid://dw2fg1a5b0fwb" path="res://scenes/ui/pause_menu/menu_button.tscn" id="2_4glfl"]
+[ext_resource type="Texture2D" uid="uid://irx31unbtqmp" path="res://assets/graphics/ui/horloge/Background heure.png" id="4_1gqom"]
+[ext_resource type="FontFile" uid="uid://ciqkqlpv7qisu" path="res://assets/fonts/PixAntiqua.ttf" id="4_mj7o4"]
 [ext_resource type="Texture2D" uid="uid://ddt3utf2ixmb1" path="res://assets/graphics/ui/pause_menu/menu_icons.png" id="4_o0vl8"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu/bg_time_label.gd" id="5_5a460"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv0xc"]
 resource_local_to_scene = true
@@ -19,25 +22,102 @@ resource_local_to_scene = true
 atlas = ExtResource("4_o0vl8")
 region = Rect2(0, 44, 23, 22)
 
-[node name="PauseMenu" type="CanvasLayer"]
-scale = Vector2(4, 4)
-transform = Transform2D(4, 0, 0, 4, 0, 0)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lls7n"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 66, 23, 22)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmd0w"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 88, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyojd"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 110, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evw3m"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 132, 23, 22)
+
+[sub_resource type="Theme" id="Theme_wk2pf"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.129412, 0.129412, 0.129412, 1)
+Label/constants/shadow_outline_size = 2
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("4_mj7o4")
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+offset = Vector2(704, 16)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 704, 16)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+offset_right = 126.0
+offset_bottom = 77.0
+theme_override_constants/separation = 1
 script = ExtResource("1_db6wq")
 
-[node name="Grimoire" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+[node name="Grimoire" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_uv0xc")
 label_text = "Grimoire"
 
-[node name="Pokemon" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+[node name="Pokemon" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_rlp0g")
 
-[node name="Sac" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+[node name="Sac" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_l3i7s")
 label_text = "Sac"
+
+[node name="Profile" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_lls7n")
+label_text = "Aranel"
+
+[node name="Save" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_lmd0w")
+label_text = "Save"
+
+[node name="Paramètres" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_cyojd")
+label_text = "Paramètres"
+
+[node name="Retour" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_evw3m")
+label_text = "Retour"
+
+[node name="BG" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BG"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_wk2pf")
+
+[node name="BG_heure" type="TextureRect" parent="BG/Control"]
+layout_mode = 0
+offset_top = 390.0
+offset_right = 183.0
+offset_bottom = 540.0
+texture = ExtResource("4_1gqom")
+
+[node name="Label" type="Label" parent="BG/Control/BG_heure"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 114.0
+offset_right = 56.0
+offset_bottom = 139.0
+script = ExtResource("5_5a460")

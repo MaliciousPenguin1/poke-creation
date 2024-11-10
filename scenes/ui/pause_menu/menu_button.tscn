@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw2fg1a5b0fwb"]
+[gd_scene load_steps=7 format=3 uid="uid://dw2fg1a5b0fwb"]
 
 [ext_resource type="Script" path="res://scenes/ui/pause_menu/menu_button.gd" id="1_sngoj"]
 [ext_resource type="Texture2D" uid="uid://ddt3utf2ixmb1" path="res://assets/graphics/ui/pause_menu/menu_icons.png" id="2_b6oyh"]
 [ext_resource type="Texture2D" uid="uid://b0iwsmk2olc4g" path="res://assets/graphics/ui/pause_menu/menu_button.png" id="3_e2syd"]
+[ext_resource type="FontFile" uid="uid://ciqkqlpv7qisu" path="res://assets/fonts/PixAntiqua.ttf" id="4_cstsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlc8l"]
 resource_local_to_scene = true
 atlas = ExtResource("2_b6oyh")
 region = Rect2(0, 22, 23, 22)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7meqb"]
+font = ExtResource("4_cstsl")
+font_size = 12
+font_color = Color(0.0627451, 0.0941176, 0.129412, 1)
+shadow_color = Color(0.815686, 0.815686, 0.784314, 1)
 
 [node name="MenuButton" type="TextureButton"]
 anchors_preset = 15
@@ -25,17 +32,20 @@ label_text = "Pokémon"
 [node name="Icon" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 19.0
-offset_right = 59.0
+offset_left = 12.0
+offset_right = 52.0
 offset_bottom = 40.0
+stretch_mode = 2
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 41.0
-offset_top = 8.0
-offset_right = 81.0
-offset_bottom = 31.0
+offset_left = 40.0
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 29.0
+label_settings = SubResource("LabelSettings_7meqb")
 
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

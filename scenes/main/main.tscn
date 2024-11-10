@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctdpqnelcj70n"]
+[gd_scene load_steps=5 format=3 uid="uid://ctdpqnelcj70n"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_hmgtg"]
 [ext_resource type="Script" path="res://scenes/main/debug.gd" id="2_514wy"]
 [ext_resource type="PackedScene" uid="uid://nufv3pi7nh3h" path="res://scenes/other/custom_camera/custom_camera.tscn" id="2_phffe"]
 [ext_resource type="PackedScene" uid="uid://bwqvy2tejy5gl" path="res://scenes/main/phone_controls.tscn" id="3_230gu"]
-[ext_resource type="PackedScene" uid="uid://y4w17hnjfl2r" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_d0l36"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hmgtg")
@@ -13,7 +12,7 @@ script = ExtResource("1_hmgtg")
 y_sort_enabled = true
 
 [node name="CustomCamera" parent="WorldParent" instance=ExtResource("2_phffe")]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="UIParent" type="Control" parent="."]
 layout_mode = 3
@@ -22,10 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PauseMenu" parent="UIParent" instance=ExtResource("3_d0l36")]
-offset = Vector2(100, 20)
-transform = Transform2D(4, 0, 0, 4, 100, 20)
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("2_514wy")

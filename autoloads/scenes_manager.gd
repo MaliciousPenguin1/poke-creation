@@ -47,3 +47,8 @@ func remove_scene(scene_name : String, scene_type : SceneType) -> void:
 		_:
 			var node_to_remove := main.find_child(scene_name)
 			node_to_remove.queue_free()
+
+
+##Show the pause menu
+func show_pause_menu() -> void:
+	add_scene("res://scenes/ui/pause_menu/pause_menu.tscn", SceneType.UI)
