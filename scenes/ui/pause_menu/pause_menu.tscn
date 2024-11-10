@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://y4w17hnjfl2r"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_db6wq"]
+[ext_resource type="PackedScene" uid="uid://dw2fg1a5b0fwb" path="res://scenes/ui/pause_menu/menu_button.tscn" id="2_4glfl"]
+[ext_resource type="Texture2D" uid="uid://ddt3utf2ixmb1" path="res://assets/graphics/ui/pause_menu/menu_icons.png" id="4_o0vl8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv0xc"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 0, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlp0g"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 22, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3i7s"]
+resource_local_to_scene = true
+atlas = ExtResource("4_o0vl8")
+region = Rect2(0, 44, 23, 22)
+
+[node name="PauseMenu" type="CanvasLayer"]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_db6wq")
+
+[node name="Grimoire" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_uv0xc")
+label_text = "Grimoire"
+
+[node name="Pokemon" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_rlp0g")
+
+[node name="Sac" parent="VBoxContainer" instance=ExtResource("2_4glfl")]
+layout_mode = 2
+icon = SubResource("AtlasTexture_l3i7s")
+label_text = "Sac"
