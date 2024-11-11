@@ -39,7 +39,7 @@ func _input(_event: InputEvent) -> void:
 		elif Input.is_action_just_pressed("move_up"):
 			set_index(current_index - 1, true)
 		elif Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("run"):
-			owner.queue_free()
+			call_return()
 		elif Input.is_action_just_pressed("interact"):
 			_on_clicked_button()
 	elif _event is InputEventMouseMotion:
@@ -88,6 +88,7 @@ func call_parameters() -> void:
 	
 	
 func call_return() -> void:
+	ScenesManager.start_clock()
 	owner.queue_free()
 
 

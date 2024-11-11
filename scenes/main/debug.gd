@@ -16,5 +16,8 @@ func _ready() -> void:
 	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collision_debug/npc2.tscn", ScenesManager.SceneType.ENTITY, Vector2i(6, 8))
 	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collision_debug/collisions_debug_map.tscn", ScenesManager.SceneType.WORLD)
 	
-	custom_camera.reparent(world_parent.get_child(1))
-	custom_camera.move_to_parent()
+	for child in world_parent.get_children():
+		if child is Player:
+			custom_camera.reparent(child)
+			custom_camera.move_to_parent()
+			break

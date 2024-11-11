@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://y4w17hnjfl2r"]
+[gd_scene load_steps=22 format=3 uid="uid://y4w17hnjfl2r"]
 
 [ext_resource type="Script" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_db6wq"]
 [ext_resource type="Script" path="res://scripts/custom_canvas_layer.gd" id="1_vho6j"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://84go724vu24s" path="res://assets/graphics/ui/horloge/Background date.png" id="8_ah852"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu/bg_date.gd" id="9_5ehvt"]
 [ext_resource type="Texture2D" uid="uid://cn7wssvh8a4s" path="res://assets/graphics/ui/horloge/Hiver 64px.png" id="10_dml48"]
+[ext_resource type="Texture2D" uid="uid://b56wy16yv3cw4" path="res://assets/graphics/ui/horloge/Printemps 64px.png" id="11_uyvtu"]
+[ext_resource type="Texture2D" uid="uid://bj217otukdcrf" path="res://assets/graphics/ui/horloge/Ete 64px.png" id="12_tn75m"]
+[ext_resource type="Texture2D" uid="uid://b2vkxvptaqyy7" path="res://assets/graphics/ui/horloge/Automne 64px.png" id="13_51m2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv0xc"]
 resource_local_to_scene = true
@@ -143,10 +146,35 @@ offset_top = 28.0
 offset_right = 82.0
 offset_bottom = 53.0
 
-[node name="Icon" type="TextureRect" parent="BG/Control/BG_date"]
+[node name="Icon_Hiver" type="TextureRect" parent="BG/Control/BG_date"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 texture = ExtResource("10_dml48")
+
+[node name="Icon_Printemps" type="TextureRect" parent="BG/Control/BG_date"]
+unique_name_in_owner = true
+visible = false
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("11_uyvtu")
+
+[node name="Icon_Ete" type="TextureRect" parent="BG/Control/BG_date"]
+unique_name_in_owner = true
+visible = false
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("12_tn75m")
+
+[node name="Icon_Automne" type="TextureRect" parent="BG/Control/BG_date"]
+unique_name_in_owner = true
+visible = false
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("13_51m2b")

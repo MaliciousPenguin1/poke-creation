@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctdpqnelcj70n"]
+[gd_scene load_steps=6 format=3 uid="uid://ctdpqnelcj70n"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_hmgtg"]
 [ext_resource type="Script" path="res://scenes/main/debug.gd" id="2_514wy"]
 [ext_resource type="PackedScene" uid="uid://nufv3pi7nh3h" path="res://scenes/other/custom_camera/custom_camera.tscn" id="2_phffe"]
 [ext_resource type="PackedScene" uid="uid://bwqvy2tejy5gl" path="res://scenes/main/phone_controls.tscn" id="3_230gu"]
+[ext_resource type="Script" path="res://scripts/game_time.gd" id="3_vnexw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hmgtg")
@@ -12,6 +13,9 @@ script = ExtResource("1_hmgtg")
 y_sort_enabled = true
 
 [node name="CustomCamera" parent="WorldParent" instance=ExtResource("2_phffe")]
+
+[node name="GameTime" type="Node2D" parent="WorldParent"]
+script = ExtResource("3_vnexw")
 
 [node name="UIParent" type="Control" parent="."]
 layout_mode = 3
