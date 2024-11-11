@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlvcpqo2fhn0j"]
+
+[ext_resource type="PackedScene" uid="uid://dol0of47lfepn" path="res://scenes/ui/custom_nodes/sound_button/sound_button.tscn" id="1_mfecy"]
+[ext_resource type="Script" path="res://scenes/ui/custom_nodes/sub_menu_button/sub_menu_button.gd" id="2_36qdb"]
+
+[node name="SubMenuButton" instance=ExtResource("1_mfecy")]
+script = ExtResource("2_36qdb")
+menu = null
