@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Entity
 
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+var sprite : AnimatedSprite2D = null
 var moveable_component : Moveable = null
 var raycast: RayCast2D = null
 
@@ -21,3 +21,6 @@ func _ready() -> void:
 	assert(len(raycast_candidates) < 2, "The Entity class cannot have more then one direct RayCst2D children")
 	if len(raycast_candidates) == 1:
 		raycast = raycast_candidates[0]
+		
+	var sprite_candidates = find_children("*", "AnimatedSprite2D", false)
+	sprite = sprite_candidates[0]

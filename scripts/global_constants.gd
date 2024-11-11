@@ -32,3 +32,5 @@ const MAX_LEVEL : int = 100
 #======================================================
 ##The maximum amount of a singular item that can be held in a bag.
 const MAX_ITEM_QUANTITY : int = 999
+##The max Trainer Id number for the player
+const MAX_TRAINER_ID : int = 65535
