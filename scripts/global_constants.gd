@@ -16,6 +16,8 @@ const WALKING_SPEED : int = 100
 const RUNNING_SPEED : int = 200
 ##The delay before transitionning from Turning to Walking
 const DELAY_BEFORE_WALKING : float = 0.2
+##The Camera zoom
+const CAMERA_ZOOM : int = 2
 
 
 #======================================================

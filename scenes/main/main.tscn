@@ -12,7 +12,6 @@ script = ExtResource("1_hmgtg")
 y_sort_enabled = true
 
 [node name="CustomCamera" parent="WorldParent" instance=ExtResource("2_phffe")]
-zoom = Vector2(2, 2)
 
 [node name="UIParent" type="Control" parent="."]
 layout_mode = 3
