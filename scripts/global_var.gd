@@ -2,4 +2,4 @@ extends Node
 class_name GlobalVar
 
 
-static var reserved_tiles : Array[Vector2i]
+static var reserved_tiles : Dictionary
