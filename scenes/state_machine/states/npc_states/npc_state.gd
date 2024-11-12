@@ -27,5 +27,6 @@ func _ready() -> void:
 
 func enter(_message : Dictionary = {}) -> void:
 	if animation_name:
-		owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
+		if owner.sprite.animation != animation_name + DIRECTIONS[owner.facing_direction]:
+			owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
 		owner.raycast.target_position = owner.facing_direction * GlobalConstants.TILES_SIZE
