@@ -30,3 +30,4 @@ func enter(_message : Dictionary = {}) -> void:
 		if owner.sprite.animation != animation_name + DIRECTIONS[owner.facing_direction]:
 			owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
 		owner.raycast.target_position = owner.facing_direction * GlobalConstants.TILES_SIZE
+		owner.raycast.force_raycast_update()
