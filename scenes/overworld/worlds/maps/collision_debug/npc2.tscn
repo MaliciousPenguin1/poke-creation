@@ -218,7 +218,7 @@ script = ExtResource("1_yg3ys")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_2tb1d")
-animation = &"IdleLeft"
+animation = &"WalkDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w5x4o")

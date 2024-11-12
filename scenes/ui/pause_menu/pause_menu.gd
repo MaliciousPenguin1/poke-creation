@@ -1,6 +1,10 @@
 extends VBoxContainer
 
 
+@onready var choose_audio: AudioStreamPlayer = %ChooseAudio
+@onready var select_audio: AudioStreamPlayer = %SelectAudio
+
+
 var buttons : Array[Node] = []
 var valid_buttons : Array[Node] = []
 var valid_need_to_call : Array[Callable] = []
@@ -8,6 +12,7 @@ var conditions : Array[Callable] = [always_true, always_true, always_true, alway
 var need_to_call : Array[Callable] = [call_grimoire, call_party, call_bag, call_profile, call_save, call_parameters, call_return]
 var max_index = 0
 var current_index = 0
+var can_process_keyboard : bool = true
 
 
 #
@@ -22,6 +27,7 @@ func _ready() -> void:
 	buttons = get_children()
 	for child in buttons:
 		child.button_down.connect(_on_clicked_button)
+		child.focus_entered.connect(_on_focused_button)
 
 	var need_to_sort = on_entering_ui()
 	
@@ -34,19 +40,19 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if _event is InputEventKey:
 		get_viewport().set_input_as_handled()
-		if Input.is_action_just_pressed("move_down"):
-			set_index(current_index + 1, true)
-		elif Input.is_action_just_pressed("move_up"):
-			set_index(current_index - 1, true)
-		elif Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("run"):
-			call_return()
-		elif Input.is_action_just_pressed("interact"):
-			_on_clicked_button()
+		if can_process_keyboard:
+			if Input.is_action_pressed("move_down"):
+				set_index(current_index + 1, true)
+			elif Input.is_action_pressed("move_up"):
+				set_index(current_index - 1, true)
+			elif Input.is_action_just_pressed("pause") or Input.is_action_just_pressed("run"):
+				call_return()
+			elif Input.is_action_just_pressed("interact"):
+				_on_clicked_button()
 	elif _event is InputEventMouseMotion:
 		for button in valid_buttons:
 			if button.is_hovered():
 				button.grab_focus()
-
 
 
 #
@@ -55,9 +61,10 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_clicked_button() -> void:
+	select_audio.play()
 	valid_need_to_call[current_index].call()
-	
-	
+
+
 #
 # Callables on each button click
 #
@@ -134,3 +141,11 @@ func set_index(idx : int, need_to_update_focus = false) -> void:
 	current_index = idx % max_index
 	if need_to_update_focus:
 		valid_buttons[current_index].grab_focus()
+
+
+func _on_focused_button() -> void:
+	choose_audio.play()
+	can_process_keyboard = false
+	#await choose_audio.finished
+	#can_process_keyboard = true
+	get_tree().create_timer(GlobalConstants.UI_KEYBOARD_COOLDOWN).timeout.connect(func(): can_process_keyboard = true)

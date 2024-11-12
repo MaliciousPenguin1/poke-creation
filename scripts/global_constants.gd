@@ -34,3 +34,5 @@ const MAX_LEVEL : int = 100
 const MAX_ITEM_QUANTITY : int = 999
 ##The max Trainer Id number for the player
 const MAX_TRAINER_ID : int = 65535
+##The cooldown between keyboard inputs ofr GUI (ex: keep up pressed to scroll a list)
+const UI_KEYBOARD_COOLDOWN : float = 0.1

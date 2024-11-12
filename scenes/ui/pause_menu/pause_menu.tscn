@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://y4w17hnjfl2r"]
+[gd_scene load_steps=26 format=3 uid="uid://y4w17hnjfl2r"]
 
 [ext_resource type="Shader" path="res://assets/graphics/shaders/blur.gdshader" id="1_5ohf3"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_db6wq"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b56wy16yv3cw4" path="res://assets/graphics/ui/horloge/Printemps 64px.png" id="11_uyvtu"]
 [ext_resource type="Texture2D" uid="uid://bj217otukdcrf" path="res://assets/graphics/ui/horloge/Ete 64px.png" id="12_tn75m"]
 [ext_resource type="Texture2D" uid="uid://b2vkxvptaqyy7" path="res://assets/graphics/ui/horloge/Automne 64px.png" id="13_51m2b"]
+[ext_resource type="AudioStream" uid="uid://hj3nmtkdqjhe" path="res://assets/audio/se/Choose.WAV" id="15_o28lr"]
+[ext_resource type="AudioStream" uid="uid://cewkvylqdr7og" path="res://assets/audio/se/select.WAV" id="16_f13lk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gdwjv"]
 shader = ExtResource("1_5ohf3")
@@ -196,3 +198,13 @@ label_text = "Paramètres"
 layout_mode = 2
 icon = SubResource("AtlasTexture_evw3m")
 label_text = "Retour"
+
+[node name="ChooseAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_o28lr")
+bus = &"Sounds"
+
+[node name="SelectAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("16_f13lk")
+bus = &"Sounds"
