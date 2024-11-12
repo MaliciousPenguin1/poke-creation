@@ -254,3 +254,5 @@ direction = Vector2i(0, 1)
 [node name="Wait4" type="Node" parent="Compass"]
 script = ExtResource("10_k2rk2")
 duration = 4.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

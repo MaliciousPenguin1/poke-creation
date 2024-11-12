@@ -61,7 +61,6 @@ func init() -> void:
 
 static func increment_time() -> void:
 	increment_minute(1)
-	print(get_formatted_current_time())
 
 
 static func increment_minute(increment : int = 1) -> void:

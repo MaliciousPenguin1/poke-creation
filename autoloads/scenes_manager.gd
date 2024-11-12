@@ -52,6 +52,7 @@ func remove_scene(scene_name : String, scene_type : SceneType) -> void:
 ##Show the pause menu
 func show_pause_menu() -> void:
 	stop_clock()
+	get_tree().paused = true
 	add_scene("res://scenes/ui/pause_menu/pause_menu.tscn", SceneType.UI)
 
 

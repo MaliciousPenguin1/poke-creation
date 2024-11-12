@@ -27,5 +27,5 @@ func _on_instruction_consumed() -> void:
 		current_instruction_index = current_instruction_index % len(instructions) if periodical else current_instruction_index
 		if current_instruction_index < len(instructions):
 			if wait_between_instructions > 0:
-				await get_tree().create_timer(wait_between_instructions).timeout
+				await get_tree().create_timer(wait_between_instructions, false).timeout
 			execute_next_instruction()
