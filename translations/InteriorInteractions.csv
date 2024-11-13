@@ -1,0 +1,222 @@
+keys,en,fr,es
+,Texts of interior interaction,Textes d’interaction intérieur,Textos de interacción interior
+EMPTY_BASKET,This basket is empty.,Cette corbeille est vide.,El cesto de basura está vacío.
+EMPTY_BUCKET,This bucket is empty.,Ce seau est vide.,Este cubo está vacío.
+BUCKET_ALCHEMY,[color=green]%s:[color=black] The alchemical ingredients thrown into this bucket are past their prime.§GlobalVar.player.player_name,"""[color=green]%s:[color=black] Les ingrédients alchimiques jetés dans ce seau ne sont plus de la première fraicheur. % GlobalVar.player.player_name",\C[3]\N[1]:\C[0] Los ingredientes alquímicos arrojados a este cubo ya no son los más frescos.
+,Nothing like a little water to cool off when you wake up.,Rien de tel qu’un peu d’eau pour se rafraîchir au réveil.,Nada como un poco de agua para refrescarte al despertar.
+,This bucket is filled with edible plants.,Ce seau est rempli de plantes comestibles.,Este cubo está lleno de plantas comestibles.
+,This bucket is filled with medicinal herbs.,Ce seau est rempli d’herbes médicinales.,Este cubo está lleno de hierbas medicinales.
+,This bowl is filled with medicinal herbs.,Ce bol est rempli d’herbes médicinales.,Este cuenco está lleno de hierbas medicinales.
+,This cauldron is empty.,Ce chaudron est vide.,Este caldero está vacío.
+,Looks like there are traces of burning in that cauldron.,On dirait qu’il a des traces de brûlé dans ce chaudron.,Parece que hay rastros de quemado en ese caldero.
+,This cauldron is used for cooking.,Ce chaudron sert à la cuisson.,Este caldero se usa para cocinar.
+,\C[3]\N[1]:\C[0] It smells good! I wonder what is cooking in this cauldron.,\C[3]\N[1] :\C[0] Ça sent bon ! Je me demande ce qui cuit dans ce chaudron.,\C[3]\N[1]:\C[0] ¡Huele bien! Me pregunto qué se está cocinando en este caldero.
+,This jar is empty.,Cette jarre est vide.,Esta jarra está vacía.
+,This jar is filled with water.,Cette jarre est remplie d’eau.,Esta jarra está llena de agua.
+,This jar is filled with water. It is used for cooking.,Cette jarre est remplie d’eau. Elle est utilisée pour la cuisine.,Esta jarra está llena de agua. Se utiliza para cocinar.
+,This jar is full of berry oil. Enough to season meals or to light up.,Cette jarre est pleine d’huile de Baie. De quoi assaisonner les plats ou s’éclairer.,Esta jarra está llena de aceite de baya. Para condimentar los platos o iluminar.
+,This jar contains oil for local consumption.,Cette jarre contient de l’huile destinée à la consommation locale.,Esta jarra contiene aceite para consumo local.
+,This jar contains oil for export.,Cette jarre contient de l’huile destinée à l’exportation.,Esta jarra contiene aceite para exportación.
+,This jar is full of wine. It’s a luxury product.,Cette jarre est remplie de vin. C’est un produit de luxe.,Esta jarra está llena de vino. Es un producto lujoso.
+,This jar contains wine for local consumption.,Cette jarre contient du vin destiné à la consommation locale.,Esta jarra contiene vino para consumo local.
+,This jar contains wine for export.,Cette jarre contient du vin destiné à l’exportation.,Esta jarra contiene vino para exportación.
+,\C[3]\N[1]:\C[0] This jar smells strong! Is it an alchemical brew?,\C[3]\N[1] :\C[0] Cette jarre sent fort ! C’est un breuvage alchimique ?,\C[3]\N[1]:\C[0] ¡Esta jarra huele fuerte! ¿Es un brebaje alquímico?
+,What could possibly be in this jar?,Que peut-il bien y avoir dans cette jarre ?,¿Qué podría haber en esta jarra?
+,This barrel is empty.,Ce tonneau est vide.,Este barril está vacío.
+,This barrel is filled with water.,Ce tonneau est rempli d’eau.,Este barril está lleno de agua.
+,Food has been placed in this barrel.,De la nourriture a été placée dans ce tonneau.,Se ha colocado comida en este barril.
+,Various tools were placed in this barrel.,Divers outils ont été placés dans ce tonneau.,Varias herramientas estaban colocadas en este barril.
+,What could possibly be in this barrel?,Que peut-il bien y avoir dans ce tonneau ?,¿Qué podría haber en este barril?
+,This crate is empty.,Cette caisse est vide.,Esta caja está vacía.
+,This crate contains flour.,Cette caisse contient de la farine.,Esta caja contiene harina.
+,There are non-perishable goods in that crate.,Il a des denrées non périssables dans cette caisse.,Tiene alimentos no perecibles en esa caja.
+,There are clothes in this crate.,Il y a des vêtements dans cette caisse.,Hay ropa en esta caja.
+,There are metal utensils in that crate.,Il y a des ustensiles métalliques dans cette caisse.,Hay algunos utensilios de metal en la caja.
+,There are plenty of goods in this crate.,Il y a plein de marchandises dans cette caisse.,Hay muchos productos en esta caja.
+,What could possibly be in this crate?,Que peut-il bien y avoir dans cette caisse ?,¿Qué podría haber en esta caja?
+,These bags contain grain intended to be milled.,Ces sacs contiennent du grain destiné à être moulu.,Estas bolsas contienen granos destinados a ser molidos.
+,Food reserves are stored here.,Des réserves de nourritures sont entreposées ici.,Las reservas de alimentos se almacenan aquí.
+,There are good food reserves in this house.,Il y a de bonnes réserves de nourriture dans cette demeure.,Hay buenas reservas de alimentos en esta casa.
+,There’s no risk of running out of food in this mansion.,On ne risque pas de manquer de nourriture dans ce manoir.,No hay riesgo de quedarse sin comida en esta mansión.
+,These shelves are empty.,Ces étagères sont vides.,Estos estantes están vacíos.
+,"There are scrolls on these shelves, but nothing interesting to read.","Il y a des parchemins sur ces étagères, mais rien d’intéressant à lire.","Hay pergaminos en estas estanterías, pero nada interesante para leer."
+,"There are books on these shelves, but nothing interesting to read.","Il y a des livres sur ces étagères, mais rien d’intéressant à lire.","Hay libros en estas estanterías, pero nada interesante para leer."
+,"There are beautiful grimoires on these shelves, but nothing interesting to read.","Il y a de beaux grimoires sur ces étagères, mais rien d’intéressant à lire.","Hay hermosos grimorios en estas estanterías, pero nada interesante para leer."
+,There are dishes on these shelves.,Il y a de la vaisselle sur ces étagères.,Hay platos en estos estantes.
+,It’s full of good food!,C’est rempli de bonnes choses à manger !,¡Está lleno de buena comida!
+,There are berries on these shelves.,Il y a des baies sur ces étagères.,Hay bayas en estos estantes.
+,There are herbs on these shelves.,Il y a des herbes sur ces étagères.,Hay hierbas en estos estantes.
+,There are loads of merchandise on these shelves!,Il y a plein de marchandises sur ces étagères !,¡Hay montones de mercadería en estos estantes!
+,There are plenty of forged items on these shelves!,Il y a plein d’objets forgés sur ces étagères !,¡Hay muchos artículos forjados en estos estantes!
+,There are plenty of potions on these shelves!,Il y a plein de potions sur ces étagères !,¡Hay muchas pociones en estos estantes!
+,There are plenty of enchanted items on these shelves!,Il y a plein d’objets enchantés sur ces étagères !,¡Hay muchos artículos encantados en estos estantes!
+,There’s silverware in this dresser.,Il y a de l’argenterie dans cette commode.,Hay cubiertos de plata en esta cómoda.
+,There are clothes in this wardrobe.,Il y a des vêtements dans cette armoire.,Hay algunas vestimentas en el guardarropa.
+,There are silk clothes in this wardrobe.,Il y a des vêtements en soie dans cette armoire.,Hay algunas vestimentas de seda en el guardarropa.
+,Firewood is gathered here.,C’est du bois de chauffage.,Es leña.
+,It’s wood for the forge.,C’est du bois pour la forge.,Es madera para la forja.
+,These logs will be used for constructions.,Ces grumes vont servir pour des constructions.,Estos registros se utilizarán para construcciones.
+,This wood is intended for export.,Ce bois est destiné à l’exportation.,Esta madera está destinada a la exportación.
+,These planks will be used for constructions.,Ces planches vont servir pour des constructions.,Estos tablones se utilizarán para construcciones.
+,These planks are intended for export.,Ces planches sont destinées à l’exportation.,Estos tablones son para exportación.
+,Looks like someone left berries on the edge of the table.,On dirait que quelqu’un a laissé des baies sur le bord de la table.,Parece que alguien dejó bayas al borde de la mesa.
+,These berries are for one of the Pokemons that lives here.,Ces baies sont destinées à l’un des Pokémons qui vit ici.,Estas bayas son para uno de los Pokémones que vive aquí.
+,This food is intended for one of the Pokemons that lives here.,Cette nourriture est destinée à l’un des Pokémons qui vit ici.,Esta comida está destinada a uno de los Pokémones que vive aquí.
+,There is a loaf of bread on the table.,Il y a une miche de pain posée sur la table.,Hay una barra de pan sobre la mesa.
+,It’s a modest meal there.,C’est un modeste repas qu’il y a là.,Allí es una comida modesta.
+,There is a sumptuous meal on this table.,Il y a un somptueux repas sur cette table.,Hay una comida suntuosa en esta mesa.
+,Someone left their drink on the table.,Quelqu’un a laissé sa boisson sur la table.,Alguien dejó su bebida sobre la mesa.
+,It’s a sink.,C’est un évier.,Es un fregadero.
+,A cauldron is placed on this counter.,Un chaudron est posé sur cet évier.,Se coloca un caldero en este fregadero.
+,Crockery is placed in this sink.,De la vaisselle est posée sur cet évier.,La vajilla se coloca en este fregadero.
+,\C[3]\N[1]:\C[0] I pity the person who will have to wash all this dishes.,\C[3]\N[1] :\C[0] Je plains la personne qui aura à laver toute cette vaisselle.,\C[3]\N[1]:\C[0] Compadezco a la persona que tendrá que lavar todos estos platos.
+,\C[3]\N[1]:\C[0] This bed is not mine.,\C[3]\N[1] :\C[0] Ce lit n’est pas à moi.,\C[3]\N[1]:\C[0] Esta cama no es mía.
+,\C[3]\N[1]:\C[0] This is not the bed I rented. My room is next door.,\C[3]\N[1] :\C[0] Ce n’est pas le lit que j’ai loué. Ma chambre est à côté.,\C[3]\N[1]:\C[0] Esta no es la cama que alquilé. Mi habitación está al lado.
+,\C[3]\N[1]:\C[0] This bed is already rented by someone else.,\C[3]\N[1] :\C[0] Ce lit est déjà loué par quelqu’un d’autre.,\C[3]\N[1]:\C[0] Esta cama ya está alquilada por otra persona.
+,\C[3]\N[1]:\C[0] I should rent this room from the innkeeper if I want to sleep here.,\C[3]\N[1] :\C[0] Je devrais louer cette chambre à l’aubergiste si je souhaite dormir ici.,\C[3]\N[1]:\C[0] Debería alquilarle esta habitación al posadero si quiero dormir aquí.
+,It’s a nest.,C’est un nid.,Es un nido.
+,It’s a nest. It looks abandoned.,C’est un nid. Il semble abandonné.,Es un nido. Parece abandonado.
+,It’s a nest. It is used by one of the Pokemons of this location.,C’est un nid. Il est utilisé par l’un des Pokémons de ce lieu.,Es un nido. Es utilizado por uno de los Pokémones de esta ubicación.
+,There must be some worthless trinkets in there.,Il doit y avoir des babioles sans intérêt là-dedans.,Debe haber algunas baratijas sin valor aquí.
+,It’s a laundry basket.,C’est une panière à linge.,Es un cesto de ropa sucia.
+,There are tools placed here.,Ce sont des outils.,Son herramientas.
+,"It’s a carnyx, a kelt war horn.","C’est un carnyx, un cor de guerre kelte.","Es un carnyx, un cuerno de guerra kelto."
+,"They are carnyxes, a kelt war horn.","Ce sont des carnyx, un cor de guerre kelte.","Son carnyx, un cuerno de guerra kelto."
+,The fireplace is unlit.,Le foyer est éteint.,La chimenea está apagada.
+,Nothing like a good fire to warm up!,Rien de tel qu’un bon feu pour se réchauffer !,¡No hay nada mejor que el fuego para calentarse!
+,"\C[3]\N[1]:\C[0] I shouldn’t be opening this chest, not sure the locals want it.","\C[3]\N[1] :\C[0] Je ne devrais pas ouvrir ce coffre, pas sûr que les habitants le veuillent.","\C[3]\N[1]:\C[0] No debería abrir este cofre, no estoy seguro de que los lugareños lo quieran."
+,"\C[3]\N[1]:\C[0] I’m not going to steal from the merchant’s chest, it’s unworthy of my blood.","\C[3]\N[1] :\C[0] Je ne vais pas voler dans le coffre du marchand, c’est indigne de mon sang.","\C[3]\N[1]:\C[0] No voy a robar de la caja fuerte del mercader, es indigno de mi sangre."
+,A variety of goods are displayed on these stalls.,Diverses marchandises sont exposées sur ces étalages.,En estos puestos se exponen diversos productos.
+,"It is an ingot, a useful raw material for forging.","C’est un lingot, une matière première utile pour la forge.","Es un lingote, una materia prima útil para la forja."
+,Various ores useful for forging are presented here.,Divers minerais utiles en forgeage sont présentés ici.,Aquí se presentan varios minerales útiles para la forja.
+,Forged items are on display here.,Des objets forgés sont exposés ici.,Aquí se exponen objetos forjados.
+,These are medicinal herbs.,Ce sont des herbes médicinales.,Son hierbas medicinales.
+,There are various potions and alchemical ingredients displayed here.,Il y a divers potions et ingrédients alchimiques exposés ici.,Aquí se exponen diversas pociones e ingredientes alquímicos.
+,These are utensils for practicing alchemy.,Ce sont des ustensiles pour pratiquer l’Alchimie.,Son utensilios para practicar la alquimia.
+,Gems on display here.,Des gemmes sont exposées ici.,Aquí se exhiben gemas.
+,They look like magical items.,On dirait des objets magiques.,Parecen objetos mágicos.
+,Parchments and grimoires are displayed on these stalls.,Des parchemins et grimoires sont exposées sur ces étalages.,En estos puestos se exponen pergaminos y grimorios.
+,This berry tree is grown by someone else.,Cet arbre à baie est cultivé par quelqu’un d’autre.,Este árbol de bayas lo cultiva otra persona.
+,This apricorn tree is grown by someone else.,Ce noigrumier est cultivé par quelqu’un d’autre.,Este árbol de bonguri es cultivado por otra persona.
+,This is a book about the art of forging.,C’est un livre qui traite de l’art du forgeage.,Este es un libro sobre el arte de la forja.
+,The books on this shelf deal with the art of forging.,Les livres sur cet étagère traitent de l’art du forgeage.,Los libros de esta estantería tratan del arte de la forja.
+,This crate is filled with berries.,Cette caisse est remplie de baies.,Esta caja está llena de bayas.
+,,,
+,,,
+,,,
+,It looks like a quote made for a client.,On dirait un devis fait pout un client.,Parece un presupuesto para un cliente.
+,These are the store’s records.,Ce sont les registres de cette boutique.,Estos son los registros de esta tienda.
+,These are the records of the mill: it serves as the granary and warehouse for the town.,Ce sont les registres du moulin : il sert de grenier et d’entrepôt pour la ville.,Estos son los registros del molino: sirve de hórreo y almacén del pueblo.
+,These are the warehouse registers. All incoming and outgoing goods are recorded here.,Ce sont les registres de l’entrepôt. Toutes les marchandises qui sortent ou y rentrent y sont consignées.,Son los registros del almacén. Aquí se registran todas las entradas y salidas de mercancías.
+,,,
+,,,
+,,,
+,,,
+,,,
+,,#Meule de moulin#,
+,This grinding wheel is used to grind cereals or seeds.\nlIts mechanism can be activated using the lever on the lower level.,Cette meule sert à moudre des céréales ou des graines.\nlSon mécanisme peut être activé avec le levier à l’étage inférieur.,Esta muela se utiliza para moler cereales o semillas.\nlSu mecanismo puede activarse mediante la palanca situada en el nivel inferior.
+,This grinding wheel is used to grind cereals or seeds.\nlIts mechanism can be activated by the lever on the same floor.,Cette meule sert à moudre des céréales ou des graines.\nlSon mécanisme peut être activé avec le levier situé au même étage.,Esta muela se utiliza para moler cereales o semillas.\nlSu mecanismo puede activarse mediante la palanca situada en la misma planta.
+,This grinding wheel is used to grind cereals or seeds.\nlIts mechanism can be activated using the lever on the upper level.,Cette meule sert à moudre des céréales ou des graines.\nlSon mécanisme peut être activé avec le levier à l’étage supérieur.,Esta muela se utiliza para moler cereales o semillas.\nlSu mecanismo puede activarse mediante la palanca situada en el nivel superior.
+,"This grinding wheel is used to grind cereals or seeds, but it is not possible to activate its mechanism.","Cette meule sert à moudre des céréales ou des graines, mais il n’est pas possible d’activer son mécanisme.","Esta muela se utiliza para moler cereales o semillas, pero no es posible activar su mecanismo."
+,The grinding wheel turns and is used to make flour or oil.,La meule tourne et permet de faire de la farine ou de l’huile.,La muela gira y se usa para hacer harina o aceite.
+,Would you like to grind a raw material?,Voulez-vous moudre une matière première ?,¿Quiere moler una materia prima?
+,Would you like to grind an another raw material?,Voulez-vous moudre une autre matière première ?,¿Quiere moler otra materia prima?
+,There’s no room left in the bag to grind anything else.,Il n’y a plus de place dans le sac pour moudre autre chose.,No queda espacio en la bolsa para moler nada más.
+,There is nothing else to grind.,Il n’y a plus rien d’autre à moudre.,No hay nada más que moler.
+,No thanks,Non merci,No gracias
+,"How many Seeds do you want to grind? (In stock: [QUANTITY], 2 units required per grind)","Combien de Graines voulez-vous broyer ? (En stock : [QUANTITY], 2 unités requises par broyage)","¿Cuántas Semillas desea moler? (En stock: [QUANTITY], se requieren 2 unidades por molienda)"
+,"How many Medicinal Leeks do you want to grind? (In stock: [QUANTITY], 4 units required per grind)","Combien de Soignons voulez-vous broyer ? (En stock : [QUANTITY], 4 unités requises par broyage)","¿Cuántos Puerros medicinales desea moler? (En stock: [QUANTITY], se requieren 4 unidades por molienda)"
+,How many Tiny Mushrooms do you want to grind? (In stock: [QUANTITY]),Combien de Petits Champis voulez-vous broyer ? (En stock : [QUANTITY]),¿Cuántas Minisetas desea moler? (En stock: [QUANTITY])
+,How many Big Mushrooms do you want to grind? (In stock: [QUANTITY]),Combien de Gros Champis voulez-vous broyer ? (En stock : [QUANTITY]),¿Cuántas Setas Grandes desea moler? (En stock: [QUANTITY])
+,How many Balm Mushrooms do you want to grind? (In stock: [QUANTITY]),Combien de Champis Suaves voulez-vous broyer ? (En stock : [QUANTITY]),¿Cuántas Setas Aroma desea moler? (En stock: [QUANTITY])
+,,reservé,
+,,reservé,
+,1,1,1
+,2,2,2
+,3,3,3
+,4,4,4
+,5,5,5
+,6,6,6
+,8,8,8
+,10,10,10
+,12,12,12
+,20,20,20
+,40,40,40
+,The maximum ([MAX_QUANTITY]),Le maximum ([MAX_QUANTITY]),El máximo ([MAX_QUANTITY])
+,Nothing,Rien,Nada
+,Error: millstone not configured in this place.,Erreur : meule non configurée dans ce lieu.,Error: muela no configurada en esta placa.
+,,reservé,
+,,reservé,
+,,reservé,
+,,reservé,
+,,reservé,
+,The general store is closed overnight. You have to wait until dawn for the store to open.,Le négoce général est fermé durant la nuit. Il faut attendre l’aube pour que la boutique ouvre.,El almacén general está cerrado durante la noche. Hay que esperar hasta el amanecer para que la tienda abra.
+,The forge is closed overnight. You have to wait until dawn for the store to open.,La forge est fermée durant la nuit. Il faut attendre l’aube pour que la boutique ouvre.,La herrería está cerrada durante la noche. Hay que esperar hasta el amanecer para que la tienda abra.
+,The herbalist’s shop is closed overnight. You have to wait until dawn for the store to open.,L’herboristerie est fermée durant la nuit. Il faut attendre l’aube pour que la boutique ouvre.,La herboristería está cerrada por la noche. Hay que esperar hasta el amanecer para que la tienda abra.
+,The grocery store is closed overnight.,L’épicerie est fermée durant la nuit. Il faut attendre l’aube pour que la boutique ouvre.,La tienda de comestibles está cerrada por la noche. Hay que esperar hasta el amanecer para que la tienda abra.
+,The jewelry store is closed overnight. You have to wait until dawn for the store to open.,La bijouterie est fermée durant la nuit. Il faut attendre l’aube pour que la boutique ouvre.,La joyería está cerrada por la noche. Hay que esperar hasta el amanecer para que la tienda abra.
+,Is there anything else I may do for you?,Souhaitez-vous autre chose ?,¿Puedo ayudarte en algo más?
+,You’ve bought up all my stock. I’ve got nothing left to sell you for today.,"Vous m’avez acheté tout mon stock, je n’ai plus rien à vous vendre pour aujourd’hui.",Has comprado toda mi mercancía. No me queda nada que venderte por hoy.
+,Please come again!,Nous espérons vous revoir bientôt !,¡Vuelve cuando quieras!
+,Thank you for your purchase! See you next time!,Merci de votre achat ! À une prochaine fois !,Gracias por tu compra. ¡Hasta la próxima!
+,Thank you for your purchases! Hope to see you soon!,Merci de vos achats ! En espérant vous revoir bientôt !,¡Gracias por tus compras! ¡Espero verle pronto!
+,"Impressive, you bought everything I had to sell! Come back another day if you want to buy something else.","Impressionnant, vous m’avez acheté tout ce que j’avais à vendre ! Repassez un autre jour si vous voulez m’acheter autre chose.","¡Impresionante, has comprado todo lo que tenía para vender! Vuelve otro día si quieres comprar algo más."
+,,reservé,
+,,reservé,
+,,#Textes communs des Bardes#,
+,\C[1]Bard:\C[0] Singing about Pokémons exploits is my great passion!,"\C[1]Barde:\C[0] Chanter les exploits des Pokémons, c’est ma grande passion !",\C[1]Bardo:\C[0] ¡Cantar sobre las hazañas de los Pokémones es mi gran pasión!
+,\C[2]Bardess:\C[0] Singing about Pokémons exploits is my great passion!,"\C[2]Bardesse :\C[0] Chanter les exploits des Pokémons, c’est ma grande passion !",\C[2]Barda:\C[0] ¡Cantar sobre las hazañas de los Pokémones es mi gran pasión!
+,\C[1]Bard:\C[0] Singing about Pokémons exploits is our great passion!,"\C[1]Barde:\C[0] Chanter les exploits des Pokémons, c’est notre grande passion !",\C[1]Bardo:\C[0] ¡Cantar sobre las hazañas de los Pokémones es nuestra gran pasión!
+,\C[2]Bardess:\C[0] Singing about Pokémons exploits is our great passion!,"\C[2]Bardesse :\C[0] Chanter les exploits des Pokémons, c’est notre grande passion !",\C[2]Barda:\C[0] ¡Cantar sobre las hazañas de los Pokémones es nuestra gran pasión!
+,\C[3]Bard couple:\C[0] Singing about Pokémons exploits is our great passion!,"\C[3]Couple de Bardes :\C[0] Chanter les exploits des Pokémons, c’est notre grande passion !",\C[3]Pareja de Bardos:\C[0] ¡Cantar sobre las hazañas de los Pokémones es nuestra gran pasión!
+,"Come with some magical creatures, and I can pay homage to them.",Viens avec des créatures magiques et je pourrais leur faire hommage.,Ven con algunas criaturas mágicas y podré rendirles homenaje.
+,"… but I find no inspiration for those who are dead or have not yet seen the light of life. Return with a living creature, and my music will resound!","… mais je ne trouve point d’inspiration pour ceux qui sont morts ou n’ont pas encore vu la lumière de la vie. Reviens avec une créature vivace, et ma musique résonnera !","… pero no encuentro inspiración para los que están muertos o aún no han visto la luz de la vida. Vuelve con una criatura viva, ¡y mi música resonará!"
+,Do you need any of my services?,As-tu besoin de l’un de mes services ?,¿Necesita alguno de mis servicios?
+,Do you need another of my services?,As-tu besoin d’un autre de mes services ?,¿Necesitas otro de mis servicios?
+,Rename a creature,Renommer une créature,Renombrar una criatura
+,Remember a move,Remémorer une capacité,Recuerde un movimiento
+,Forget a move,Effacer une capacité,Olvide un movimiento
+,A joust to entertain the audience!,Une joute pour divertir le public !,¡A justa para entretener al público!
+,,reservé,
+,,reservé,
+,Which of your creatures is destined to be known by a new name?,Laquelle de tes créatures est destinée à être connue sous un nouveau nom ?,¿Cuál de tus criaturas está destinada a ser conocida por un nuevo nombre?
+,Would you like to rename another creature?,Veux-tu renommer une autre créature ?,¿Quieres cambiar el nombre de otra criatura?
+,"No new name to claim, so be it.","Point de nouveau nom à clamer, ainsi soit-il.","Ningún nombre nuevo que proclamar, que así sea."
+,"A dead cannot be renamed, because the memories it has left behind are set in stone.",Un mort ne peut être renommé car les souvenirs qu’il a légués sont gravés dans le marbre.,A un muerto no se le puede cambiar el nombre porque los recuerdos que ha dejado son inamovibles.
+,"I can’t rename an egg, because it doesn’t have a name yet.","Je ne peux renommer un œuf, car il n’a point encore de nom.",No puedo cambiar el nombre de un huevo porque aún no tiene nombre.
+,"This Pokémon will not accept being called by another name, as the memory of its former trainer is still present.",Ce Pokémon n’acceptera pas d’être appelé par un autre nom car le souvenir de son ancien dresseur est encore présent.,"Este Pokémon no aceptará que lo llames por otro nombre, ya que el recuerdo de su antiguo entrenador sigue presente."
+,You’ll need to forge a particularly powerful bond with it to change its mind.,Il te faudra nouer des liens particulièrement puissants avec lui pour le faire changer d’avis.,Tendrás que crear un vínculo muy fuerte con él para que cambie de opinión.
+,I see you’re keeping silent for [POKEMON]. How should I interpret it?,Je vois que tu observes le silence pour [POKEMON]. Comment dois-je l’interpréter ?,Veo que guardas silencio sobre [POKEMON]. ¿Cómo debo interpretarlo?
+,Call it by its species name,L’appeler par son nom d’espèce,Llámalo por el nombre de su especie
+,Keep its current nickname,Conserver son surnom actuel,Mantén su mote actual
+,"Hear ye, hear ye! This Pokémon is going back to its roots and now wants to be called by its species name: [POKEMON]!","Oyez, oyez ! Ce Pokémon retourne aux sources et veut désormais être appelé par son nom d’espèce : [POKEMON] !","¡Escuchad, escuchad! Este Pokémon vuelve a sus raíces y ahora quiere que se le llame por el nombre de su especie: ¡[POKEMON]!"
+,"Hear ye, hear ye! From now on, this Pokémon will be known as [POKEMON]!","Oyez, oyez ! Ce Pokémon sera désormais connu sous le nom [OF] [POKEMON] !","¡Escuchad, escuchad! A partir de ahora, este Pokémon será conocido como [POKEMON]!"
+,I can bring back memories of ancient moves that every magical creature has learned or could have learned.,Je peux faire resurgir le souvenir des anciennes capacités que toute créature magique a appris ou aurait pu apprendre.,Puedo traer recuerdos de antiguos movimientos que toda criatura mágica ha aprendido o podría haber aprendido.
+,Would you like me to help another Pokémon remember a move?,Veux-tu que j’aide un autre Pokémon à se souvenir d’une capacité ?,¿Quieres que ayude a otro Pokémon a que recuerde un movimiento?
+,Which Pokémon needs to remember a move?,Quel Pokémon doit se souvenir d’une capacité ?,¿Qué Pokémon necesita recordar un movimiento?
+,"No move to bring back, so be it.","Point de capacité à faire rejaillir, ainsi soit-il.","Ningún movimiento para traer de vuelta, que así sea."
+,This Pokémon’s knowledge vanished with its death. Altering its moves is no longer possible.,Les connaissances de ce Pokémon se sont envolées avec sa mort. Altérer ses capacités n’est plus possible.,Los conocimientos de este Pokémon desaparecieron con su muerte. Ya no es posible modificar sus movimientos.
+,An egg has acquired no knowledge.,Un œuf n’a point acquis de connaissances.,Un huevo no ha adquirido ningún conocimiento.
+,[POKEMON] doesn’t seem to have any moves to remember …,[POKEMON] ne semble pas avoir de capacité dont [PERS_PRONOUN] peut se souvenir…,[POKEMON] no parece tener ningún movimiento que recuerde…
+,I can alter a creature’s memories so that it forgets a move.,Je peux altérer les souvenirs d’une créature pour qu’elle oublie une capacité.,Puedo alterar los recuerdos de una criatura para que olvide un movimiento.
+,Do you want another creature to forget a move?,Veux-tu qu’une autre créature oublie une capacité ?,¿Quieres que otra criatura olvide un movimiento?
+,Which Pokémon should forget a move?,Quel Pokémon doit oublier une capacité ?,¿Qué Pokémon debería olvidar un movimiento?
+,"No move to sink into oblivion, so be it.","Point de capacité à faire sombrer dans l’oubli, ainsi soit-il.","Ningún movimiento caerá en el olvido, que así sea."
+,My singing has given this Pokémon amnesia. It no longer has any moves that can be forgotten.,Mon chant a rendu ce Pokémon amnésique. Il n’a plus aucune capacité qu’on puisse lui faire oublier.,Mi canto ha hecho que este Pokémon tenga amnesia. Ya no tiene ningún movimiento que se pueda olvidar.
+,What move should be forgotten?,Quelle capacité oublier ?,¿Qué movimiento hay que olvidar?
+,"With the power of voice, [POKEMON] has forgotten [MOVE]!","Par le pouvoir de la voix, [POKEMON] a oublié [MOVE] !","Con el poder de la voz, ¡[POKEMON] ha olvidado [MOVE]!"
+,… I see that my singing has given this Pokémon amnesia. I suggest you relearn one of its moves if you don’t want to force it to struggle in battle.,… Je vois que mon chant a rendu ce Pokémon amnésique. Je te suggère de lui réapprendre une capacité si tu ne veux pas le contraindre à lutter en combat.,… Veo que mi canto le ha provocado amnesia a este Pokémon. Te sugiero que vuelvas a aprender uno de sus movimientos si no quieres obligarlo a forcejear en combate.
+,My magical creatures haven’t yet recovered from our last battle. Wait a day or two.,Mes créatures magiques n’ont pas encore récupéré de notre dernier combat. Attends un jour ou deux.,Mis criaturas mágicas aún no se han recuperado de nuestra última batalla. Espera un día o dos.
+,Our magical creatures haven’t yet recovered from our last battle. Wait a day or two.,Nos créatures magiques n’ont pas encore récupéré de notre dernier combat. Attends un jour ou deux.,Nuestras criaturas mágicas aún no se han recuperado de nuestra última batalla. Espera un día o dos.
+,How can you fight me without a magical creature capable of doing so?,Comment veux-tu me combattre sans créature magique apte à le faire ?,¿Cómo puedes luchar contra mí sin una criatura mágica capaz de hacerlo?
+,How can you fight us without a magical creature capable of doing so?,Comment veux-tu nous combattre sans créature magique apte à le faire ?,¿Cómo puedes luchar contra nosotros sin una criatura mágica capaz de hacerlo?
+,"Hear ye, hear ye! This trainer challenges me to a duel!","Oyez, oyez ! \f[Cette Dresseuse§Ce Dresseur] me défie en duel !","¡Escuchad, escuchad! ¡\f[Esta entrenadora§Este entrenador] me reta a un duelo!"
+,"Hear ye, hear ye! This trainer challenges us to a duel!","Oyez, oyez ! \f[Cette Dresseuse§Ce Dresseur] nous défie en duel !","¡Escuchad, escuchad! \f[Esta entrenadora§Este entrenador] nos reta a un duelo!"
+,,,
+,,,
+,I invite you all to the town square to witness our joust!,Je vous convie tous sur la place de la ville pour assister à notre joute !,Os invito a todos a la plaza del pueblo para presenciar nuestra justa.
+,"\C[1]Bard:\C[0] What sadness, the performance is already over …","\C[1]Barde:\C[0] Quelle tristesse, le spectacle est déjà terminé…","\C[1]Bardo:\C[0] Es tan triste, el espectáculo ya ha terminado…"
+,"\C[2]Bardess:\C[0] What sadness, the performance is already over …","\C[2]Bardesse:\C[0] Quelle tristesse, le spectacle est déjà terminé…","\C[2]Barda:\C[0] Es tan triste, el espectáculo ya ha terminado…"
+,"\C[3]Bard couple:\C[0] What sadness, the performance is already over …","\C[3]Couple de Bardes :\C[0] Quelle tristesse, le spectacle est déjà terminé…","\C[3]Pareja de Bardos:\C[0] Es tan triste, el espectáculo ya ha terminado…"
+,"But I can’t oppose the requested truce, because our customs allow it.","Mais je ne peux m’opposer à la trêve demandée, car nos coutumes le permettent.","Pero no puedo oponerme a la tregua que hemos pedido, porque nuestras costumbres lo permiten."
+,"But we can’t oppose the requested truce, because our customs allow it.","Mais nous ne pouvons-nous opposer à la trêve demandée, car nos coutumes le permettent.","Pero no podemos oponernos a la tregua solicitada, porque nuestras costumbres lo permiten."

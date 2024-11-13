@@ -33,3 +33,5 @@ func _ready() -> void:
 	trainer_id = "%05d" % randi_range(0, GlobalConstants.MAX_TRAINER_ID)
 	gender = Gender.MALE
 	set_sprite()
+	
+	GlobalVar.player = self
