@@ -168,36 +168,37 @@ script = ExtResource("1_db6wq")
 [node name="Grimoire" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_uv0xc")
-label_text = "Grimoire"
+label_text = "POKEGRIMOIRE"
 
 [node name="Pokemon" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_rlp0g")
+label_text = "POKEMON"
 
 [node name="Sac" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_l3i7s")
-label_text = "Sac"
+label_text = "SAC"
 
 [node name="Profile" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_lls7n")
-label_text = "Aranel"
+label_text = "{PLAYER_NAME}"
 
 [node name="Save" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_lmd0w")
-label_text = "Save"
+label_text = "SAUVEGARDE"
 
 [node name="Paramètres" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_cyojd")
-label_text = "Paramètres"
+label_text = "OPTION"
 
 [node name="Retour" parent="Buttons/VBoxContainer" instance=ExtResource("2_4glfl")]
 layout_mode = 2
 icon = SubResource("AtlasTexture_evw3m")
-label_text = "Retour"
+label_text = "QUITTER"
 
 [node name="ChooseAudio" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

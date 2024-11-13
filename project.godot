@@ -86,6 +86,10 @@ debug_menu={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/InteriorInteractions.en.translation", "res://translations/InteriorInteractions.es.translation", "res://translations/InteriorInteractions.fr.translation", "res://translations/ui.de.translation", "res://translations/ui.en.translation", "res://translations/ui.es.translation", "res://translations/ui.fr.translation", "res://translations/ui.it.translation", "res://translations/ui.kana.translation", "res://translations/ui.ko.translation")
+
 [layer_names]
 
 2d_physics/layer_1="World"

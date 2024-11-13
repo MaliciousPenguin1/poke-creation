@@ -23,9 +23,9 @@ func _ready() -> void:
 	
 	match type:
 		Type.NEW_GAME:
-			label.text = "Nouvelle Partie"
+			label.text = tr("NEW_GAME")
 		Type.OPTION:
-			label.text = "Options"
+			label.text = tr("OPTION")
 
 
 func select() -> void:
