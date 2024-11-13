@@ -1,8 +1,8 @@
 extends Control
 
 
-@onready var world_parent: Node2D = $"../../WorldParent"
-@onready var custom_camera: CustomCamera = $"../../WorldParent/CustomCamera"
+@onready var world_parent: Node2D = $"../../../WorldParent"
+@onready var custom_camera: CustomCamera = $"../../../WorldParent/CustomCamera"
 @onready var buttons_container: VBoxContainer = %VBoxContainer
 
 
