@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctdpqnelcj70n"]
+[gd_scene load_steps=9 format=3 uid="uid://ctdpqnelcj70n"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_hmgtg"]
 [ext_resource type="Script" path="res://scenes/main/debug.gd" id="2_514wy"]
 [ext_resource type="PackedScene" uid="uid://nufv3pi7nh3h" path="res://scenes/other/custom_camera/custom_camera.tscn" id="2_phffe"]
 [ext_resource type="PackedScene" uid="uid://bwqvy2tejy5gl" path="res://scenes/main/phone_controls.tscn" id="3_230gu"]
 [ext_resource type="Script" path="res://scripts/game_time.gd" id="3_vnexw"]
+[ext_resource type="Script" path="res://scripts/custom_canvas_layer.gd" id="4_jt7h5"]
+[ext_resource type="Script" path="res://scenes/main/ui_parent.gd" id="5_yo1x1"]
+[ext_resource type="Script" path="res://scenes/main/phone_controls.gd" id="6_b5msf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hmgtg")
@@ -17,16 +20,23 @@ y_sort_enabled = true
 [node name="GameTime" type="Node2D" parent="WorldParent"]
 script = ExtResource("3_vnexw")
 
-[node name="UIParent" type="Control" parent="."]
+[node name="CustomCanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_jt7h5")
+
+[node name="UIParent" type="Control" parent="CustomCanvasLayer"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_yo1x1")
 
 [node name="Debug" type="Node" parent="."]
 script = ExtResource("2_514wy")
 
 [node name="PhoneControls" parent="." instance=ExtResource("3_230gu")]
 visible = false
+z_index = 1000
+script = ExtResource("6_b5msf")
