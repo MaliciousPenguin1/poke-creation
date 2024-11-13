@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://x4vtf843gbs1"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu/menu_button.gd" id="1_83s76"]
+[ext_resource type="Texture2D" uid="uid://b2rkhl3souy38" path="res://assets/graphics/windowskin/message.png" id="1_pg8vr"]
+
+[node name="MarginContainer" type="MarginContainer"]
+focus_mode = 1
+script = ExtResource("1_83s76")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_pg8vr")
+region_rect = Rect2(0, 0, 65, 48)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 6
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
