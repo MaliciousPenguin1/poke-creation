@@ -36,3 +36,10 @@ const MAX_ITEM_QUANTITY : int = 999
 const MAX_TRAINER_ID : int = 65535
 ##The cooldown between keyboard inputs ofr GUI (ex: keep up pressed to scroll a list)
 const UI_KEYBOARD_COOLDOWN : float = 0.1
+
+
+#======================================================
+#ENUM
+#======================================================
+#The gender for the player
+enum PlayerGender {MALE, FEMALE}

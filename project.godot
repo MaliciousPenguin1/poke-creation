@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ScenesManager="*res://autoloads/scenes_manager.gd"
+TextPaser="*res://scripts/text_paser.gd"
 
 [display]
 
