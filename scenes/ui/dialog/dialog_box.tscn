@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmtxxgcfuv1x3"]
+
+[ext_resource type="Texture2D" uid="uid://c78fafuasjoc4" path="res://assets/graphics/ui/dialog/message.png" id="1_1jqhl"]
+[ext_resource type="Texture2D" uid="uid://bi5eduec74pif" path="res://assets/graphics/ui/dialog/pause2.png" id="2_6l4yd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2xvh"]
+atlas = ExtResource("2_6l4yd")
+region = Rect2(0, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eqyp"]
+atlas = ExtResource("2_6l4yd")
+region = Rect2(13, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8afm"]
+atlas = ExtResource("2_6l4yd")
+region = Rect2(0, 16, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqeks"]
+atlas = ExtResource("2_6l4yd")
+region = Rect2(13, 16, 13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57bfd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2xvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8afm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqeks")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DialogBox" type="MarginContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+texture = ExtResource("1_1jqhl")
+region_rect = Rect2(0, -1, 65, 49)
+patch_margin_left = 18
+patch_margin_top = 26
+patch_margin_right = 42
+patch_margin_bottom = 20
+
+[node name="ContinueSymbol" type="Control" parent="."]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ContinueSymbol"]
+sprite_frames = SubResource("SpriteFrames_57bfd")
+autoplay = "default"
+frame_progress = 0.722472
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 6
+
+[node name="DialogLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"DialogLabel"
+bbcode_enabled = true
+text = "Hello and welcome to the Temple of Ho-Oh future disciple!
+Bottom text"
+scroll_active = false

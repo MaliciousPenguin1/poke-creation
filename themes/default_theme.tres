@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cp8djtsmv1mqv"]
+
+[ext_resource type="FontFile" uid="uid://ciqkqlpv7qisu" path="res://assets/fonts/PixAntiqua.ttf" id="1_anyik"]
+
+[resource]
+DialogLabel/base_type = &"RichTextLabel"
+DialogLabel/colors/default_color = Color(0, 0, 0, 1)
+DialogLabel/colors/font_shadow_color = Color(0.75, 0.75, 0.75, 1)
+DialogLabel/constants/line_separation = 4
+DialogLabel/constants/shadow_offset_x = 1
+DialogLabel/constants/shadow_offset_y = 1
+DialogLabel/constants/shadow_outline_size = 0
+DialogLabel/font_sizes/normal_font_size = 12
+DialogLabel/fonts/normal_font = ExtResource("1_anyik")

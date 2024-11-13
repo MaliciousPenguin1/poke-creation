@@ -15,6 +15,7 @@ func _ready() -> void:
 	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collision_debug/npc1.tscn", ScenesManager.SceneType.ENTITY, Vector2i(4, 8))
 	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collision_debug/npc2.tscn", ScenesManager.SceneType.ENTITY, Vector2i(6, 8))
 	ScenesManager.add_scene("res://scenes/overworld/worlds/maps/collision_debug/collisions_debug_map.tscn", ScenesManager.SceneType.WORLD)
+	ScenesManager.add_scene("res://scenes/ui/dialog/dialog_box.tscn", ScenesManager.SceneType.UI)
 	
 	for child in world_parent.get_children():
 		if child is Player:
