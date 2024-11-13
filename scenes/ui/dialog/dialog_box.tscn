@@ -48,6 +48,7 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
+theme_override_constants/margin_bottom = 4
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(0, 48)
