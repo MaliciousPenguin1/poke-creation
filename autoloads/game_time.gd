@@ -1,5 +1,4 @@
 extends Node2D
-class_name GameTime
 
 
 enum DAY_NAMES {LUNIA, MERIA, YARIA, GWENIA, SADIA, SULIA}
@@ -27,11 +26,11 @@ const MAX_DAY : int = 30
 const MAX_MONTH : int = 4
 
 
-static var hour : int
-static var minute : int
-static var month : int
-static var day : int
-static var year : int
+var hour : int
+var minute : int
+var month : int
+var day : int
+var year : int
 
 
 var nb_frames_passed_since_last_update : int
@@ -59,11 +58,11 @@ func init() -> void:
 	nb_frames_passed_since_last_update = 0
 
 
-static func increment_time() -> void:
+func increment_time() -> void:
 	increment_minute(1)
 
 
-static func increment_minute(increment : int = 1) -> void:
+func increment_minute(increment : int = 1) -> void:
 	minute += increment
 	if minute >= MAX_MINUTES:
 		var hours_to_increment = minute / MAX_MINUTES
@@ -71,7 +70,7 @@ static func increment_minute(increment : int = 1) -> void:
 		increment_hour(hours_to_increment)
 
 
-static func increment_hour(increment : int = 1) -> void:
+func increment_hour(increment : int = 1) -> void:
 	hour += increment
 	if hour >= MAX_HOURS:
 		var days_to_increment = hour / MAX_HOURS
@@ -79,7 +78,7 @@ static func increment_hour(increment : int = 1) -> void:
 		increment_day(days_to_increment)
 
 
-static func increment_day(increment : int = 1) -> void:
+func increment_day(increment : int = 1) -> void:
 	day += increment
 	if day >= MAX_DAY:
 		var months_to_increment = day / MAX_DAY
@@ -87,7 +86,7 @@ static func increment_day(increment : int = 1) -> void:
 		increment_month(months_to_increment)
 
 
-static func increment_month(increment : int = 1) -> void:
+func increment_month(increment : int = 1) -> void:
 	month += increment
 	if month >= MAX_MONTH:
 		var years_to_increment = month / MAX_MONTH
@@ -95,7 +94,7 @@ static func increment_month(increment : int = 1) -> void:
 		increment_year(years_to_increment)
 
 
-static func increment_year(increment : int = 1) -> void:
+func increment_year(increment : int = 1) -> void:
 	year += increment
 
 
@@ -107,12 +106,12 @@ func stop_clock() -> void:
 	set_process(false)
 
 
-static func get_formatted_current_date() -> String:
+func get_formatted_current_date() -> String:
 	var day_label : String = DAY_NAMES_LABEL[day  % MAX_DAY]
 	var month_label : String = MONTH_NAMES_LABEL[month  % MAX_MONTH]
 	
 	return day_label + " " + str(day + 1) + " " + month_label + " " + str(year)
 
 
-static func get_formatted_current_time() -> String:
+func get_formatted_current_time() -> String:
 	return "%02d" % hour + ":" + "%02d" % minute

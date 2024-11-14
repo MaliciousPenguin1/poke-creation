@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/main/debug.gd" id="2_514wy"]
 [ext_resource type="PackedScene" uid="uid://nufv3pi7nh3h" path="res://scenes/other/custom_camera/custom_camera.tscn" id="2_phffe"]
 [ext_resource type="PackedScene" uid="uid://bwqvy2tejy5gl" path="res://scenes/main/phone_controls.tscn" id="3_230gu"]
-[ext_resource type="Script" path="res://scripts/game_time.gd" id="3_vnexw"]
+[ext_resource type="Script" path="res://autoloads/game_time.gd" id="3_vnexw"]
 [ext_resource type="Script" path="res://scripts/custom_canvas_layer.gd" id="4_jt7h5"]
 [ext_resource type="Script" path="res://scenes/main/ui_parent.gd" id="5_yo1x1"]
 [ext_resource type="Script" path="res://scenes/main/phone_controls.gd" id="6_b5msf"]

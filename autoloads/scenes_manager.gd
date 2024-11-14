@@ -58,20 +58,6 @@ func show_pause_menu() -> void:
 	if not GlobalVar.can_pause:
 		return
 	
-	stop_clock()
+	GameTime.stop_clock()
 	get_tree().paused = true
 	add_scene("res://scenes/ui/pause_menu/pause_menu.tscn", SceneType.UI)
-
-
-#Stops the internal time
-func stop_clock() -> void:
-	for child in main.world_parent.get_children():
-		if child is GameTime:
-			child.stop_clock()
-
-
-#Starts the internal time
-func start_clock() -> void:
-	for child in main.world_parent.get_children():
-		if child is GameTime:
-			child.start_clock()

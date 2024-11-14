@@ -13,7 +13,7 @@ var finished : bool = false
 
 func _ready() -> void:
 	for child in instructions:
-		if child is Instruction:
+		if child is Instruction and !child.consumed.is_connected(_on_instruction_consumed):
 			child.consumed.connect(_on_instruction_consumed)
 
 

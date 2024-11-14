@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dtq45fb7e8ahk"]
+[gd_scene load_steps=8 format=4 uid="uid://dtq45fb7e8ahk"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_o7evx"]
 [ext_resource type="AudioStream" uid="uid://bnt6x4dnwxjk0" path="res://assets/audio/music/maps/Town - Eldania.ogg" id="2_8rpfj"]
 [ext_resource type="Script" path="res://resources/encounter_resource.gd" id="3_s4uwl"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="4_c73u1"]
+[ext_resource type="PackedScene" uid="uid://bwo1cexs6vrj1" path="res://scenes/overworld/npc/professor.tscn" id="5_gcwv5"]
 
 [sub_resource type="Resource" id="Resource_t05lg"]
 script = ExtResource("3_s4uwl")
@@ -43,3 +44,6 @@ tile_set = ExtResource("4_c73u1")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAASAAoABAAAAAgAAAAdAAcABAAAAAgAAAALAAgABAAAABgAAAAOAAYABgAFAAIAAAAOAAUABgAFAAEAAAAOAAQABgAFAAAAAAANAAYABgAEAAIAAAANAAUABgAEAAEAAAANAAQABgAEAAAAAAAMAAYABgAEAAIAAAAMAAUABgAEAAEAAAAMAAQABgAEAAAAAAALAAYABgAEAAIAAAALAAUABgAEAAEAAAALAAQABgAEAAAAAAAKAAYABgADAAIAAAAKAAUABgADAAEAAAAKAAQABgADAAAAAAAKABAABgADAAIAAAAOABAABgAFAAIAAAAOAA8ABgAFAAEAAAAOAA4ABgAFAAAAAAANABAABgAEAAIAAAANAA8ABgAEAAEAAAANAA4ABgAEAAAAAAAMABAABgAEAAIAAAAMAA8ABgAEAAEAAAAMAA4ABgAEAAAAAAALABAABgAEAAIAAAALAA8ABgAEAAEAAAALAA4ABgAEAAAAAAAKAA8ABgADAAEAAAAKAA4ABgADAAAAAAAPABIABAAKAA4AAAARABIABAAKAA4AAAA=")
 tile_set = ExtResource("4_c73u1")
+
+[node name="Professor" parent="Entities" index="0" instance=ExtResource("5_gcwv5")]
+position = Vector2(24, 24)

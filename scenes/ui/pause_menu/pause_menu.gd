@@ -98,7 +98,7 @@ func call_parameters() -> void:
 	
 	
 func call_return() -> void:
-	ScenesManager.start_clock()
+	GameTime.start_clock()
 	get_tree().paused = false
 	owner.queue_free()
 

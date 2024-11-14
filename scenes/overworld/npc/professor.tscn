@@ -235,7 +235,7 @@ ready_instructions_handler = NodePath("ReadyInstructionsHandler")
 
 [node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
 script = ExtResource("8_rovnx")
-instructions = [NodePath("Walk_Right"), NodePath("Walk_Right"), NodePath("Walk_Down"), NodePath("Walk_Down"), NodePath("Wait4"), NodePath("Repeat2")]
+instructions = [NodePath("Walk_Right"), NodePath("Walk_Right"), NodePath("Walk_Down"), NodePath("Walk_Down"), NodePath("Wait4")]
 periodical = true
 
 [node name="Repeat2" type="Node" parent="Behavior/ReadyInstructionsHandler" node_paths=PackedStringArray("instructions")]
@@ -265,3 +265,4 @@ script = ExtResource("10_k2rk2")
 duration = 4.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 31
