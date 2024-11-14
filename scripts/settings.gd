@@ -8,8 +8,10 @@ const ACTIONS_LIST : Array[String] = ["interact", "cancel", "pause", "move_up", 
 enum TextSpeed{SLOW,NORMAL,FAST,INSTANT}
 
 
+#region Variables meant to be accessed by other scripts.
 static var autosave : bool = false
 static var text_speed : int
+#endregion
 
 static var config_file : ConfigFile  = ConfigFile.new()
 
