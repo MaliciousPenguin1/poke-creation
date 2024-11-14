@@ -8,3 +8,7 @@ class_name Main
 
 @onready var world_parent: Node2D = $WorldParent
 @onready var ui_parent: Control = $CustomCanvasLayer/UIParent
+
+
+func _ready() -> void:
+	Settings.set_settings()
