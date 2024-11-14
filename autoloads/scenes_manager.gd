@@ -35,18 +35,22 @@ func add_scene(scene_path : String, scene_type : SceneType, coordinates : Vector
 func remove_scene(scene_name : String, scene_type : SceneType) -> void:
 	match scene_type:
 		SceneType.WORLD:
-			var node_to_remove : Node2D = main.world_parent.find_child(scene_name, false)
-			node_to_remove.queue_free()
+			var node_to_remove : Node2D = get_node(str(main.world_parent.get_path()) + "/" + scene_name)
+			if node_to_remove:
+				node_to_remove.queue_free()
 			GlobalVar.reserved_tiles.clear()
 		SceneType.ENTITY:
-			var node_to_remove : Node2D = main.world_parent.find_child(scene_name, false)
-			node_to_remove.queue_free()
+			var node_to_remove : Node2D = get_node(str(main.world_parent.get_path()) + "/" + scene_name)
+			if node_to_remove:
+				node_to_remove.queue_free()
 		SceneType.UI:
-			var node_to_remove : Control = main.world_parent.find_child(scene_name, false)
-			node_to_remove.queue_free()
+			var node_to_remove : Control = get_node(str(main.ui_parent.get_path()) + "/" + scene_name)
+			if node_to_remove:
+				node_to_remove.queue_free()
 		_:
 			var node_to_remove := main.find_child(scene_name)
-			node_to_remove.queue_free()
+			if node_to_remove:
+				node_to_remove.queue_free()
 
 
 ##Show the pause menu
