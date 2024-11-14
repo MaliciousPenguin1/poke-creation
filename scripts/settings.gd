@@ -2,8 +2,13 @@ extends Node
 class_name Settings
 
 
+const DEFAULT_SETTINGS_DIRECTORY : String = "res://settings.cfg"
+const USER_SETTINGS_DIRECTORY : String = "user://settings.cfg"
+
 const ACTIONS_LIST : Array[String] = ["interact", "cancel", "pause", "move_up", "move_down", "move_left", "move_right", "run"]
 const VOLUME_MAX : int = 32
+const VALID_LANGUAGES : Array[String] = ["en", "es", "fr"]
+const DEFAULT_LANGUAGE : String = "en"
 
 
 enum TextSpeed{SLOW,NORMAL,FAST,INSTANT}
@@ -27,10 +32,11 @@ static func set_settings() -> void:
 
 
 static func _check_config_file() -> void:
-	if not FileAccess.file_exists("user://settings.cfg"):
-		DirAccess.copy_absolute("res://settings.cfg","user://settings.cfg")
+	if not FileAccess.file_exists(USER_SETTINGS_DIRECTORY):
+		DirAccess.copy_absolute(DEFAULT_SETTINGS_DIRECTORY,USER_SETTINGS_DIRECTORY)
+		language_setup()
 	
-	var error = config_file.load("user://settings.cfg")
+	var error = config_file.load(USER_SETTINGS_DIRECTORY)
 
 	if error != OK:
 		push_error("There was a problem with the settings.cfg file.")
@@ -55,6 +61,22 @@ func change_setting(setting_name : String, new_value : Variant) -> void:
 			return
 	
 	push_error("Couldn't find a setting called \"" + setting_name +"\".")
+
+
+static func language_setup() -> void:
+	var error = config_file.load(USER_SETTINGS_DIRECTORY)
+
+	if error != OK:
+		push_error("There was a problem with the settings.cfg file.")
+		return
+	
+	var language : String = OS.get_locale_language()
+	if language not in VALID_LANGUAGES:
+		language = DEFAULT_LANGUAGE
+	
+	config_file.set_value("General", "language", language)
+	config_file.save(USER_SETTINGS_DIRECTORY)
+	TranslationServer.set_locale(language)
 
 
 static func _set_general_settings() -> void: #SaveManager pas encore implémenté.
