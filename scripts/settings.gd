@@ -3,6 +3,7 @@ class_name Settings
 
 
 const ACTIONS_LIST : Array[String] = ["interact", "cancel", "pause", "move_up", "move_down", "move_left", "move_right", "run"]
+const VOLUME_MAX : int = 32
 
 
 enum TextSpeed{SLOW,NORMAL,FAST,INSTANT}
@@ -74,8 +75,14 @@ static func _set_audio_settings() -> void:
 
 
 static func _set_bus_audio(bus_id : int, value : int) -> void:
-	var volume : int = roundi((value / 100.0 * 80) - 8)
-	AudioServer.set_bus_volume_db(bus_id, volume)
+	var volume : int = roundi(((value / 100.0 * VOLUME_MAX * 2) - VOLUME_MAX))
+	print(volume)
+	
+	if volume == -VOLUME_MAX:
+		AudioServer.set_bus_mute(bus_id, true)
+	else:
+		AudioServer.set_bus_mute(bus_id, false)
+		AudioServer.set_bus_volume_db(bus_id, volume)
 
 
 static func _set_controls_settings() -> void:
