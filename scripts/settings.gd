@@ -76,7 +76,6 @@ static func _set_audio_settings() -> void:
 
 static func _set_bus_audio(bus_id : int, value : int) -> void:
 	var volume : int = roundi(((value / 100.0 * VOLUME_MAX * 2) - VOLUME_MAX))
-	print(volume)
 	
 	if volume == -VOLUME_MAX:
 		AudioServer.set_bus_mute(bus_id, true)
