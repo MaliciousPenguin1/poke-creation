@@ -73,7 +73,8 @@ run={
 }
 interact={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
 ]
 }
 pause={
@@ -94,6 +95,9 @@ cancel={
 
 [internationalization]
 
+locale/translation_remaps={
+"res://assets/graphics/ui/main_menu/main menu_text_en.png": PackedStringArray("res://assets/graphics/ui/main_menu/main menu_text_en.png:en", "res://assets/graphics/ui/main_menu/main menu_text_es.png:es", "res://assets/graphics/ui/main_menu/main menu_text_fr.png:fr")
+}
 locale/translations=PackedStringArray("res://translations/InteriorInteractions.en.translation", "res://translations/InteriorInteractions.es.translation", "res://translations/InteriorInteractions.fr.translation", "res://translations/ui.de.translation", "res://translations/ui.en.translation", "res://translations/ui.es.translation", "res://translations/ui.fr.translation", "res://translations/ui.it.translation", "res://translations/ui.kana.translation", "res://translations/ui.ko.translation")
 
 [layer_names]
