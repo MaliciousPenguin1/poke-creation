@@ -2,7 +2,7 @@ keys,en,fr,es
 ,Texts of interior interaction,Textes d’interaction intérieur,Textos de interacción interior
 EMPTY_BASKET,This basket is empty.,Cette corbeille est vide.,El cesto de basura está vacío.
 EMPTY_BUCKET,This bucket is empty.,Ce seau est vide.,Este cubo está vacío.
-BUCKET_ALCHEMY,[color=green]%s:[color=black] The alchemical ingredients thrown into this bucket are past their prime.§GlobalVar.player.player_name,"""[color=green]%s:[color=black] Les ingrédients alchimiques jetés dans ce seau ne sont plus de la première fraicheur. % GlobalVar.player.player_name",\C[3]\N[1]:\C[0] Los ingredientes alquímicos arrojados a este cubo ya no son los más frescos.
+BUCKET_ALCHEMY,[color=green]PLAYER_NAME:[color=black] The alchemical ingredients thrown into this bucket are past their prime.,[color=green]PLAYER_NAME:[color=black] Les ingrédients alchimiques jetés dans ce seau ne sont plus de la première fraicheur.,[color=green]PLAYER_NAME:[color=black] Los ingredientes alquímicos arrojados a este cubo ya no son los más frescos.
 ,Nothing like a little water to cool off when you wake up.,Rien de tel qu’un peu d’eau pour se rafraîchir au réveil.,Nada como un poco de agua para refrescarte al despertar.
 ,This bucket is filled with edible plants.,Ce seau est rempli de plantes comestibles.,Este cubo está lleno de plantas comestibles.
 ,This bucket is filled with medicinal herbs.,Ce seau est rempli d’herbes médicinales.,Este cubo está lleno de hierbas medicinales.

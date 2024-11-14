@@ -44,7 +44,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	nb_frames_passed_since_last_update += 1
-	if nb_frames_passed_since_last_update == IRL_FRAME_PER_IG_MIN:
+	if nb_frames_passed_since_last_update == roundi(IRL_FRAME_PER_IG_MIN / GlobalVar.time_speed):
 		increment_time()
 		nb_frames_passed_since_last_update = 0
 

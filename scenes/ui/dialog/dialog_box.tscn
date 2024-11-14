@@ -87,3 +87,4 @@ bbcode_enabled = true
 text = "Hello and welcome to the Temple of Ho-Oh future disciple!
 Bottom text"
 scroll_active = false
+scroll_following = true
