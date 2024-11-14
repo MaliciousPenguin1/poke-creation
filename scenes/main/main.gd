@@ -9,3 +9,7 @@ class_name Main
 @onready var world_parent: Node2D = %WorldParent
 @onready var ui_parent: Control = %UIParent
 @onready var custom_camera: CustomCamera = %CustomCamera
+
+
+func _ready() -> void:
+	Settings.set_settings()

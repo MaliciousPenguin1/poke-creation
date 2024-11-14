@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmtxxgcfuv1x3"]
+[gd_scene load_steps=9 format=3 uid="uid://cmtxxgcfuv1x3"]
 
 [ext_resource type="Texture2D" uid="uid://c78fafuasjoc4" path="res://assets/graphics/ui/dialog/message.png" id="1_1jqhl"]
+[ext_resource type="Script" path="res://scenes/ui/dialog/dialog_box.gd" id="1_1k3t4"]
 [ext_resource type="Texture2D" uid="uid://bi5eduec74pif" path="res://assets/graphics/ui/dialog/pause2.png" id="2_6l4yd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2xvh"]
@@ -49,6 +50,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
 theme_override_constants/margin_bottom = 4
+script = ExtResource("1_1k3t4")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(0, 48)
