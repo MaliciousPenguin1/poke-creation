@@ -1,21 +1,25 @@
 extends Node
-class_name Compass
+class_name Handler
 
-@export var instructions : Array[Compass_Instruction]
+
+@export var instructions : Array[Instruction]
 @export var periodical : bool = false
 @export var wait_between_instructions : float = 0
 
+
 var current_instruction_index : int = 0
-var processing_instruction : bool = false
+var finished : bool = false
 
 
 func _ready() -> void:
-	await owner.ready
-	for child in get_children():
-		if child is Compass_Instruction:
+	for child in instructions:
+		if child is Instruction:
 			child.consumed.connect(_on_instruction_consumed)
-	
-	execute_next_instruction()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
 
 func execute_next_instruction() -> void:
@@ -29,3 +33,5 @@ func _on_instruction_consumed() -> void:
 			if wait_between_instructions > 0:
 				await get_tree().create_timer(wait_between_instructions, false).timeout
 			execute_next_instruction()
+		else:
+			finished = true

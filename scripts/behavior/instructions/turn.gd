@@ -1,5 +1,5 @@
-extends Compass_Instruction
-class_name Compass_Instruction_Turn
+extends Instruction
+class_name Instruction_Turn
 
 @export var direction : Vector2i
 @export var duration : float

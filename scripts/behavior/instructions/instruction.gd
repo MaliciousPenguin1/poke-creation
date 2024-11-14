@@ -1,5 +1,5 @@
 extends Node
-class_name Compass_Instruction
+class_name Instruction
 
 
 signal consumed

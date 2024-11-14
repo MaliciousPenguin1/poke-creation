@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scenes/state_machine/states/player_states/walk.gd" id="5_04j86"]
 [ext_resource type="Texture2D" uid="uid://iuq3c4co3w3g" path="res://assets/graphics/overworld/characters/girl_run_ow.png" id="6_g5kit"]
 [ext_resource type="Texture2D" uid="uid://ccpo0l4v38o60" path="res://assets/graphics/overworld/characters/Heros-Aranel_m_walk.png" id="6_yoxqj"]
-[ext_resource type="Script" path="res://scenes/interactable_components/moveable.gd" id="7_dk5s6"]
+[ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="7_dk5s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
 size = Vector2(16, 16)
@@ -378,11 +378,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("moveable_component", "raycast")]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 25
 script = ExtResource("1_tm114")
+moveable_component = NodePath("Moveable")
+raycast = NodePath("RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yukce")

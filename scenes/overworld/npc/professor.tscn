@@ -1,16 +1,17 @@
-[gd_scene load_steps=34 format=3 uid="uid://bwo1cexs6vrj1"]
+[gd_scene load_steps=35 format=3 uid="uid://bwo1cexs6vrj1"]
 
 [ext_resource type="Script" path="res://scripts/entity.gd" id="1_2o0ja"]
-[ext_resource type="Script" path="res://scenes/interactable_components/moveable.gd" id="1_yg3ys"]
+[ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="1_yg3ys"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/idle.gd" id="3_b2a8t"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="3_oaiaq"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/walk.gd" id="4_xh4ao"]
+[ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_2h51q"]
 [ext_resource type="Texture2D" uid="uid://dk360svuatjht" path="res://assets/graphics/overworld/characters/oak_run_ow.png" id="7_gsyx2"]
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/turn.gd" id="8_4e1da"]
-[ext_resource type="Script" path="res://scenes/interactable_components/compass.gd" id="8_l74bf"]
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/walk.gd" id="9_cgsf1"]
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/wait.gd" id="10_k2rk2"]
-[ext_resource type="Script" path="res://scenes/interactable_components/compass_instructions/repeat.gd" id="10_l7nd7"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/turn.gd" id="8_4e1da"]
+[ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="8_rovnx"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/walk.gd" id="9_cgsf1"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/wait.gd" id="10_k2rk2"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/repeat.gd" id="10_l7nd7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd82i"]
 atlas = ExtResource("7_gsyx2")
@@ -198,10 +199,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5x4o"]
 size = Vector2(16, 16)
 
-[node name="Professor" type="CharacterBody2D"]
+[node name="Professor" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast")]
 y_sort_enabled = true
 collision_mask = 27
 script = ExtResource("1_2o0ja")
+sprite = NodePath("AnimatedSprite2D")
+moveable_component = NodePath("Moveable")
+raycast = NodePath("RayCast2D")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
 initial_state = NodePath("NpcStateIdle")
@@ -225,33 +229,38 @@ animation = &"WalkRight"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w5x4o")
 
-[node name="Compass" type="Node" parent="." node_paths=PackedStringArray("instructions")]
-script = ExtResource("8_l74bf")
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("ready_instructions_handler")]
+script = ExtResource("7_2h51q")
+ready_instructions_handler = NodePath("ReadyInstructionsHandler")
+
+[node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
+script = ExtResource("8_rovnx")
 instructions = [NodePath("Walk_Right"), NodePath("Walk_Right"), NodePath("Walk_Down"), NodePath("Walk_Down"), NodePath("Wait4"), NodePath("Repeat2")]
 periodical = true
 
-[node name="Repeat2" type="Node" parent="Compass"]
+[node name="Repeat2" type="Node" parent="Behavior/ReadyInstructionsHandler" node_paths=PackedStringArray("instructions")]
 script = ExtResource("10_l7nd7")
 number_of_periods = 2
+instructions = [NodePath("RandTurn"), NodePath("RandWalk")]
 
-[node name="RandTurn" type="Node" parent="Compass/Repeat2"]
+[node name="RandTurn" type="Node" parent="Behavior/ReadyInstructionsHandler/Repeat2"]
 script = ExtResource("8_4e1da")
 duration = 0.6
 random_direction = true
 
-[node name="RandWalk" type="Node" parent="Compass/Repeat2"]
+[node name="RandWalk" type="Node" parent="Behavior/ReadyInstructionsHandler/Repeat2"]
 script = ExtResource("9_cgsf1")
 random_direction = true
 
-[node name="Walk_Right" type="Node" parent="Compass"]
+[node name="Walk_Right" type="Node" parent="Behavior/ReadyInstructionsHandler"]
 script = ExtResource("9_cgsf1")
 direction = Vector2i(1, 0)
 
-[node name="Walk_Down" type="Node" parent="Compass"]
+[node name="Walk_Down" type="Node" parent="Behavior/ReadyInstructionsHandler"]
 script = ExtResource("9_cgsf1")
 direction = Vector2i(0, 1)
 
-[node name="Wait4" type="Node" parent="Compass"]
+[node name="Wait4" type="Node" parent="Behavior/ReadyInstructionsHandler"]
 script = ExtResource("10_k2rk2")
 duration = 4.0
 

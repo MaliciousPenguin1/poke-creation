@@ -1,5 +1,5 @@
-extends Compass_Instruction
-class_name Compass_Wait
+extends Instruction
+class_name Instruction_Wait
 
 
 @export var duration : float

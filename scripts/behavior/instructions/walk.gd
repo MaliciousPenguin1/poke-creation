@@ -1,5 +1,5 @@
-extends Compass_Instruction
-class_name Compass_Instruction_Walk
+extends Instruction
+class_name Instruction_Walk
 
 
 @export var direction : Vector2i
