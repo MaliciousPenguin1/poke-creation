@@ -24,7 +24,7 @@ var tween : Tween
 func _ready() -> void:
 	icon_texture_rect.texture = icon
 	icon_texture_rect.set_pivot_offset(icon_texture_rect.size/2)
-	label.text = GlobalVar.text_parser.translate_and_parse_text(label_text)
+	label.text = TextParser.translate_and_parse_text(label_text)
 	selected = false
 
 

@@ -1,5 +1,4 @@
 extends Node
-class_name TextParser
 
 
 var PARSE_TABLE : Dictionary = {
@@ -7,10 +6,6 @@ var PARSE_TABLE : Dictionary = {
 	"E" : add_e_for_female,
 	"MONEY" : replace_money,
 }
-
-
-func _ready() -> void:
-	GlobalVar.text_parser = self
 
 
 func translate_and_parse_text(text : String, context_table : Dictionary = {}) -> String:
