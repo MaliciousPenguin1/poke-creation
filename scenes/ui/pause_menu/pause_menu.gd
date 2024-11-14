@@ -62,6 +62,9 @@ func _input(_event: InputEvent) -> void:
 
 func _on_clicked_button() -> void:
 	select_audio.play()
+	while select_audio.is_playing():
+		pass
+
 	valid_need_to_call[current_index].call()
 
 
@@ -146,6 +149,4 @@ func set_index(idx : int, need_to_update_focus = false) -> void:
 func _on_focused_button() -> void:
 	choose_audio.play()
 	can_process_keyboard = false
-	#await choose_audio.finished
-	#can_process_keyboard = true
 	get_tree().create_timer(GlobalConstants.UI_KEYBOARD_COOLDOWN).timeout.connect(func(): can_process_keyboard = true)

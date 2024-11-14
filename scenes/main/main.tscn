@@ -13,9 +13,11 @@
 script = ExtResource("1_hmgtg")
 
 [node name="WorldParent" type="Node2D" parent="."]
+unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="CustomCamera" parent="WorldParent" instance=ExtResource("2_phffe")]
+unique_name_in_owner = true
 
 [node name="GameTime" type="Node2D" parent="WorldParent"]
 script = ExtResource("3_vnexw")
@@ -24,6 +26,7 @@ script = ExtResource("3_vnexw")
 script = ExtResource("4_jt7h5")
 
 [node name="UIParent" type="Control" parent="CustomCanvasLayer"]
+unique_name_in_owner = true
 z_index = 100
 layout_mode = 3
 anchors_preset = 15

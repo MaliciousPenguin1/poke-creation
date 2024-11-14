@@ -6,5 +6,6 @@ class_name Main
 ##using the ScenesManager autoload.
 
 
-@onready var world_parent: Node2D = $WorldParent
-@onready var ui_parent: Control = $CustomCanvasLayer/UIParent
+@onready var world_parent: Node2D = %WorldParent
+@onready var ui_parent: Control = %UIParent
+@onready var custom_camera: CustomCamera = %CustomCamera
