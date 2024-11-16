@@ -24,11 +24,10 @@ func _ready() -> void:
 	await owner.ready
 	player = owner as Player
 	assert(player != null, "The owner of this state isn't of type \"Player\".")
-	player.current_state = self
 
 
 func enter(_message : Dictionary = {}) -> void:
 	if animation_name:
 		player.sprite.play(animation_name + DIRECTIONS[player.facing_direction])
-		player.raycast.target_position = player.facing_direction * GlobalConstants.TILES_SIZE
-		player.raycast.force_raycast_update()
+	player.raycast.target_position = player.facing_direction * GlobalConstants.TILES_SIZE
+	player.raycast.force_raycast_update()

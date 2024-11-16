@@ -22,12 +22,11 @@ var callback
 
 func _ready() -> void:
 	await owner.ready
-	owner.current_state = self
 
 
 func enter(_message : Dictionary = {}) -> void:
 	if animation_name:
 		if owner.sprite.animation != animation_name + DIRECTIONS[owner.facing_direction]:
 			owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
-		owner.raycast.target_position = owner.facing_direction * GlobalConstants.TILES_SIZE
-		owner.raycast.force_raycast_update()
+	owner.raycast.target_position = owner.facing_direction * GlobalConstants.TILES_SIZE
+	owner.raycast.force_raycast_update()

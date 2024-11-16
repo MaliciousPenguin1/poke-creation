@@ -1,13 +1,15 @@
-[gd_scene load_steps=52 format=3 uid="uid://bualplka5bvtp"]
+[gd_scene load_steps=54 format=3 uid="uid://bualplka5bvtp"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_tm114"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="2_xr2sg"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/player_states/idle.gd" id="3_g7fc7"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/player_states/turn.gd" id="4_3dnc1"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/player_states/walk.gd" id="5_04j86"]
+[ext_resource type="Script" path="res://scenes/state_machine/states/player_states/colliding.gd" id="6_1noon"]
 [ext_resource type="Texture2D" uid="uid://iuq3c4co3w3g" path="res://assets/graphics/overworld/characters/girl_run_ow.png" id="6_g5kit"]
 [ext_resource type="Texture2D" uid="uid://ccpo0l4v38o60" path="res://assets/graphics/overworld/characters/Heros-Aranel_m_walk.png" id="6_yoxqj"]
 [ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="7_dk5s6"]
+[ext_resource type="AudioStream" uid="uid://c7cd436bl3asg" path="res://assets/audio/se/bump.WAV" id="9_ler3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukce"]
 size = Vector2(16, 16)
@@ -378,13 +380,14 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("moveable_component", "raycast")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("moveable_component", "raycast", "state_machine")]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 25
 script = ExtResource("1_tm114")
 moveable_component = NodePath("Moveable")
 raycast = NodePath("RayCast2D")
+state_machine = NodePath("StateMachine")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yukce")
@@ -402,6 +405,10 @@ animation_name = "Idle"
 
 [node name="PlayerStateWalk" type="Node" parent="StateMachine"]
 script = ExtResource("5_04j86")
+animation_name = "Walk"
+
+[node name="PlayerStateColliding" type="Node" parent="StateMachine"]
+script = ExtResource("6_1noon")
 animation_name = "Walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -424,3 +431,8 @@ animation = &"IdleDown"
 
 [node name="Moveable" type="Node" parent="."]
 script = ExtResource("7_dk5s6")
+
+[node name="BumpAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_ler3f")
+bus = &"Sounds"

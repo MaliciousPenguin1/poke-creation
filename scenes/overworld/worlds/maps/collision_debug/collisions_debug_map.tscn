@@ -28,6 +28,10 @@ position = Vector2(104, 136)
 [node name="Professor" parent="Entities" index="2" instance=ExtResource("5_h38ml")]
 position = Vector2(136, 104)
 
+[node name="VisibleOnScreenEnabler2D" parent="." index="2"]
+position = Vector2(168, 136)
+scale = Vector2(16.8, 13.6)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 process_mode = 3
 stream = ExtResource("3_jmssy")

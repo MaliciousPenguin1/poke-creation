@@ -13,11 +13,10 @@ func unhandled_input(_event: InputEvent) -> void:
 func process(_delta: float) -> void:
 	if player.moveable_component.can_move():
 		var target_position : Vector2i = Vector2i(player.global_position) + (current_dir * GlobalConstants.TILES_SIZE)
-		if target_position in GlobalVar.reserved_tiles or player.raycast.is_colliding():
-			#TODO: play_thud_sound
-			state_machine.transition_to("PlayerStateIdle")
-		else:
+		if owner.moveable_component.can_walk_towards(target_position):
 			player.moveable_component.move(current_dir, target_position)
+		else:
+			state_machine.transition_to("PlayerStateColliding", {"dir" : current_dir})
 
 
 func enter(_message : Dictionary = {}) -> void:

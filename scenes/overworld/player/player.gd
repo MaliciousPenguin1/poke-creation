@@ -4,6 +4,7 @@ class_name Player
 
 @onready var animated_sprite_male: AnimatedSprite2D = $AnimatedSpriteMale
 @onready var animated_sprite_female: AnimatedSprite2D = $AnimatedSpriteFemale
+@onready var bump_audio: AudioStreamPlayer = %BumpAudio
 
 
 var gender : GlobalConstants.PlayerGender
@@ -34,3 +35,7 @@ func _ready() -> void:
 	set_sprite()
 	
 	GlobalVar.player = self
+
+
+func play_colliding_sound() -> void:
+	bump_audio.play()

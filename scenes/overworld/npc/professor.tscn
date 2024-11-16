@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://bwo1cexs6vrj1"]
+[gd_scene load_steps=36 format=3 uid="uid://bwo1cexs6vrj1"]
 
 [ext_resource type="Script" path="res://scripts/entity.gd" id="1_2o0ja"]
 [ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="1_yg3ys"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/idle.gd" id="3_b2a8t"]
 [ext_resource type="PackedScene" uid="uid://bq8ryygmstkfd" path="res://scenes/state_machine/state_machine.tscn" id="3_oaiaq"]
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/walk.gd" id="4_xh4ao"]
+[ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/colliding.gd" id="5_2ysek"]
 [ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_2h51q"]
 [ext_resource type="Texture2D" uid="uid://dk360svuatjht" path="res://assets/graphics/overworld/characters/oak_run_ow.png" id="7_gsyx2"]
 [ext_resource type="Script" path="res://scripts/behavior/instructions/turn.gd" id="8_4e1da"]
@@ -199,13 +200,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5x4o"]
 size = Vector2(16, 16)
 
-[node name="Professor" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast")]
+[node name="Professor" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast", "state_machine")]
 y_sort_enabled = true
 collision_mask = 27
 script = ExtResource("1_2o0ja")
 sprite = NodePath("AnimatedSprite2D")
 moveable_component = NodePath("Moveable")
 raycast = NodePath("RayCast2D")
+state_machine = NodePath("StateMachine")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
 initial_state = NodePath("NpcStateIdle")
@@ -217,6 +219,10 @@ animation_name = "Idle"
 [node name="NpcStateWalk" type="Node" parent="StateMachine"]
 script = ExtResource("4_xh4ao")
 animation_name = "Walk"
+
+[node name="NpcStateColliding" type="Node" parent="StateMachine"]
+script = ExtResource("5_2ysek")
+animation_name = "Idle"
 
 [node name="Moveable" type="Node" parent="."]
 script = ExtResource("1_yg3ys")

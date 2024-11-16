@@ -6,7 +6,6 @@ const DEFAULT_MOVEMENT_DURATION : float = 0.25
 
 
 var is_moving : bool = false
-
 var target_tile : Vector2i
 
 
@@ -31,8 +30,20 @@ func turn(direction : Vector2i) -> void:
 func finish_movement() -> void:
 	is_moving = false
 	GlobalVar.reserved_tiles.erase(target_tile)
-	owner.current_state.after_walk()
+	owner.state_machine.state.after_walk()
 
 
 func can_move() -> bool:
 	return !is_moving
+
+
+func initiate_collision(time_to_wait : float = DEFAULT_MOVEMENT_DURATION) -> void:
+	if owner is Player:
+		owner.play_colliding_sound()
+
+	await get_tree().create_timer(time_to_wait, false).timeout
+	owner.finished_bumping.emit()
+
+
+func can_walk_towards(target_position : Vector2i) -> bool:
+	return !target_position in GlobalVar.reserved_tiles and !owner.raycast.is_colliding()
