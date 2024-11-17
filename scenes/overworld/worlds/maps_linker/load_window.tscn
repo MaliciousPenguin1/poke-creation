@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://nrr8b3sj6k23"]
+
+[ext_resource type="Script" path="res://scenes/overworld/worlds/maps_linker/maps_linker_windows.gd" id="1_2rbiy"]
+
+[node name="LoadWindow" type="FileDialog"]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(960, 540)
+visible = true
+transient = false
+extend_to_title = true
+min_size = Vector2i(960, 540)
+ok_button_text = "Open"
+file_mode = 0
+root_subfolder = "res://resources/world_layout_data/"
+script = ExtResource("1_2rbiy")

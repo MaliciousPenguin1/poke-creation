@@ -29,6 +29,9 @@ class_name Map
 @export var good_rod_encounters : Array[Encounters]
 ##The encounters that can happen when fishing with a super rod.
 @export var super_rod_encounters : Array[Encounters]
+##Stuff related to the map linker.
+@export_group("Map Linker Data")
+@export var neighbors : Array[Map]
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
