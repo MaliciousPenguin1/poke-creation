@@ -2,6 +2,10 @@ extends Node2D
 class_name Map
 
 
+#The Chunk Areas of the map
+@export var chunks : Array[Area2D] = []
+#Neighbor maps
+@export var id : int
 ##The name of the map (or its key in a csv translation file).
 @export var map_name : String = "Placeholder"
 ##The bgm of this map.
@@ -31,5 +35,16 @@ class_name Map
 @export var super_rod_encounters : Array[Encounters]
 
 
-func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	GlobalVar.reserved_tiles.clear()
+func _ready() -> void:
+	for chunk in chunks:
+		chunk.body_entered.connect(_on_chunk_entered.bind(chunk), 1)
+
+
+func _on_chunk_entered(_body : Player, chunk : Area2D) -> void:
+	if owner.current_map != self:
+		print("changing map ", self, " pos ", position, " global pos ", global_position)
+		ScenesManager.add_map_scene_neighbours(id, global_position)
+
+
+#func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
+	#GlobalVar.reserved_tiles.clear()

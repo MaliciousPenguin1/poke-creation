@@ -23,6 +23,7 @@ ScenesManager="*res://autoloads/scenes_manager.gd"
 TextParser="*res://autoloads/text_parser.gd"
 Utils="*res://autoloads/utils.gd"
 GameTime="*res://autoloads/game_time.gd"
+Maplinker="*res://autoloads/maplinker.gd"
 
 [display]
 

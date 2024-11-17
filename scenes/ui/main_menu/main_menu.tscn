@@ -25,8 +25,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqf1y")
-starting_map_scene_name = "res://scenes/overworld/worlds/maps/collision_debug/collisions_debug_map.tscn"
-starting_pos = Vector2i(3, 5)
+starting_map_id = 1
+starting_pos = Vector2i(1, 0)
 
 [node name="bg" type="CanvasLayer" parent="."]
 

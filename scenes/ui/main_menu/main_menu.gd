@@ -6,7 +6,7 @@ extends Control
 @onready var select_audio: AudioStreamPlayer = %SelectAudio
 
 
-@export var starting_map_scene_name : String
+@export var starting_map_id : int
 @export var starting_pos : Vector2i
 
 
@@ -69,7 +69,7 @@ func interact_with_current_button() -> void:
 	var current_button : MainMenuButton = buttons[current_index]
 	if current_button.is_new_game():
 		ScenesManager.add_scene("res://scenes/overworld/player/Player.tscn", ScenesManager.SceneType.ENTITY, starting_pos)
-		ScenesManager.add_scene(starting_map_scene_name, ScenesManager.SceneType.WORLD)
+		ScenesManager.add_map_scene(starting_map_id)
 		
 		for child in ScenesManager.main.world_parent.get_children():
 			if child is Player:

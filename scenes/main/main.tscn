@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://ctdpqnelcj70n"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_hmgtg"]
+[ext_resource type="Script" path="res://scenes/main/world_parent.gd" id="2_5rqho"]
 [ext_resource type="Script" path="res://scenes/main/debug.gd" id="2_514wy"]
 [ext_resource type="PackedScene" uid="uid://nufv3pi7nh3h" path="res://scenes/other/custom_camera/custom_camera.tscn" id="2_phffe"]
 [ext_resource type="PackedScene" uid="uid://bwqvy2tejy5gl" path="res://scenes/main/phone_controls.tscn" id="3_230gu"]
-[ext_resource type="Script" path="res://autoloads/game_time.gd" id="3_vnexw"]
 [ext_resource type="Script" path="res://scripts/custom_canvas_layer.gd" id="4_jt7h5"]
 [ext_resource type="Script" path="res://scenes/main/ui_parent.gd" id="5_yo1x1"]
 [ext_resource type="Script" path="res://scenes/main/phone_controls.gd" id="6_b5msf"]
@@ -15,12 +15,10 @@ script = ExtResource("1_hmgtg")
 [node name="WorldParent" type="Node2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+script = ExtResource("2_5rqho")
 
 [node name="CustomCamera" parent="WorldParent" instance=ExtResource("2_phffe")]
 unique_name_in_owner = true
-
-[node name="GameTime" type="Node2D" parent="WorldParent"]
-script = ExtResource("3_vnexw")
 
 [node name="CustomCanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_jt7h5")
