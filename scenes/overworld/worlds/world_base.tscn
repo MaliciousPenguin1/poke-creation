@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b478d0jn2vmn6"]
+[gd_scene load_steps=2 format=3 uid="uid://b478d0jn2vmn6"]
 
-[ext_resource type="Script" path="res://scenes/overworld/worlds/world_base.gd" id="1_itrf2"]
 [ext_resource type="PackedScene" uid="uid://bbo6i7x123fov" path="res://scenes/overworld/worlds/maps/maplink_test/mapB.tscn" id="2_ptsk5"]
 
 [node name="WorldBase" type="Node2D"]
-script = ExtResource("1_itrf2")
 
 [node name="mapB" parent="." instance=ExtResource("2_ptsk5")]

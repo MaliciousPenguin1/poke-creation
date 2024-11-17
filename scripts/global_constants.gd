@@ -18,7 +18,10 @@ const RUNNING_SPEED : int = 200
 const DELAY_BEFORE_WALKING : float = 0.2
 ##The Camera zoom
 const CAMERA_ZOOM : int = 2
-
+##Chunk size
+const CHUNK_SIZE : int = 3
+##NB of neighbour chunks to render
+const CHUNK_RENDREING_DISTANCE : int = 1
 
 #======================================================
 #POKEMON

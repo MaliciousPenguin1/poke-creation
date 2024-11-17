@@ -10,43 +10,54 @@ enum SceneType {WORLD, UI, ENTITY}
 @onready var main : Main = get_tree().root.get_child(-1)
 
 
-func add_map_scene_neighbours(map_id : int, original_map_coordinates : Vector2i) -> void:
-			var neighbour_ids : Array = Maplinker.get_neighbours_ids(map_id)
-			var currently_loaded_map_ids : Array = Maplinker.get_currently_loaded_map_ids().duplicate()
-			
-			var scene_to_free : Node2D
-			for loaded_map_id in currently_loaded_map_ids:
-				print("CHECKING FOR UNLOADING ", loaded_map_id)
-				if loaded_map_id != map_id and !(loaded_map_id in neighbour_ids):
-					print("UNLOADING ", loaded_map_id)
-					scene_to_free = main.world_parent.find_children("*", "", false).filter(func(s): return s.id == loaded_map_id)[0]
-					scene_to_free.queue_free()
-					Maplinker.register_unloaded(loaded_map_id)
-
-			var current_neighbour_id : int
-			var current_neighbour_offset : Vector2i
-			var neighbour_scene : Node2D
-			
-			for neighbour_data in Maplinker.get_neighbours_data(map_id):
-				current_neighbour_id = neighbour_data[0]
-				current_neighbour_offset = neighbour_data[1]
-				if !Maplinker.is_already_loaded(current_neighbour_id):
-					print("LOADING ", current_neighbour_id)
-					neighbour_scene = load(Maplinker.get_scene_resource_name(current_neighbour_id)).instantiate()
-					neighbour_scene.global_position = original_map_coordinates + current_neighbour_offset
-					main.world_parent.add_child(neighbour_scene)
-					neighbour_scene.owner = main.world_parent
-					Maplinker.register_loaded(current_neighbour_id)
-				else:
-					print(current_neighbour_id, " IS ALREADY LOADED")
-
-
-func add_map_scene(map_id : int) -> void:
-	var map_scene = load(Maplinker.get_scene_resource_name(map_id)).instantiate()
-	map_scene.global_position = Vector2i(0, 0)
-	main.world_parent.add_child(map_scene)
-	map_scene.owner = main.world_parent
+func load_map(map_id : int, pos : Vector2i = Vector2i(0, 0)) -> void:
+	print("LOADING ", map_id)
+	var scene : Node2D = load(Maplinker.get_scene_resource_name(map_id)).instantiate()
+	scene.global_position = pos
+	for chunk in scene.chunks:
+		Maplinker.register_chunk(chunk)
+	main.world_parent.add_child(scene)
+	scene.owner = main.world_parent
 	Maplinker.register_loaded(map_id)
+
+
+# Unloads every map which isn' tthe neighbout of the given map
+func unload_unnecessary_maps(map_id : int) -> void:
+	var neighbour_ids : Array = Maplinker.get_neighbours_ids(map_id)
+	var currently_loaded_map_ids : Array = Maplinker.get_currently_loaded_map_ids().duplicate()
+
+	var scene_to_free : Node2D
+	for loaded_map_id in currently_loaded_map_ids:
+		print("CHECKING FOR UNLOADING ", loaded_map_id)
+		if loaded_map_id != map_id and !(loaded_map_id in neighbour_ids):
+			print("UNLOADING ", loaded_map_id)
+			scene_to_free = main.world_parent.find_children("*", "", false).filter(func(s): return s.id == loaded_map_id)[0]
+			for chunk in scene_to_free.chunks:
+				Maplinker.unregister_chunk(chunk)
+			scene_to_free.queue_free()
+			Maplinker.register_unloaded(loaded_map_id)
+
+
+# Loads and places the neighbours of a given map in the world and unloads the unnecessary maps
+func add_map_scene_neighbours(map_id : int, original_map_coordinates : Vector2i) -> void:
+	unload_unnecessary_maps(map_id)
+
+	var current_neighbour_id : int
+	var current_neighbour_offset : Vector2i
+
+	for neighbour_data in Maplinker.get_neighbours_data(map_id):
+		current_neighbour_id = neighbour_data[0]
+		current_neighbour_offset = neighbour_data[1]
+		if !Maplinker.is_already_loaded(current_neighbour_id):
+			load_map(current_neighbour_id, original_map_coordinates + GlobalConstants.TILES_SIZE*GlobalConstants.CHUNK_SIZE*current_neighbour_offset)
+		else:
+			print(current_neighbour_id, " IS ALREADY LOADED")
+
+
+# Loads a new map inside the world and unloads every map which isnt connected to this map
+func add_new_map_scene(map_id : int) -> void:
+	unload_unnecessary_maps(map_id)
+	load_map(map_id)
 
 
 ##Adds a scene to the main one.

@@ -243,7 +243,7 @@ ready_instructions_handler = NodePath("ReadyInstructionsHandler")
 
 [node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
 script = ExtResource("8_rovnx")
-instructions = [NodePath("Walk_Right"), NodePath("Walk_Right"), NodePath("Walk_Down"), NodePath("Walk_Down"), NodePath("Wait4")]
+instructions = [NodePath("Walk_Right"), NodePath("Wait4")]
 periodical = true
 
 [node name="Repeat2" type="Node" parent="Behavior/ReadyInstructionsHandler" node_paths=PackedStringArray("instructions")]
