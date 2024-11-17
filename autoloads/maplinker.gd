@@ -3,10 +3,16 @@ extends Node
 
 var DATA : Dictionary = {
 	1: ["res://scenes/overworld/worlds/maps/maplink_test/mapA.tscn", 
-	[[2, Vector2i(0, -48)]]
+	[[2, Vector2i(0, -48)], [3, Vector2i(0, -48)]]
 	],
 	2: ["res://scenes/overworld/worlds/maps/maplink_test/mapB.tscn", 
-	[[1, Vector2i(0, 48)]]
+	[[1, Vector2i(0, 48)], [3, Vector2i(0, 0)]]
+	],
+	3: ["res://scenes/overworld/worlds/maps/maplink_test/mapC.tscn", 
+	[[1, Vector2i(0, 48)], [2, Vector2i(0, 0)], [4, Vector2i(144, 0)]]
+	],
+	4: ["res://scenes/overworld/worlds/maps/maplink_test/mapD.tscn", 
+	[[3, Vector2i(-144, 0)]]
 	]
 }
 

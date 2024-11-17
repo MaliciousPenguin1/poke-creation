@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=4 uid="uid://cbeo4ffstlgvw"]
+
+[ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_j14gk"]
+[ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_hryko"]
+[ext_resource type="PackedScene" uid="uid://b37oig68gh8pl" path="res://scenes/overworld/worlds/chunk.tscn" id="3_hlnpa"]
+
+[node name="mapC" node_paths=PackedStringArray("chunks") instance=ExtResource("1_j14gk")]
+chunks = [NodePath("Chunk"), NodePath("Chunk2"), NodePath("Chunk3"), NodePath("Chunk4"), NodePath("Chunk5")]
+id = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap" index="0"]
+z_index = -2
+tile_map_data = PackedByteArray("AAAAAAYAAAADAAAAAAAAAAcAAAADAAAAAAAAAAgAAAADAAAAAAABAAgAAAADAAAAAAABAAcAAAADAAAAAAABAAYAAAADAAAAAAACAAYAAAADAAAAAAACAAcAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAEAAcAAAADAAAAAAAFAAcAAAADAAAAAAAFAAgAAAADAAAAAAADAAcAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAGAAgAAAADAAAAAAAGAAcAAAADAAAAAAAGAAYAAAADAAAAAAAHAAYAAAADAAAAAAAHAAcAAAADAAAAAAAHAAgAAAADAAAAAAAIAAgAAAADAAAAAAAIAAcAAAADAAAAAAAIAAYAAAADAAAAAAAGAAUAAAADAAAAAAAGAAQAAAADAAAAAAAHAAQAAAADAAAAAAAHAAMAAAADAAAAAAAHAAIAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAHAAUAAAADAAAAAAAIAAUAAAADAAAAAAAIAAQAAAADAAAAAAAIAAMAAAADAAAAAAAIAAIAAAADAAAAAAAIAAEAAAADAAAAAAAIAAAAAAADAAAAAAAHAAAAAAADAAAAAAAHAAEAAAADAAAAAAAGAAEAAAADAAAAAAAGAAAAAAADAAAAAAA=")
+tile_set = ExtResource("2_hryko")
+
+[node name="Chunk" parent="." index="3" instance=ExtResource("3_hlnpa")]
+position = Vector2(16, 112)
+
+[node name="Chunk2" parent="." index="4" instance=ExtResource("3_hlnpa")]
+position = Vector2(64, 112)
+
+[node name="Chunk3" parent="." index="5" instance=ExtResource("3_hlnpa")]
+position = Vector2(112, 16)
+
+[node name="Chunk4" parent="." index="6" instance=ExtResource("3_hlnpa")]
+position = Vector2(112, 64)
+
+[node name="Chunk5" parent="." index="7" instance=ExtResource("3_hlnpa")]
+position = Vector2(112, 112)

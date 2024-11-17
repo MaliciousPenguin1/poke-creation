@@ -12,15 +12,14 @@ enum SceneType {WORLD, UI, ENTITY}
 
 func add_map_scene_neighbours(map_id : int, original_map_coordinates : Vector2i) -> void:
 			var neighbour_ids : Array = Maplinker.get_neighbours_ids(map_id)
-			var currently_loaded_map_ids : Array = Maplinker.get_currently_loaded_map_ids()
-			
+			var currently_loaded_map_ids : Array = Maplinker.get_currently_loaded_map_ids().duplicate()
 			
 			var scene_to_free : Node2D
 			for loaded_map_id in currently_loaded_map_ids:
+				print("CHECKING FOR UNLOADING ", loaded_map_id)
 				if loaded_map_id != map_id and !(loaded_map_id in neighbour_ids):
 					print("UNLOADING ", loaded_map_id)
 					scene_to_free = main.world_parent.find_children("*", "", false).filter(func(s): return s.id == loaded_map_id)[0]
-					print(scene_to_free)
 					scene_to_free.queue_free()
 					Maplinker.register_unloaded(loaded_map_id)
 
