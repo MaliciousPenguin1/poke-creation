@@ -59,24 +59,38 @@ func unregister_chunk(chunk : Chunk) -> void:
 	LOADED_CHUNKS.erase(chunk)
 
 
-func register_entity_in_chunk(chunk : Chunk, entity : Entity):
-	if entity.current_chunk in LOADED_CHUNKS.keys():
-		LOADED_CHUNKS[entity.current_chunk][1].erase(entity)
+func register_entity_in_chunk(chunk : Chunk, entity : Entity) -> void:
+	remove_entity_from_chunk(entity)
 	entity.current_chunk = chunk
 
 	LOADED_CHUNKS[chunk][1][entity] = null
 
 
-func find_and_activate_neighbour_chunks(chunk : Chunk):
+func remove_entity_from_chunk(entity : Entity) -> void:
+	if entity.current_chunk in LOADED_CHUNKS.keys():
+		LOADED_CHUNKS[entity.current_chunk][1].erase(entity)
+
+
+func refresh_chunks(chunk : Chunk) -> void:
 	var pos_diff : Vector2
 	var rendering_distance : int = GlobalConstants.CHUNK_RENDREING_DISTANCE*GlobalConstants.CHUNK_SIZE*GlobalConstants.TILES_SIZE 
 	for loaded_chunk in LOADED_CHUNKS:
 		pos_diff = abs(chunk.global_position - loaded_chunk.global_position)
 		if loaded_chunk == chunk or pos_diff.x <= rendering_distance and pos_diff.y <= rendering_distance:
 			activate_chunk(loaded_chunk)
+		else:
+			deactivate_chunk(loaded_chunk)
 
 
-func activate_chunk(chunk : Chunk):
+func activate_chunk(chunk : Chunk) -> void:
 	chunk.need_to_process = true
 	for entity in LOADED_CHUNKS[chunk][1].keys():
-		entity.set_process_mode(0)
+		print("REACTIVATING ENTITY ", entity)
+		entity.set_process_mode(0) 
+
+
+func deactivate_chunk(chunk : Chunk) -> void:
+	chunk.need_to_process = false
+	for entity in LOADED_CHUNKS[chunk][1].keys():
+		print("STOPPING ENTITY ", entity)
+		entity.set_process_mode(4) 

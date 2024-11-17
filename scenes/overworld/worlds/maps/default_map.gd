@@ -2,6 +2,9 @@ extends Node2D
 class_name Map
 
 
+@onready var entities: Node2D = $Entities
+
+
 #The Chunk Areas of the map
 @export var chunks : Array[Chunk] = []
 #Neighbor maps
@@ -38,22 +41,22 @@ class_name Map
 func _ready() -> void:
 	for chunk in chunks:
 		chunk.body_entered.connect(_on_chunk_entered.bind(chunk), 1)
+	for entity in entities.get_children():
+		entity.original_map_id = id
 
 
 func _on_chunk_entered(body : Node2D, chunk : Chunk) -> void:
 	if body is Player:
 		owner.current_chunk = chunk
-		Maplinker.find_and_activate_neighbour_chunks(chunk)
+		Maplinker.refresh_chunks(chunk)
 		if owner.current_map != self:
 			print("changing map ", self, " pos ", position, " global pos ", global_position)
-			print(Maplinker.LOADED_CHUNKS)
 			owner.current_map = self
 			ScenesManager.add_map_scene_neighbours(id, global_position)
 	elif body is Entity:
-		print("NPC")
 		Maplinker.register_entity_in_chunk(chunk, body)
-		if !chunk.need_to_process:
-			print("STOPPING NPC")
+		if !chunk.need_to_process and (owner.current_map == null or body.original_map_id != owner.current_map.id):
+			print("STOPPING NPC ", body)
 			body.set_process_mode(4)
 
 
