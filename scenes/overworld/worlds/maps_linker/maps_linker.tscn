@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://csrqc62r7g0iw"]
+[gd_scene load_steps=7 format=3 uid="uid://csrqc62r7g0iw"]
 
 [ext_resource type="Script" path="res://scenes/overworld/worlds/maps_linker/maps_linker.gd" id="1_t7loc"]
+[ext_resource type="PackedScene" uid="uid://b502vfa15qdrh" path="res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_1.tscn" id="2_eup64"]
+[ext_resource type="PackedScene" uid="uid://nk4jqs0htdcb" path="res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn" id="3_ke2sc"]
+[ext_resource type="PackedScene" uid="uid://db7ujq4cak0qy" path="res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn" id="4_dpnhr"]
+[ext_resource type="PackedScene" uid="uid://v8sge1l8p70w" path="res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn" id="5_c37wa"]
+[ext_resource type="PackedScene" uid="uid://cnr7rlror7ab" path="res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_5.tscn" id="6_4rm7g"]
 
 [node name="MapsLinker" type="Node2D"]
 script = ExtResource("1_t7loc")
+
+[node name="TestMap1" parent="." node_paths=PackedStringArray("neighbors") instance=ExtResource("2_eup64")]
+neighbors = [NodePath("../TestMap2")]
+
+[node name="TestMap2" parent="." node_paths=PackedStringArray("neighbors") instance=ExtResource("3_ke2sc")]
+position = Vector2(80, 0)
+neighbors = [NodePath("../TestMap1"), NodePath("../TestMap3"), NodePath("../TestMap4")]
+
+[node name="TestMap3" parent="." node_paths=PackedStringArray("neighbors") instance=ExtResource("4_dpnhr")]
+position = Vector2(160, 0)
+neighbors = [NodePath("../TestMap2"), NodePath("../TestMap4")]
+
+[node name="TestMap4" parent="." node_paths=PackedStringArray("neighbors") instance=ExtResource("5_c37wa")]
+position = Vector2(80, 112)
+neighbors = [NodePath("../TestMap3"), NodePath("../TestMap2"), NodePath("../TestMap5")]
+
+[node name="TestMap5" parent="." node_paths=PackedStringArray("neighbors") instance=ExtResource("6_4rm7g")]
+position = Vector2(336, 112)
+neighbors = [NodePath("../TestMap4")]

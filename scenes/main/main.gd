@@ -7,6 +7,7 @@ class_name Main
 
 
 @onready var world_parent: Node2D = %WorldParent
+@onready var world: Node2D = $WorldParent/World
 @onready var ui_parent: Control = %UIParent
 @onready var custom_camera: CustomCamera = %CustomCamera
 

@@ -73,8 +73,8 @@ func _on_save_window_file_selected(path : String) -> void:
 	ResourceSaver.save(resource, path)
 
 
-func _get_neighbors(map : Map) -> Array[String]:
-	var array : Array[String]
+func _get_neighbors(map : Map) -> PackedStringArray:
+	var array : PackedStringArray
 	for neighbor in map.neighbors:
 		array.append(neighbor.scene_file_path)
 	return array
@@ -112,8 +112,9 @@ func _on_load_window_file_selected(path : String) -> void:
 #endregion
 		var map : PackedScene = load(key)
 		var map_instance : Map = map.instantiate()
-		map.name = resource.data[key]["map_name"]
-		map.global_position = resource.data[key]["position_in_world"]
+		map_instance.name = resource.data[key]["map_name"]
+		map_instance.global_position = resource.data[key]["position_in_world"]
+		add_child(map_instance)
 	
 	_define_neighbors(resource)
 
@@ -122,8 +123,8 @@ func _define_neighbors(resource : WorldLayoutData) -> void:
 	var index : int = 0
 	
 	for entry in resource.data:
-		get_child(index).neighbors = entry["neighbors_node_paths"]
-		
+		var map : Map = get_child(index) as Map
+		map.neighbors = (entry["neighbors_node_paths"])
 		index += 1 
 	
 	print("World layout loaded successfully!")

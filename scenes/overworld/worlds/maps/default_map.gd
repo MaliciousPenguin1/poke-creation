@@ -36,3 +36,7 @@ class_name Map
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
 	GlobalVar.reserved_tiles.clear()
+
+
+func _on_map_area_body_entered(body: Node2D) -> void:
+	ScenesManager.on_map_entered(self.scene_file_path)

@@ -22,6 +22,9 @@ unique_name_in_owner = true
 [node name="GameTime" type="Node2D" parent="WorldParent"]
 script = ExtResource("3_vnexw")
 
+[node name="World" type="Node2D" parent="WorldParent"]
+y_sort_enabled = true
+
 [node name="CustomCanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_jt7h5")
 

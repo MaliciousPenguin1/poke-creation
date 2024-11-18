@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="WorldLayoutData" load_steps=2 format=3 uid="uid://ficvqlugijmg"]
+
+[ext_resource type="Script" path="res://resources/world_layout_data/world_layout_data.gd" id="1_guueu"]
+
+[resource]
+script = ExtResource("1_guueu")
+data = {
+"res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_1.tscn": {
+"map_name": &"TestMap1",
+"neighbors": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn"),
+"neighbors_node_paths": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn"),
+"position_in_world": Vector2(0, 0)
+},
+"res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn": {
+"map_name": &"TestMap2",
+"neighbors": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_1.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"neighbors_node_paths": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_1.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"position_in_world": Vector2(80, 0)
+},
+"res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn": {
+"map_name": &"TestMap3",
+"neighbors": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"neighbors_node_paths": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"position_in_world": Vector2(160, 0)
+},
+"res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn": {
+"map_name": &"TestMap4",
+"neighbors": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_5.tscn"),
+"neighbors_node_paths": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_3.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_2.tscn", "res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_5.tscn"),
+"position_in_world": Vector2(80, 112)
+},
+"res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_5.tscn": {
+"map_name": &"TestMap5",
+"neighbors": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"neighbors_node_paths": PackedStringArray("res://scenes/overworld/worlds/maps/map_linker_test_maps/test_map_4.tscn"),
+"position_in_world": Vector2(336, 112)
+}
+}
