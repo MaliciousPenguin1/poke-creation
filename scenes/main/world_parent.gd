@@ -26,7 +26,8 @@ func _process(_delta : float) -> void:
 				instanciated_scene = scene.instantiate()
 				ScenesManager.place_the_loaded_map_in_the_world(instanciated_scene, Maplinker.BEING_LOADED_MAP_IDS[loading_map_id])
 				Maplinker.BEING_LOADED_MAP_IDS.erase(loading_map_id)
-				need_to_update_chunks = true
+				Maplinker.refresh_chunks(current_chunk)
+				return
 		
 		if need_to_update_chunks:
 			Maplinker.refresh_chunks(current_chunk)
