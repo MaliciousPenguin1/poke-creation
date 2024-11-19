@@ -9,6 +9,8 @@ class_name Map
 @export var chunks : Array[Chunk] = []
 #Neighbor maps
 @export var id : int
+#BG Music
+@export var bg_music_player : AudioStreamPlayer
 ##The name of the map (or its key in a csv translation file).
 @export var map_name : String = "Placeholder"
 ##The bgm of this map.
@@ -48,11 +50,16 @@ func _ready() -> void:
 func _on_chunk_entered(body : Node2D, chunk : Chunk) -> void:
 	if body is Player:
 		owner.current_chunk = chunk
-		Maplinker.refresh_chunks(chunk)
 		if owner.current_map != self:
 			print("changing map ", self, " pos ", position, " global pos ", global_position)
+			if owner.current_map != null and owner.current_map.bg_music_player != null:
+				owner.current_map.bg_music_player.stop()
 			owner.current_map = self
+			if bg_music_player != null:
+				bg_music_player.play()
 			ScenesManager.add_map_scene_neighbours(id, global_position)
+		Maplinker.refresh_chunks(chunk)
+		Maplinker.force_chunk_activation(chunks)
 	elif body is Entity:
 		Maplinker.register_entity_in_chunk(chunk, body)
 		if !chunk.need_to_process and (owner.current_map == null or body.original_map_id != owner.current_map.id):

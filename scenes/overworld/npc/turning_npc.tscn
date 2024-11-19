@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://byvp7rk6bwotk"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_myh7r"]
+[ext_resource type="Script" path="res://scenes/state_machine/state_machine.gd" id="2_6yyoi"]
+[ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/idle.gd" id="3_ael8j"]
+[ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/walk.gd" id="4_wrt13"]
+[ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/colliding.gd" id="5_7d6m6"]
+[ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="6_eem3j"]
+[ext_resource type="Texture2D" uid="uid://b7c34lbombjw5" path="res://assets/graphics/overworld/characters/Lake_trio_initiate_m_0.png" id="7_0u0pd"]
+[ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="8_ls2cg"]
+[ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="9_7oi3y"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/turn.gd" id="10_abjo7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7rin"]
+atlas = ExtResource("7_0u0pd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw3w7"]
+atlas = ExtResource("7_0u0pd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pbmt"]
+atlas = ExtResource("7_0u0pd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxxrg"]
+atlas = ExtResource("7_0u0pd")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra3pw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7rin")
+}],
+"loop": true,
+"name": &"IdleDown",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw3w7")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pbmt")
+}],
+"loop": true,
+"name": &"IdleRight",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxxrg")
+}],
+"loop": true,
+"name": &"IdleUp",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3ith"]
+size = Vector2(16, 16)
+
+[node name="TurningNpc" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast", "state_machine")]
+script = ExtResource("1_myh7r")
+sprite = NodePath("AnimatedSprite2D")
+moveable_component = NodePath("Moveable")
+raycast = NodePath("RayCast2D")
+state_machine = NodePath("StateMachine")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_6yyoi")
+initial_state = NodePath("NpcStateIdle")
+
+[node name="NpcStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("3_ael8j")
+animation_name = "Idle"
+
+[node name="NpcStateWalk" type="Node" parent="StateMachine"]
+script = ExtResource("4_wrt13")
+
+[node name="NpcStateColliding" type="Node" parent="StateMachine"]
+script = ExtResource("5_7d6m6")
+
+[node name="Moveable" type="Node" parent="."]
+script = ExtResource("6_eem3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_ra3pw")
+animation = &"IdleDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v3ith")
+
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("ready_instructions_handler")]
+script = ExtResource("8_ls2cg")
+ready_instructions_handler = NodePath("ReadyInstructionsHandler")
+
+[node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
+script = ExtResource("9_7oi3y")
+instructions = [NodePath("Instruction_Turn")]
+periodical = true
+
+[node name="Instruction_Turn" type="Node" parent="Behavior/ReadyInstructionsHandler"]
+script = ExtResource("10_abjo7")
+duration = 0.3
+random_direction = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

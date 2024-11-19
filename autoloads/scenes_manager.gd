@@ -63,7 +63,7 @@ func add_scene(scene_path : String, scene_type : SceneType, coordinates : Vector
 	
 	match scene_type:
 		SceneType.WORLD:
-			print("Cannot Load WORLD from here")
+			push_error("Cannot Load WORLD from here")
 		SceneType.ENTITY:
 			var scene : Node2D = load(scene_path).instantiate()
 			final_position.x += GlobalConstants.TILES_SIZE / 2

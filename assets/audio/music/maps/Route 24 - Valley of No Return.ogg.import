@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbk6avcvwdxa8"
+path="res://.godot/imported/Route 24 - Valley of No Return.ogg-cf9f7f81ad6cbc51ada628f685642493.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/maps/Route 24 - Valley of No Return.ogg"
+dest_files=["res://.godot/imported/Route 24 - Valley of No Return.ogg-cf9f7f81ad6cbc51ada628f685642493.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://fhjvsl8pntk7"]
+[gd_scene load_steps=4 format=4 uid="uid://nqcytn60bdp7"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_3l01u"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_pxwuo"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt1qdm67254y1"
+path="res://.godot/imported/Route 9 - Gallia Cliffs.ogg-688f08179d5bbc1d51484e4d395b3fbd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/maps/Route 9 - Gallia Cliffs.ogg"
+dest_files=["res://.godot/imported/Route 9 - Gallia Cliffs.ogg-688f08179d5bbc1d51484e4d395b3fbd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

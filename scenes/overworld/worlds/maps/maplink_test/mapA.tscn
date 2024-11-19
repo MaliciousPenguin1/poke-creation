@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=4 uid="uid://i20sykq2yu7s"]
+[gd_scene load_steps=6 format=4 uid="uid://i20sykq2yu7s"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_47fc5"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_mba2s"]
 [ext_resource type="PackedScene" uid="uid://b37oig68gh8pl" path="res://scenes/overworld/worlds/chunk.tscn" id="3_qba1k"]
+[ext_resource type="PackedScene" uid="uid://byvp7rk6bwotk" path="res://scenes/overworld/npc/turning_npc.tscn" id="3_sownt"]
+[ext_resource type="AudioStream" uid="uid://bnt6x4dnwxjk0" path="res://assets/audio/music/maps/Town - Eldania.ogg" id="5_y5t8w"]
 
-[node name="mapA" node_paths=PackedStringArray("chunks") instance=ExtResource("1_47fc5")]
+[node name="mapA" node_paths=PackedStringArray("chunks", "bg_music_player") instance=ExtResource("1_47fc5")]
 chunks = [NodePath("Chunk")]
 id = 1
+bg_music_player = NodePath("AudioStreamPlayer")
 
 [node name="Ground" type="TileMapLayer" parent="Tilemap" index="0"]
 z_index = -2
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("2_mba2s")
 
+[node name="TurningNpc" parent="Entities" index="0" instance=ExtResource("3_sownt")]
+position = Vector2(24, 8)
+
 [node name="Chunk" parent="." index="3" instance=ExtResource("3_qba1k")]
 position = Vector2(16, 16)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("5_y5t8w")
+bus = &"Music"

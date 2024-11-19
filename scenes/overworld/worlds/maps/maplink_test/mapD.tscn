@@ -1,17 +1,23 @@
-[gd_scene load_steps=4 format=4 uid="uid://2agc6ndd5los"]
+[gd_scene load_steps=6 format=4 uid="uid://2agc6ndd5los"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_cpu4q"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_m66bx"]
+[ext_resource type="PackedScene" uid="uid://byvp7rk6bwotk" path="res://scenes/overworld/npc/turning_npc.tscn" id="3_jboxi"]
 [ext_resource type="PackedScene" uid="uid://b37oig68gh8pl" path="res://scenes/overworld/worlds/chunk.tscn" id="3_ltcrp"]
+[ext_resource type="AudioStream" uid="uid://cvq1qjxcsuyyy" path="res://assets/audio/music/maps/Town - Sylvan Town.ogg" id="5_yeg7i"]
 
-[node name="mapD" node_paths=PackedStringArray("chunks") instance=ExtResource("1_cpu4q")]
+[node name="mapD" node_paths=PackedStringArray("chunks", "bg_music_player") instance=ExtResource("1_cpu4q")]
 chunks = [NodePath("Chunk"), NodePath("Chunk2"), NodePath("Chunk3")]
 id = 4
+bg_music_player = NodePath("AudioStreamPlayer")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap" index="0"]
 z_index = -2
 tile_map_data = PackedByteArray("AAAAAAAAAAAEAAEAAAABAAAAAAAEAAEAAAACAAAAAAAEAAEAAAACAAEAAAAEAAEAAAABAAEAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAABAAIAAAAEAAEAAAACAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAACAAMAAAAEAAEAAAACAAQAAAAEAAEAAAABAAQAAAAEAAEAAAAAAAQAAAAEAAEAAAABAAUAAAAEAAEAAAAAAAUAAAAEAAEAAAACAAUAAAAEAAEAAAACAAYAAAAEAAEAAAABAAYAAAAEAAEAAAAAAAYAAAAEAAEAAAAAAAcAAAAEAAEAAAABAAcAAAAEAAEAAAACAAcAAAAEAAEAAAACAAgAAAAEAAEAAAABAAgAAAAEAAEAAAAAAAgAAAAEAAEAAAA=")
 tile_set = ExtResource("2_m66bx")
+
+[node name="TurningNpc" parent="Entities" index="0" instance=ExtResource("3_jboxi")]
+position = Vector2(40, 56)
 
 [node name="Chunk" parent="." index="3" instance=ExtResource("3_ltcrp")]
 position = Vector2(16, 16)
@@ -21,3 +27,7 @@ position = Vector2(16, 64)
 
 [node name="Chunk3" parent="." index="5" instance=ExtResource("3_ltcrp")]
 position = Vector2(16, 112)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("5_yeg7i")
+bus = &"Music"

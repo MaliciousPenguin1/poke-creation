@@ -1,23 +1,35 @@
-[gd_scene load_steps=4 format=4 uid="uid://dtwco6b2jr0dw"]
+[gd_scene load_steps=6 format=4 uid="uid://dtwco6b2jr0dw"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_3l01u"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_pxwuo"]
 [ext_resource type="PackedScene" uid="uid://b37oig68gh8pl" path="res://scenes/overworld/worlds/chunk.tscn" id="3_odbyl"]
+[ext_resource type="PackedScene" uid="uid://byvp7rk6bwotk" path="res://scenes/overworld/npc/turning_npc.tscn" id="3_xd4hx"]
+[ext_resource type="AudioStream" uid="uid://cm8jnhmqkr1ex" path="res://assets/audio/music/maps/Town - Tintignac.ogg" id="5_6nkxx"]
 
-[node name="mapE" node_paths=PackedStringArray("chunks") instance=ExtResource("1_3l01u")]
+[node name="mapE" node_paths=PackedStringArray("chunks", "bg_music_player") instance=ExtResource("1_3l01u")]
 chunks = [NodePath("Chunk"), NodePath("Chunk2"), NodePath("Chunk3"), NodePath("Chunk4"), NodePath("Chunk5"), NodePath("Chunk6")]
 id = 5
+bg_music_player = NodePath("AudioStreamPlayer")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap" index="0"]
 z_index = -2
 tile_map_data = PackedByteArray("AAAAAAAAAAACAAEAAAABAAAAAAACAAEAAAACAAAAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAAAAAIAAAACAAEAAAABAAIAAAACAAEAAAACAAIAAAACAAEAAAADAAAAAAACAAEAAAADAAEAAAACAAEAAAADAAIAAAACAAEAAAAEAAIAAAACAAEAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAFAAAAAAACAAEAAAAFAAEAAAACAAEAAAAFAAIAAAACAAEAAAAAAAMAAAACAAEAAAABAAMAAAACAAEAAAACAAMAAAACAAEAAAADAAMAAAACAAEAAAAEAAMAAAACAAEAAAAFAAMAAAACAAEAAAAFAAQAAAACAAEAAAAEAAQAAAACAAEAAAADAAQAAAACAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAACAAEAAAAAAAUAAAACAAEAAAABAAUAAAACAAEAAAACAAUAAAACAAEAAAADAAUAAAACAAEAAAAEAAUAAAACAAEAAAAFAAUAAAACAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAHAAEAAAACAAEAAAAGAAEAAAACAAEAAAAGAAIAAAACAAEAAAAHAAIAAAACAAEAAAAIAAIAAAACAAEAAAAIAAMAAAACAAEAAAAHAAMAAAACAAEAAAAGAAMAAAACAAEAAAAGAAQAAAACAAEAAAAHAAQAAAACAAEAAAAIAAQAAAACAAEAAAAIAAUAAAACAAEAAAAHAAUAAAACAAEAAAAGAAUAAAACAAEAAAA=")
 tile_set = ExtResource("2_pxwuo")
 
+[node name="TurningNpc" parent="Entities" index="0" instance=ExtResource("3_xd4hx")]
+position = Vector2(8, 8)
+
+[node name="TurningNpc2" parent="Entities" index="1" instance=ExtResource("3_xd4hx")]
+position = Vector2(104, 56)
+
+[node name="TurningNpc3" parent="Entities" index="2" instance=ExtResource("3_xd4hx")]
+position = Vector2(104, 8)
+
 [node name="Chunk" parent="." index="3" instance=ExtResource("3_odbyl")]
 position = Vector2(16, 16)
 
 [node name="Chunk2" parent="." index="4" instance=ExtResource("3_odbyl")]
-position = Vector2(15, 64)
+position = Vector2(16, 64)
 
 [node name="Chunk3" parent="." index="5" instance=ExtResource("3_odbyl")]
 position = Vector2(64, 16)
@@ -30,3 +42,7 @@ position = Vector2(112, 16)
 
 [node name="Chunk6" parent="." index="8" instance=ExtResource("3_odbyl")]
 position = Vector2(112, 64)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+stream = ExtResource("5_6nkxx")
+bus = &"Music"

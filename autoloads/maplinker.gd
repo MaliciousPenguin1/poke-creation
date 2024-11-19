@@ -85,12 +85,15 @@ func refresh_chunks(chunk : Chunk) -> void:
 func activate_chunk(chunk : Chunk) -> void:
 	chunk.need_to_process = true
 	for entity in LOADED_CHUNKS[chunk][1].keys():
-		print("REACTIVATING ENTITY ", entity)
-		entity.set_process_mode(0) 
+		entity.set_process_mode(0)
 
 
 func deactivate_chunk(chunk : Chunk) -> void:
 	chunk.need_to_process = false
 	for entity in LOADED_CHUNKS[chunk][1].keys():
-		print("STOPPING ENTITY ", entity)
-		entity.set_process_mode(4) 
+		entity.set_process_mode(4)
+
+
+func force_chunk_activation(chunks : Array[Chunk]) -> void:
+	for chunk in chunks:
+		activate_chunk(chunk)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm8jnhmqkr1ex"
+path="res://.godot/imported/Town - Tintignac.ogg-77d37f987f80b312d0f65264055831a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/maps/Town - Tintignac.ogg"
+dest_files=["res://.godot/imported/Town - Tintignac.ogg-77d37f987f80b312d0f65264055831a4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

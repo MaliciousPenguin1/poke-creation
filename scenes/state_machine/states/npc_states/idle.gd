@@ -11,5 +11,6 @@ func enter(_message : Dictionary = {}) -> void:
 	super()
 	callback = _message["callback"] if _message.has("callback") else null
 	if _message.has("duration"):
-		await get_tree().create_timer(_message["duration"], false).timeout
+		await create_tween().tween_interval(_message["duration"]).finished
+		#await get_tree().create_timer(_message["duration"], false).timeout
 		_on_timer_timeout()
