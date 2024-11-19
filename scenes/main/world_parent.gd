@@ -11,8 +11,10 @@ func _process(_delta : float) -> void:
 	var scene_name : String
 	var scene : Resource
 	var instanciated_scene : Node2D
+	var need_to_update_chunks : bool = false
 
 	for loading_map_id in Maplinker.BEING_LOADED_MAP_IDS.keys():
+		print(Maplinker.BEING_LOADED_MAP_IDS)
 		scene_name = Maplinker.get_scene_resource_name(loading_map_id)
 		status = ResourceLoader.load_threaded_get_status(scene_name)
 
@@ -24,3 +26,7 @@ func _process(_delta : float) -> void:
 				instanciated_scene = scene.instantiate()
 				ScenesManager.place_the_loaded_map_in_the_world(instanciated_scene, Maplinker.BEING_LOADED_MAP_IDS[loading_map_id])
 				Maplinker.BEING_LOADED_MAP_IDS.erase(loading_map_id)
+				need_to_update_chunks = true
+		
+		if need_to_update_chunks:
+			Maplinker.refresh_chunks(current_chunk)

@@ -427,7 +427,7 @@ frame_progress = 0.896308
 visible = false
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_k0jsu")
-animation = &"IdleDown"
+animation = &"WalkLeft"
 
 [node name="Moveable" type="Node" parent="."]
 script = ExtResource("7_dk5s6")

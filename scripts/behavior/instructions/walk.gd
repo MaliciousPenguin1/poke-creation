@@ -12,7 +12,7 @@ func consume(_object_to_instruct) -> void:
 	
 	if random_direction:
 		need_to_collide_if_cant_move = false
-		callback_in_case_of_collision = consume
+		callback_in_case_of_collision = consume.bind(_object_to_instruct)
 		direction = [Vector2i(0,-1), Vector2i(0,1), Vector2i(-1, 0), Vector2i(1, 0)][randi_range(0, 3)]
 
 	if _object_to_instruct.facing_direction != direction:

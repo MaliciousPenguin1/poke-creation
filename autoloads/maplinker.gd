@@ -34,6 +34,15 @@ var DATA : Dictionary = {
 	],
 	11: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_f_4_4.tscn", 
 	[]
+	],
+	15: ["res://scenes/overworld/worlds/maps/mapp_link_stress_test_real_condition/stess_test_a.tscn", 
+	[[16, Vector2i(1, 0)]]
+	],
+	16: ["res://scenes/overworld/worlds/maps/mapp_link_stress_test_real_condition/stress_test_b.tscn", 
+	[[15, Vector2i(-1, 0)], [17, Vector2i(0, -2)]]
+	],
+	17: ["res://scenes/overworld/worlds/maps/mapp_link_stress_test_real_condition/stress_test_c.tscn", 
+	[[16, Vector2i(0, 2)]]
 	]
 }
 var LOADED_MAP_IDS : Array[int] = []
