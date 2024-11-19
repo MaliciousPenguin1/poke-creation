@@ -27,7 +27,6 @@ func set_sprite() -> void:
 	
 	
 func _ready() -> void:
-	super()
 	player_name = "Aranel"
 	trainer_id = "%05d" % randi_range(0, GlobalConstants.MAX_TRAINER_ID)
 	gender = GlobalConstants.PlayerGender.MALE

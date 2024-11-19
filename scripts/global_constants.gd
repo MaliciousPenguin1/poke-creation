@@ -19,7 +19,7 @@ const DELAY_BEFORE_WALKING : float = 0.2
 ##The Camera zoom
 const CAMERA_ZOOM : int = 2
 ##Chunk size
-const CHUNK_SIZE : int = 3
+const CHUNK_SIZE : int = 4
 ##NB of neighbour chunks to render
 const CHUNK_RENDREING_DISTANCE : int = 1
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/overworld/worlds/chunk.gd" id="1_vuvxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4gj6"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [node name="Chunk" type="Area2D"]
 collision_layer = 256
@@ -11,5 +11,5 @@ collision_mask = 3
 script = ExtResource("1_vuvxq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_c4gj6")

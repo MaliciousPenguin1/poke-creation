@@ -10,17 +10,29 @@ enum SceneType {WORLD, UI, ENTITY}
 @onready var main : Main = get_tree().root.get_child(-1)
 
 
-func load_map(map_id : int, pos : Vector2i = Vector2i(0, 0)) -> void:
+# Loads the given map and instanciates it in this frame
+func load_map_instantly(map_id : int, pos : Vector2i = Vector2i(0, 0)) -> void:
 	var scene : Node2D = load(Maplinker.get_scene_resource_name(map_id)).instantiate()
+	place_the_loaded_map_in_the_world(scene, pos)
+
+
+# Loads the given map asynchronously 
+func load_map_asynch(map_id : int, pos : Vector2i = Vector2i(0, 0)):
+	ResourceLoader.load_threaded_request(Maplinker.get_scene_resource_name(map_id))
+	Maplinker.register_being_loaded(map_id, pos)
+
+
+# Places a loaded map inside the WorldParent Node
+func place_the_loaded_map_in_the_world(scene : Node2D, pos : Vector2i) -> void:
 	scene.global_position = pos
 	for chunk in scene.chunks:
 		Maplinker.register_chunk(chunk)
 	main.world_parent.add_child(scene)
 	scene.owner = main.world_parent
-	Maplinker.register_loaded(map_id)
+	Maplinker.register_loaded(scene.id)
 
 
-# Unloads every map which isn' tthe neighbout of the given map
+# Unloads every map which isn' the neighbour of the given map
 func unload_unnecessary_maps(map_id : int) -> void:
 	var neighbour_ids : Array = Maplinker.get_neighbours_ids(map_id)
 	var currently_loaded_map_ids : Array = Maplinker.get_currently_loaded_map_ids().duplicate()
@@ -48,13 +60,14 @@ func add_map_scene_neighbours(map_id : int, original_map_coordinates : Vector2i)
 		current_neighbour_id = neighbour_data[0]
 		current_neighbour_offset = neighbour_data[1]
 		if !Maplinker.is_already_loaded(current_neighbour_id):
-			load_map(current_neighbour_id, original_map_coordinates + GlobalConstants.TILES_SIZE*GlobalConstants.CHUNK_SIZE*current_neighbour_offset)
+			#load_map(current_neighbour_id, original_map_coordinates + GlobalConstants.TILES_SIZE*GlobalConstants.CHUNK_SIZE*current_neighbour_offset)
+			load_map_asynch(current_neighbour_id, original_map_coordinates + GlobalConstants.TILES_SIZE*GlobalConstants.CHUNK_SIZE*current_neighbour_offset)
 
 
 # Loads a new map inside the world and unloads every map which isnt connected to this map
 func add_new_map_scene(map_id : int) -> void:
 	unload_unnecessary_maps(map_id)
-	load_map(map_id)
+	load_map_instantly(map_id)
 
 
 ##Adds a scene to the main one.

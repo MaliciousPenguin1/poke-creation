@@ -16,11 +16,30 @@ var DATA : Dictionary = {
 	],
 	5: ["res://scenes/overworld/worlds/maps/maplink_test/mapE.tscn", 
 	[[3, Vector2i(0, -3)], [4, Vector2i(3, -3)]]
+	],
+	6: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_a_4_4.tscn", 
+	[[7, Vector2i(2, 0)]]
+	],
+	7: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_b_4_4.tscn", 
+	[[6, Vector2i(-2, 0)], [8, Vector2i(2, 0)]]
+	],
+	8: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_d_4_4.tscn", 
+	[[7, Vector2i(-2, 0)]]
+	],
+	9: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_c_4_4.tscn", 
+	[[7, Vector2i(-2, 0)]]
+	],
+	10: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_e_4_4.tscn", 
+	[]
+	],
+	11: ["res://scenes/overworld/worlds/maps/maplink_stress_test/map_f_4_4.tscn", 
+	[]
 	]
 }
 var LOADED_MAP_IDS : Array[int] = []
-var LOADED_CHUNKS : Dictionary = {
-}
+var LOADED_CHUNKS : Dictionary = {}
+var BEING_LOADED_MAP_IDS : Dictionary = {}
+
 
 func get_neighbours_data(id : int) -> Array:
 	return DATA[id][1]
@@ -97,3 +116,11 @@ func deactivate_chunk(chunk : Chunk) -> void:
 func force_chunk_activation(chunks : Array[Chunk]) -> void:
 	for chunk in chunks:
 		activate_chunk(chunk)
+
+
+func register_being_loaded(id : int, pos : Vector2i) -> void:
+	BEING_LOADED_MAP_IDS[id] = pos
+
+
+func unregister_being_loaded(id : int) -> void:
+	BEING_LOADED_MAP_IDS.erase(id)

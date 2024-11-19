@@ -201,7 +201,6 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Professor" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast", "state_machine")]
-visible = false
 y_sort_enabled = true
 collision_mask = 27
 script = ExtResource("1_2o0ja")

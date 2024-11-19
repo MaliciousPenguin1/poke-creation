@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=4 uid="uid://v13bk1snrk8h"]
+
+[ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_18e2m"]
+[ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_p23sc"]
+[ext_resource type="PackedScene" uid="uid://byvp7rk6bwotk" path="res://scenes/overworld/npc/turning_npc.tscn" id="3_roeoo"]
+[ext_resource type="PackedScene" uid="uid://b37oig68gh8pl" path="res://scenes/overworld/worlds/chunk.tscn" id="3_yolak"]
+
+[node name="mapE44" node_paths=PackedStringArray("chunks") instance=ExtResource("1_18e2m")]
+chunks = [NodePath("Chunk"), NodePath("Chunk2"), NodePath("Chunk3"), NodePath("Chunk4"), NodePath("Chunk5"), NodePath("Chunk6")]
+id = 10
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAABAAIAAAACAAAAAAACAAIAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAACAAMAAAACAAAAAAABAAMAAAACAAAAAAAAAAMAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAFAAEAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAAFAAIAAAACAAAAAAAGAAIAAAACAAAAAAAHAAIAAAACAAAAAAAHAAMAAAACAAAAAAAGAAMAAAACAAAAAAAFAAMAAAACAAAAAAAEAAMAAAACAAAAAAAIAAMAAAACAAAAAAAIAAIAAAACAAAAAAAIAAEAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAJAAEAAAACAAAAAAAJAAIAAAACAAAAAAAJAAMAAAACAAAAAAAKAAMAAAACAAAAAAAKAAIAAAACAAAAAAAKAAEAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAALAAEAAAACAAAAAAALAAIAAAACAAAAAAALAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAABAAcAAAACAAAAAAABAAYAAAACAAAAAAABAAUAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAACAAUAAAACAAAAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAADAAcAAAACAAAAAAADAAYAAAACAAAAAAADAAUAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAACAAAAAAAHAAQAAAACAAAAAAAHAAUAAAACAAAAAAAGAAUAAAACAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAAAAAAEAAYAAAACAAAAAAAEAAUAAAACAAAAAAAEAAcAAAACAAAAAAAFAAcAAAACAAAAAAAGAAcAAAACAAAAAAAGAAYAAAACAAAAAAAHAAYAAAACAAAAAAAHAAcAAAACAAAAAAAIAAYAAAACAAAAAAAIAAUAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAKAAUAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAIAAcAAAACAAAAAAAJAAcAAAACAAAAAAAKAAcAAAACAAAAAAAKAAYAAAACAAAAAAALAAUAAAACAAAAAAALAAYAAAACAAAAAAALAAcAAAACAAAAAAA=")
+tile_set = ExtResource("2_p23sc")
+
+[node name="TurningNpc" parent="Entities" index="0" instance=ExtResource("3_roeoo")]
+position = Vector2(8, 8)
+
+[node name="TurningNpc2" parent="Entities" index="1" instance=ExtResource("3_roeoo")]
+position = Vector2(24, 8)
+
+[node name="TurningNpc3" parent="Entities" index="2" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 8)
+
+[node name="TurningNpc4" parent="Entities" index="3" instance=ExtResource("3_roeoo")]
+position = Vector2(56, 8)
+
+[node name="TurningNpc5" parent="Entities" index="4" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 8)
+
+[node name="TurningNpc6" parent="Entities" index="5" instance=ExtResource("3_roeoo")]
+position = Vector2(24, 24)
+
+[node name="TurningNpc7" parent="Entities" index="6" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 24)
+
+[node name="TurningNpc8" parent="Entities" index="7" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 40)
+
+[node name="TurningNpc9" parent="Entities" index="8" instance=ExtResource("3_roeoo")]
+position = Vector2(24, 56)
+
+[node name="TurningNpc10" parent="Entities" index="9" instance=ExtResource("3_roeoo")]
+position = Vector2(56, 56)
+
+[node name="TurningNpc11" parent="Entities" index="10" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 56)
+
+[node name="TurningNpc12" parent="Entities" index="11" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 72)
+
+[node name="TurningNpc13" parent="Entities" index="12" instance=ExtResource("3_roeoo")]
+position = Vector2(88, 72)
+
+[node name="TurningNpc14" parent="Entities" index="13" instance=ExtResource("3_roeoo")]
+position = Vector2(88, 88)
+
+[node name="TurningNpc15" parent="Entities" index="14" instance=ExtResource("3_roeoo")]
+position = Vector2(8, 88)
+
+[node name="TurningNpc16" parent="Entities" index="15" instance=ExtResource("3_roeoo")]
+position = Vector2(88, 8)
+
+[node name="TurningNpc17" parent="Entities" index="16" instance=ExtResource("3_roeoo")]
+position = Vector2(104, 8)
+
+[node name="TurningNpc18" parent="Entities" index="17" instance=ExtResource("3_roeoo")]
+position = Vector2(120, 8)
+
+[node name="TurningNpc19" parent="Entities" index="18" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 8)
+
+[node name="TurningNpc20" parent="Entities" index="19" instance=ExtResource("3_roeoo")]
+position = Vector2(152, 8)
+
+[node name="TurningNpc21" parent="Entities" index="20" instance=ExtResource("3_roeoo")]
+position = Vector2(168, 8)
+
+[node name="TurningNpc22" parent="Entities" index="21" instance=ExtResource("3_roeoo")]
+position = Vector2(168, 24)
+
+[node name="TurningNpc23" parent="Entities" index="22" instance=ExtResource("3_roeoo")]
+position = Vector2(168, 40)
+
+[node name="TurningNpc24" parent="Entities" index="23" instance=ExtResource("3_roeoo")]
+position = Vector2(168, 56)
+
+[node name="TurningNpc25" parent="Entities" index="24" instance=ExtResource("3_roeoo")]
+position = Vector2(168, 72)
+
+[node name="TurningNpc26" parent="Entities" index="25" instance=ExtResource("3_roeoo")]
+position = Vector2(152, 72)
+
+[node name="TurningNpc27" parent="Entities" index="26" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 72)
+
+[node name="TurningNpc28" parent="Entities" index="27" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 56)
+
+[node name="TurningNpc29" parent="Entities" index="28" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 24)
+
+[node name="TurningNpc30" parent="Entities" index="29" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 104)
+
+[node name="TurningNpc31" parent="Entities" index="30" instance=ExtResource("3_roeoo")]
+position = Vector2(136, 120)
+
+[node name="TurningNpc32" parent="Entities" index="31" instance=ExtResource("3_roeoo")]
+position = Vector2(120, 120)
+
+[node name="TurningNpc33" parent="Entities" index="32" instance=ExtResource("3_roeoo")]
+position = Vector2(104, 120)
+
+[node name="TurningNpc34" parent="Entities" index="33" instance=ExtResource("3_roeoo")]
+position = Vector2(88, 120)
+
+[node name="TurningNpc35" parent="Entities" index="34" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 120)
+
+[node name="TurningNpc36" parent="Entities" index="35" instance=ExtResource("3_roeoo")]
+position = Vector2(56, 120)
+
+[node name="TurningNpc37" parent="Entities" index="36" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 120)
+
+[node name="TurningNpc38" parent="Entities" index="37" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 104)
+
+[node name="TurningNpc39" parent="Entities" index="38" instance=ExtResource("3_roeoo")]
+position = Vector2(56, 104)
+
+[node name="TurningNpc40" parent="Entities" index="39" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 104)
+
+[node name="TurningNpc41" parent="Entities" index="40" instance=ExtResource("3_roeoo")]
+position = Vector2(72, 88)
+
+[node name="TurningNpc42" parent="Entities" index="41" instance=ExtResource("3_roeoo")]
+position = Vector2(56, 88)
+
+[node name="TurningNpc43" parent="Entities" index="42" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 88)
+
+[node name="TurningNpc44" parent="Entities" index="43" instance=ExtResource("3_roeoo")]
+position = Vector2(40, 72)
+
+[node name="TurningNpc45" parent="Entities" index="44" instance=ExtResource("3_roeoo")]
+position = Vector2(120, 72)
+
+[node name="TurningNpc46" parent="Entities" index="45" instance=ExtResource("3_roeoo")]
+position = Vector2(104, 72)
+
+[node name="TurningNpc47" parent="Entities" index="46" instance=ExtResource("3_roeoo")]
+position = Vector2(104, 56)
+
+[node name="TurningNpc48" parent="Entities" index="47" instance=ExtResource("3_roeoo")]
+position = Vector2(104, 40)
+
+[node name="TurningNpc49" parent="Entities" index="48" instance=ExtResource("3_roeoo")]
+position = Vector2(120, 40)
+
+[node name="Chunk" parent="." index="3" instance=ExtResource("3_yolak")]
+position = Vector2(16, 16)
+
+[node name="Chunk2" parent="." index="4" instance=ExtResource("3_yolak")]
+position = Vector2(16, 80)
+
+[node name="Chunk3" parent="." index="5" instance=ExtResource("3_yolak")]
+position = Vector2(80, 16)
+
+[node name="Chunk4" parent="." index="6" instance=ExtResource("3_yolak")]
+position = Vector2(80, 80)
+
+[node name="Chunk5" parent="." index="7" instance=ExtResource("3_yolak")]
+position = Vector2(144, 16)
+
+[node name="Chunk6" parent="." index="8" instance=ExtResource("3_yolak")]
+position = Vector2(144, 80)

@@ -13,8 +13,6 @@ class_name Map
 @export var bg_music_player : AudioStreamPlayer
 ##The name of the map (or its key in a csv translation file).
 @export var map_name : String = "Placeholder"
-##The bgm of this map.
-@export var bgm : AudioStream
 ##Wether the player can fly here using the "Fly" HM or something equivalent.
 @export var can_fly_here : bool = false
 ##The coordinates of the position where the player ends up after flying to this map.
@@ -63,7 +61,6 @@ func _on_chunk_entered(body : Node2D, chunk : Chunk) -> void:
 	elif body is Entity:
 		Maplinker.register_entity_in_chunk(chunk, body)
 		if !chunk.need_to_process and (owner.current_map == null or body.original_map_id != owner.current_map.id):
-			print("STOPPING NPC ", body)
 			body.set_process_mode(4)
 
 
