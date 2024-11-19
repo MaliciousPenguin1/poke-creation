@@ -41,7 +41,8 @@ func initiate_collision(time_to_wait : float = DEFAULT_MOVEMENT_DURATION) -> voi
 	if owner is Player:
 		owner.play_colliding_sound()
 
-	await get_tree().create_timer(time_to_wait, false).timeout
+	#await get_tree().create_timer(time_to_wait, false).timeout
+	await create_tween().tween_interval(time_to_wait).finished
 	owner.finished_bumping.emit()
 
 
