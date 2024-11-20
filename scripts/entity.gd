@@ -12,7 +12,3 @@ signal finished_bumping
 
 
 var facing_direction : Vector2i = Vector2i(0, 1)
-
-
-func _ready() -> void:
-	pass

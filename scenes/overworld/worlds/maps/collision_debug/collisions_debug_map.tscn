@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bry4i2nkeugq3"]
+[gd_scene load_steps=8 format=4 uid="uid://bry4i2nkeugq3"]
 
 [ext_resource type="PackedScene" uid="uid://bh36f4xifmbpe" path="res://scenes/overworld/worlds/maps/default_map.tscn" id="1_vdesf"]
 [ext_resource type="TileSet" uid="uid://isw2m2qowklg" path="res://scenes/overworld/worlds/maps/tilesets/default_tileset.tres" id="2_rufci"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bnt6x4dnwxjk0" path="res://assets/audio/music/maps/Town - Eldania.ogg" id="3_jmssy"]
 [ext_resource type="PackedScene" uid="uid://dsk2qf0q7dj2y" path="res://scenes/overworld/worlds/maps/collision_debug/npc2.tscn" id="4_bc8e3"]
 [ext_resource type="PackedScene" uid="uid://bwo1cexs6vrj1" path="res://scenes/overworld/npc/professor.tscn" id="5_h38ml"]
+[ext_resource type="PackedScene" uid="uid://bbog2e8ft55l5" path="res://scenes/overworld/npc/condition_guy.tscn" id="6_j6u35"]
 
 [node name="CollisionsDebugMap" instance=ExtResource("1_vdesf")]
 
@@ -27,6 +28,9 @@ position = Vector2(104, 136)
 
 [node name="Professor" parent="Entities" index="2" instance=ExtResource("5_h38ml")]
 position = Vector2(136, 104)
+
+[node name="ConditionGuy" parent="Entities" index="3" instance=ExtResource("6_j6u35")]
+position = Vector2(152, 152)
 
 [node name="VisibleOnScreenEnabler2D" parent="." index="2"]
 position = Vector2(168, 136)
