@@ -16,7 +16,25 @@ func process(_delta: float) -> void:
 		if owner.moveable_component.can_walk_towards(target_position):
 			player.moveable_component.move(current_dir, target_position)
 		else:
-			state_machine.transition_to("PlayerStateColliding", {"dir" : current_dir})
+			if current_dir.x*current_dir.y != 0: #diagonal collision
+				var projections : Array[Vector2i] = [Vector2i(current_dir.x, 0), Vector2i(0, current_dir.y)]
+				var need_to_collide : bool = true
+				
+				for new_dir in projections:
+					target_position = Vector2i(player.global_position) + (new_dir * GlobalConstants.TILES_SIZE)
+					player.raycast.target_position = new_dir * GlobalConstants.TILES_SIZE
+					player.raycast.force_raycast_update()
+					
+					if owner.moveable_component.can_walk_towards(target_position):
+						player.moveable_component.turn(new_dir)
+						state_machine.transition_to("PlayerStateWalk", {"dir" : new_dir})
+						need_to_collide = false
+						break
+					
+					if need_to_collide:
+						state_machine.transition_to("PlayerStateColliding", {"dir" : current_dir})
+			else:
+				state_machine.transition_to("PlayerStateColliding", {"dir" : current_dir})
 
 
 func enter(_message : Dictionary = {}) -> void:
