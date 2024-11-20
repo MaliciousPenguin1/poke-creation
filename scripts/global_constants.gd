@@ -22,6 +22,8 @@ const CAMERA_ZOOM : int = 2
 const CHUNK_SIZE : int = 40
 ##NB of neighbour chunks to render
 const CHUNK_RENDREING_DISTANCE : int = 1
+##NB of frames to wait between the loading of two map
+const WAIT_BETWEEN_TWO_MAP_LOADS = 7
 
 #======================================================
 #POKEMON

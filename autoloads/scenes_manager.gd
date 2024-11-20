@@ -24,12 +24,14 @@ func load_map_asynch(map_id : int, pos : Vector2i = Vector2i(0, 0)):
 
 # Places a loaded map inside the WorldParent Node
 func place_the_loaded_map_in_the_world(scene : Node2D, pos : Vector2i) -> void:
+	var a = Time.get_ticks_msec()
 	scene.global_position = pos
 	for chunk in scene.chunks:
 		Maplinker.register_chunk(chunk)
 	main.world_parent.add_child(scene)
 	scene.owner = main.world_parent
 	Maplinker.register_loaded(scene.id)
+	print(Time.get_ticks_msec() - a)
 
 
 # Unloads every map which isn' the neighbour of the given map
@@ -45,6 +47,8 @@ func unload_unnecessary_maps(map_id : int) -> void:
 				Maplinker.unregister_chunk(chunk)
 			for entity in scene_to_free.entities.get_children():
 				Maplinker.remove_entity_from_chunk(entity)
+				if entity.moveable_component != null and entity.moveable_component.is_moving:
+					GlobalVar.reserved_tiles.erase(entity.moveable_component.target_tile)
 			scene_to_free.queue_free()
 			Maplinker.register_unloaded(loaded_map_id)
 
