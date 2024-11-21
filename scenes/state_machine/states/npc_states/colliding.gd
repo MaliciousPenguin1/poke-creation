@@ -8,7 +8,7 @@ var target_direction : Vector2i
 
 func _ready() -> void:
 	await super()
-	owner.finished_bumping.connect(_on_finished_bumping)
+	owner_object.finished_bumping.connect(_on_finished_bumping)
 
 
 func enter(_message : Dictionary = {}) -> void:
@@ -16,11 +16,11 @@ func enter(_message : Dictionary = {}) -> void:
 	callback = _message["callback"] if _message.has("callback") else null
 	target_position = _message["target_position"]
 	target_direction = _message["target_direction"]
-	owner.moveable_component.initiate_collision()
+	owner_object.moveable_component.initiate_collision()
 
 
 func _on_finished_bumping() -> void:
-	if owner.moveable_component.can_walk_towards(target_position):
+	if owner_object.moveable_component.can_walk_towards(target_position):
 		state_machine.transition_to("NpcStateWalk", {"direction" : target_direction, "callback" : callback})
 	else:
-		owner.moveable_component.initiate_collision()
+		owner_object.moveable_component.initiate_collision()

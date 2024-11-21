@@ -17,9 +17,9 @@ func enter(_message : Dictionary = {}) -> void:
 		need_to_collide_if_cant_move = true
 	direction = _message["direction"]
 
-	var target_position : Vector2i = Vector2i(owner.global_position) + (direction * GlobalConstants.TILES_SIZE)
-	if owner.moveable_component.can_walk_towards(target_position):
-		owner.moveable_component.move(direction, target_position)
+	var target_position : Vector2i = Vector2i(owner_object.global_position) + (direction * GlobalConstants.TILES_SIZE)
+	if owner_object.moveable_component.can_walk_towards(target_position):
+		owner_object.moveable_component.move(direction, target_position)
 	else:
 		if need_to_collide_if_cant_move:
 			state_machine.transition_to("NpcStateColliding", {"target_position" : target_position, "target_direction" : direction, "callback" : callback})

@@ -18,20 +18,23 @@ const DIRECTIONS : Dictionary = {
 
 
 var callback
+var owner_object : Entity
 
 
 func _ready() -> void:
 	await owner.ready
+	owner_object = owner as Entity
+	assert(owner_object != null, "The owner of this state isn't of type \"Entity\".")
 
 
 func enter(_message : Dictionary = {}) -> void:
 	if animation_name:
-		if owner.sprite.animation != animation_name + DIRECTIONS[owner.facing_direction]:
-			owner.sprite.play(animation_name + DIRECTIONS[owner.facing_direction])
+		if owner_object.sprite.animation != animation_name + DIRECTIONS[owner_object.facing_direction]:
+			owner_object.sprite.play(animation_name + DIRECTIONS[owner_object.facing_direction])
 
-	if owner.raycast != null:
-		owner.raycast.target_position = owner.facing_direction * GlobalConstants.TILES_SIZE
-		owner.raycast.force_raycast_update()
+	if owner_object.raycast != null:
+		owner_object.raycast.target_position = owner_object.facing_direction * GlobalConstants.TILES_SIZE
+		owner_object.raycast.force_raycast_update()
 	
-	if owner.trainer_raycast != null:
-		owner.trainer_raycast.target_position = owner.facing_direction * owner.trainer_detection_range*GlobalConstants.TILES_SIZE
+	if owner_object.trainer_raycast != null:
+		owner_object.trainer_raycast.target_position = owner_object.facing_direction * owner_object.trainer_detection_range*GlobalConstants.TILES_SIZE

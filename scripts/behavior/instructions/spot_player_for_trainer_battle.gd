@@ -2,7 +2,7 @@ extends ParallelInstruction
 class_name SpotPlayerForBattle
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	_object_to_instruct.trainer_raycast.force_raycast_update()
 	if _object_to_instruct.trainer_raycast.is_colliding():
 		if _object_to_instruct.trainer_raycast.get_collider() is Player:

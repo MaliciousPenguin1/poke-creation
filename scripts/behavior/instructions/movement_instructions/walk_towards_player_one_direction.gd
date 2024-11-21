@@ -2,7 +2,7 @@ extends Instruction
 class_name InstructionWalkTowardPlayerOneDirection
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	var pos_difference : Vector2i = GlobalVar.player.global_position - _object_to_instruct.global_position
 	assert(pos_difference.x*pos_difference.y == 0, "The Entity need to face the Player before executing InstructionWalkTowardPlayerOneDirection")
 	
