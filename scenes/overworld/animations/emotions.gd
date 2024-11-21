@@ -5,13 +5,14 @@ extends Node2D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
+@export var offset : Vector2 = Vector2(0, -24)
+
+
 const DURATION : float = 0.8
 
 
 func _ready() -> void:
-	print(global_position)
-	global_position -= Vector2(0, 24)
-	print(global_position)
+	global_position += offset
 
 
 func play_emotion(emotion_name : String) -> void:

@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_2h51q"]
 [ext_resource type="Texture2D" uid="uid://ct4kt76uh241r" path="res://assets/graphics/overworld/characters/Peasant_f_0.png" id="7_i8bgp"]
 [ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="8_rovnx"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Movement Instructions/walk.gd" id="9_cgsf1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Wait Instructions/wait.gd" id="10_k2rk2"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/movement_instructions/walk.gd" id="9_cgsf1"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/wait_instructions/wait.gd" id="10_k2rk2"]
 [ext_resource type="Script" path="res://scripts/behavior/instructions/call_function.gd" id="11_sfgg1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Control Instructions/if.gd" id="12_ycf3q"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/control_instructions/if.gd" id="12_ycf3q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ptp"]
 atlas = ExtResource("7_i8bgp")

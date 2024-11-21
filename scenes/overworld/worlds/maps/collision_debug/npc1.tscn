@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_86fcg"]
 [ext_resource type="Texture2D" uid="uid://dxvsl8jsmr23r" path="res://assets/graphics/overworld/characters/Darkrai_Novice_f_0.png" id="7_rg8fm"]
 [ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="8_q4n0g"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Movement Instructions/walk.gd" id="9_cgsf1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Wait Instructions/wait.gd" id="10_k2rk2"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/movement_instructions/walk.gd" id="9_cgsf1"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/wait_instructions/wait.gd" id="10_k2rk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3g6t"]
 atlas = ExtResource("7_rg8fm")
