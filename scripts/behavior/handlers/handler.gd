@@ -10,7 +10,7 @@ class_name Handler
 var finished : bool = false
 var can_process : bool = true
 var current_instructions : Array[Instruction] = []
-var object_to_handle
+var object_to_handle : Entity
 
 
 signal need_to_interrupt_handlers
