@@ -8,11 +8,11 @@
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/colliding.gd" id="5_2ysek"]
 [ext_resource type="Texture2D" uid="uid://g5wciks6m8ik" path="res://assets/graphics/overworld/characters/High-Priest_Gildas.png" id="7_0k8ha"]
 [ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_2h51q"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Movement Instructions/turn.gd" id="8_4e1da"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/movement_instructions/turn.gd" id="8_4e1da"]
 [ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="8_rovnx"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Movement Instructions/walk.gd" id="9_cgsf1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Wait Instructions/wait.gd" id="10_k2rk2"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Control Instructions/repeat.gd" id="10_l7nd7"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/movement_instructions/walk.gd" id="9_cgsf1"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/wait_instructions/wait.gd" id="10_k2rk2"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/control_instructions/repeat.gd" id="10_l7nd7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mrawb"]
 atlas = ExtResource("7_0k8ha")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ceraaqss8evtu"]
+[gd_scene load_steps=35 format=3 uid="uid://ceraaqss8evtu"]
 
 [ext_resource type="Script" path="res://scenes/overworld/npc/condition_guy.gd" id="1_s0jov"]
 [ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="1_yg3ys"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ct4kt76uh241r" path="res://assets/graphics/overworld/characters/Peasant_f_0.png" id="7_i8bgp"]
 [ext_resource type="Script" path="res://scripts/behavior/handlers/process_instructions_handler.gd" id="9_0c3w7"]
 [ext_resource type="Script" path="res://scripts/behavior/instructions/spot_player_for_trainer_battle.gd" id="10_dowih"]
+[ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="11_xirsy"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/movement_instructions/turn.gd" id="13_qa8xw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ptp"]
 atlas = ExtResource("7_i8bgp")
@@ -234,8 +236,9 @@ animation = &"WalkUp"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w5x4o")
 
-[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("process_instructions_handler")]
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("ready_instructions_handler", "process_instructions_handler")]
 script = ExtResource("7_2h51q")
+ready_instructions_handler = NodePath("ReadyInstructionsHandler")
 process_instructions_handler = NodePath("ProcessInstructionsHandler")
 
 [node name="ProcessInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
@@ -244,6 +247,20 @@ instructions = [NodePath("SpotPlayerForBattle")]
 
 [node name="SpotPlayerForBattle" type="Node" parent="Behavior/ProcessInstructionsHandler"]
 script = ExtResource("10_dowih")
+
+[node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
+script = ExtResource("11_xirsy")
+instructions = [NodePath("TurnRight"), NodePath("TurnDown")]
+periodical = true
+wait_between_instructions = 0.4
+
+[node name="TurnRight" type="Node" parent="Behavior/ReadyInstructionsHandler"]
+script = ExtResource("13_qa8xw")
+direction = Vector2i(1, 0)
+
+[node name="TurnDown" type="Node" parent="Behavior/ReadyInstructionsHandler"]
+script = ExtResource("13_qa8xw")
+direction = Vector2i(0, 1)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 31
