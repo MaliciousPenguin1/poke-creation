@@ -1,9 +1,9 @@
 extends Instruction
-class_name Instruction_Walk
+class_name InstructionWalk
 
 
 @export var direction : Vector2i
-@export var random_direction : bool
+@export var random_direction : bool = false
 @export var need_to_collide_if_cant_move : bool = true #automatically set to false if random_direction
 
 

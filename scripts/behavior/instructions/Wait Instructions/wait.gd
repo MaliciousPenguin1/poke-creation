@@ -1,5 +1,5 @@
 extends Instruction
-class_name Instruction_Wait
+class_name InstructionWait
 
 
 @export var duration : float

@@ -28,6 +28,9 @@ func turn(direction : Vector2i) -> void:
 
 
 func finish_movement() -> void:
+	if owner is Player:
+		owner.movement_finished.emit()
+
 	is_moving = false
 	GlobalVar.reserved_tiles.erase(target_tile)
 	owner.state_machine.state.after_walk()

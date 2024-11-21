@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bbog2e8ft55l5"]
+[gd_scene load_steps=33 format=3 uid="uid://ceraaqss8evtu"]
 
 [ext_resource type="Script" path="res://scenes/overworld/npc/condition_guy.gd" id="1_s0jov"]
 [ext_resource type="Script" path="res://scripts/interactable_components/moveable.gd" id="1_yg3ys"]
@@ -8,11 +8,8 @@
 [ext_resource type="Script" path="res://scenes/state_machine/states/npc_states/colliding.gd" id="5_2ysek"]
 [ext_resource type="Script" path="res://scripts/behavior/behavior.gd" id="7_2h51q"]
 [ext_resource type="Texture2D" uid="uid://ct4kt76uh241r" path="res://assets/graphics/overworld/characters/Peasant_f_0.png" id="7_i8bgp"]
-[ext_resource type="Script" path="res://scripts/behavior/handlers/ready_instructions_handler.gd" id="8_rovnx"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Movement Instructions/walk.gd" id="9_cgsf1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Wait Instructions/wait.gd" id="10_k2rk2"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/call_function.gd" id="11_sfgg1"]
-[ext_resource type="Script" path="res://scripts/behavior/instructions/Control Instructions/if.gd" id="12_ycf3q"]
+[ext_resource type="Script" path="res://scripts/behavior/handlers/process_instructions_handler.gd" id="9_0c3w7"]
+[ext_resource type="Script" path="res://scripts/behavior/instructions/spot_player_for_trainer_battle.gd" id="10_dowih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ptp"]
 atlas = ExtResource("7_i8bgp")
@@ -200,7 +197,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5x4o"]
 size = Vector2(16, 16)
 
-[node name="ConditionGuy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast", "state_machine")]
+[node name="Trainer" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "moveable_component", "raycast", "state_machine", "trainer_raycast")]
 y_sort_enabled = true
 collision_mask = 27
 script = ExtResource("1_s0jov")
@@ -208,6 +205,8 @@ sprite = NodePath("AnimatedSprite2D")
 moveable_component = NodePath("Moveable")
 raycast = NodePath("RayCast2D")
 state_machine = NodePath("StateMachine")
+trainer_detection_range = 4
+trainer_raycast = NodePath("TrainerRayCast2D")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_oaiaq")]
 initial_state = NodePath("NpcStateIdle")
@@ -235,40 +234,19 @@ animation = &"WalkUp"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w5x4o")
 
-[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("ready_instructions_handler")]
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("process_instructions_handler")]
 script = ExtResource("7_2h51q")
-ready_instructions_handler = NodePath("ReadyInstructionsHandler")
+process_instructions_handler = NodePath("ProcessInstructionsHandler")
 
-[node name="ReadyInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
-script = ExtResource("8_rovnx")
-instructions = [NodePath("InstructionIf"), NodePath("Wait4")]
-periodical = true
+[node name="ProcessInstructionsHandler" type="Node" parent="Behavior" node_paths=PackedStringArray("instructions")]
+script = ExtResource("9_0c3w7")
+instructions = [NodePath("SpotPlayerForBattle")]
 
-[node name="Wait4" type="Node" parent="Behavior/ReadyInstructionsHandler"]
-script = ExtResource("10_k2rk2")
-duration = 4.0
-
-[node name="InstructionCallFuncHello" type="Node" parent="Behavior/ReadyInstructionsHandler"]
-script = ExtResource("11_sfgg1")
-func_name = "hello"
-
-[node name="InstructionIf" type="Node" parent="Behavior/ReadyInstructionsHandler" node_paths=PackedStringArray("instructions", "else_instructions")]
-script = ExtResource("12_ycf3q")
-condition_func = "cond"
-instructions = [NodePath("../InstructionCallFuncHello"), NodePath("../Instruction_WalkUp")]
-else_instructions = [NodePath("../InstructionCallFuncWorld"), NodePath("../Instruction_WalkDown")]
-
-[node name="InstructionCallFuncWorld" type="Node" parent="Behavior/ReadyInstructionsHandler"]
-script = ExtResource("11_sfgg1")
-func_name = "world"
-
-[node name="Instruction_WalkDown" type="Node" parent="Behavior/ReadyInstructionsHandler"]
-script = ExtResource("9_cgsf1")
-direction = Vector2i(0, 1)
-
-[node name="Instruction_WalkUp" type="Node" parent="Behavior/ReadyInstructionsHandler"]
-script = ExtResource("9_cgsf1")
-direction = Vector2i(0, -1)
+[node name="SpotPlayerForBattle" type="Node" parent="Behavior/ProcessInstructionsHandler"]
+script = ExtResource("10_dowih")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 31
+
+[node name="TrainerRayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2

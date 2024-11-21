@@ -13,6 +13,9 @@ var trainer_id : String
 var money : int
 
 
+signal movement_finished
+
+
 func set_sprite() -> void:
 	if sprite != null:
 		sprite.visible = false

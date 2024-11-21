@@ -1,0 +1,2 @@
+extends Instruction
+class_name ParallelInstruction
