@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxja63iywhhyo"]
+
+[ext_resource type="Texture2D" uid="uid://c21bggp6xfary" path="res://assets/graphics/emotions/emotions.png" id="1_3lc4a"]
+[ext_resource type="Script" path="res://scenes/overworld/animations/emotions.gd" id="1_c4vdr"]
+[ext_resource type="AudioStream" uid="uid://hj3nmtkdqjhe" path="res://assets/audio/se/Choose.WAV" id="3_ppdm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy22u"]
+atlas = ExtResource("1_3lc4a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs5kf"]
+atlas = ExtResource("1_3lc4a")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kedbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy22u")
+}],
+"loop": true,
+"name": &"exclamation",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs5kf")
+}],
+"loop": true,
+"name": &"interrogation",
+"speed": 1.0
+}]
+
+[node name="Emotions" type="Node2D"]
+script = ExtResource("1_c4vdr")
+
+[node name="emotion_sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+sprite_frames = SubResource("SpriteFrames_kedbu")
+animation = &"interrogation"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ppdm4")
+bus = &"Sounds"
