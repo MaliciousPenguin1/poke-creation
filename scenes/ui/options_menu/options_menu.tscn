@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2awgragbo3a7"]
+
+[ext_resource type="Texture2D" uid="uid://dlipewrfs2j07" path="res://assets/graphics/ui/options_menu/Options-frame_EN.png" id="1_w42od"]
+[ext_resource type="Texture2D" uid="uid://dkf0hh5s5k43a" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option banner_transparency.png" id="2_om5yg"]
+[ext_resource type="Texture2D" uid="uid://donidw12mnerw" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option banner.png" id="3_ybwxs"]
+[ext_resource type="Texture2D" uid="uid://c74nc3fsy8erc" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en1.png" id="4_7x78w"]
+[ext_resource type="Texture2D" uid="uid://dcgx732v7gtyh" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en2.png" id="5_87xqq"]
+[ext_resource type="Texture2D" uid="uid://ckoy36wusxn3n" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en3.png" id="6_m1op0"]
+[ext_resource type="Texture2D" uid="uid://c85vu7ehqda0i" path="res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en4.png" id="7_1ek88"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w42od")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="DisplaySoundButton" type="TextureButton" parent="CanvasLayer/Background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_om5yg")
+texture_pressed = ExtResource("3_ybwxs")
+texture_hover = ExtResource("3_ybwxs")
+texture_focused = ExtResource("3_ybwxs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background/VBoxContainer/DisplaySoundButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_7x78w")
+
+[node name="DifficultyButton" type="TextureButton" parent="CanvasLayer/Background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_om5yg")
+texture_pressed = ExtResource("3_ybwxs")
+texture_hover = ExtResource("3_ybwxs")
+texture_focused = ExtResource("3_ybwxs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background/VBoxContainer/DifficultyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_87xqq")
+
+[node name="LanguageButton" type="TextureButton" parent="CanvasLayer/Background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_om5yg")
+texture_pressed = ExtResource("3_ybwxs")
+texture_hover = ExtResource("3_ybwxs")
+texture_focused = ExtResource("3_ybwxs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background/VBoxContainer/LanguageButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_m1op0")
+
+[node name="ControlsButton" type="TextureButton" parent="CanvasLayer/Background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_om5yg")
+texture_pressed = ExtResource("3_ybwxs")
+texture_hover = ExtResource("3_ybwxs")
+texture_focused = ExtResource("3_ybwxs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background/VBoxContainer/ControlsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_1ek88")

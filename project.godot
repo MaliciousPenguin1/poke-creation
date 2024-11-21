@@ -98,9 +98,22 @@ cancel={
 [internationalization]
 
 locale/translation_remaps={
-"res://assets/graphics/ui/main_menu/main menu_text_en.png": PackedStringArray("res://assets/graphics/ui/main_menu/main menu_text_en.png:en", "res://assets/graphics/ui/main_menu/main menu_text_es.png:es", "res://assets/graphics/ui/main_menu/main menu_text_fr.png:fr")
+"res://assets/graphics/ui/main_menu/main menu_text_en.png": PackedStringArray("res://assets/graphics/ui/main_menu/main menu_text_en.png:en", "res://assets/graphics/ui/main_menu/main menu_text_es.png:es", "res://assets/graphics/ui/main_menu/main menu_text_fr.png:fr"),
+"res://assets/graphics/ui/options_menu/Options-frame_EN.png": PackedStringArray("res://assets/graphics/ui/options_menu/Options-frame_EN.png:fr", "res://assets/graphics/ui/options_menu/Options-frame_ES.png:es"),
+"res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_0_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_0_fr.png:fr", "res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_0_es.png:es"),
+"res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_1_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_1_fr.png:fr", "res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_1_es.png:es"),
+"res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_2_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_2_es.png:es", "res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_2_fr.png:fr"),
+"res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_4_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_4_es.png:es", "res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_4_fr.png:fr"),
+"res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_7_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_7_es.png:es", "res://assets/graphics/ui/options_menu/difficulty banners/Difficulty_banner_7_fr.png:fr"),
+"res://assets/graphics/ui/options_menu/language/Language_en.png": PackedStringArray("res://assets/graphics/ui/options_menu/language/Language_es.png:es", "res://assets/graphics/ui/options_menu/language/Language_fr.png:fr"),
+"res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en1.png": PackedStringArray("res://assets/graphics/ui/options_menu/sub_menu/sub_option text_es1.png:es", "res://assets/graphics/ui/options_menu/sub_menu/sub_option text_fr1.png:fr"),
+"res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en2.png": PackedStringArray("res://assets/graphics/ui/options_menu/sub_menu/sub_option text_es2.png:es", "res://assets/graphics/ui/options_menu/sub_menu/sub_option text_fr2.png:fr"),
+"res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en3.png": PackedStringArray("res://assets/graphics/ui/options_menu/sub_menu/sub_option text_es3.png:es", "res://assets/graphics/ui/options_menu/sub_menu/sub_option text_fr3.png:fr"),
+"res://assets/graphics/ui/options_menu/sub_menu/sub_option text_en4.png": PackedStringArray("res://assets/graphics/ui/options_menu/sub_menu/sub_option text_es4.png:es", "res://assets/graphics/ui/options_menu/sub_menu/sub_option text_fr4.png:fr")
 }
-locale/translations=PackedStringArray("res://translations/InteriorInteractions.en.translation", "res://translations/InteriorInteractions.es.translation", "res://translations/InteriorInteractions.fr.translation", "res://translations/ui.de.translation", "res://translations/ui.en.translation", "res://translations/ui.es.translation", "res://translations/ui.fr.translation", "res://translations/ui.it.translation", "res://translations/ui.kana.translation", "res://translations/ui.ko.translation")
+locale/translations=PackedStringArray("res://translations/InteriorInteractions/InteriorInteractions.csv", "res://translations/InteriorInteractions/InteriorInteractions.en.translation", "res://translations/InteriorInteractions/InteriorInteractions.es.translation", "res://translations/InteriorInteractions/InteriorInteractions.fr.translation", "res://translations/ui/ui.csv", "res://translations/ui/ui.en.translation", "res://translations/ui/ui.es.translation", "res://translations/ui/ui.fr.translation")
+locale/locale_filter_mode=1
+locale/language_filter=["en", "es", "fr"]
 
 [layer_names]
 

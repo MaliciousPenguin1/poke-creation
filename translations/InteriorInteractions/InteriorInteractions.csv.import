@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://brd3eb4nbfqke"
+
+[deps]
+
+files=["res://translations/InteriorInteractions/InteriorInteractions.en.translation", "res://translations/InteriorInteractions/InteriorInteractions.fr.translation", "res://translations/InteriorInteractions/InteriorInteractions.es.translation"]
+
+source_file="res://translations/InteriorInteractions/InteriorInteractions.csv"
+dest_files=["res://translations/InteriorInteractions/InteriorInteractions.en.translation", "res://translations/InteriorInteractions/InteriorInteractions.fr.translation", "res://translations/InteriorInteractions/InteriorInteractions.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

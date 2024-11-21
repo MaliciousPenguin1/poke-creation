@@ -42,7 +42,6 @@ func _animate_dialog() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	print(dialog_label.visible_ratio)
 	if event.is_action_pressed("interact"):
 		if dialog_label.visible_ratio >= 1:
 			GlobalVar.time_speed = 1
