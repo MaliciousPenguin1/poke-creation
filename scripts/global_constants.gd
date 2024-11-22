@@ -25,6 +25,10 @@ const CAMERA_ZOOM : int = 2
 #======================================================
 ##The maximum level that can be reached by a Pokémon.
 const MAX_LEVEL : int = 100
+#The maximum hapiness a Pokémon can reach
+const MAX_HAPINESS : int = 255
+#Shiny rate for a Pokémon
+const SHINY_RATE : int = 8192
 
 
 #======================================================
@@ -43,3 +47,5 @@ const UI_KEYBOARD_COOLDOWN : float = 0.1
 #======================================================
 #The gender for the player
 enum PlayerGender {MALE, FEMALE}
+#The gender for Pokémon
+enum PokemonGender {MALE, FEMALE, NO_GENDER}
