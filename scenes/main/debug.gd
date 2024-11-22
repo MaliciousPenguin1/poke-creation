@@ -12,6 +12,7 @@ func _ready() -> void:
 	await owner.ready
 	#ScenesManager.add_scene("res://scenes/ui/main_menu/main_menu.tscn", ScenesManager.SceneType.UI)
 	ScenesManager.add_scene("res://scenes/ui/options_menu/options_menu.tscn", ScenesManager.SceneType.UI)
+	print(SaveManager.save_path)
 	
 	#ScenesManager.add_scene("res://scenes/overworld/worlds/maps/debug_town_map.tscn", ScenesManager.SceneType.WORLD)
 	#ScenesManager.add_scene("res://scenes/overworld/player/Player.tscn", ScenesManager.SceneType.ENTITY)
