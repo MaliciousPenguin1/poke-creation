@@ -11,6 +11,7 @@ enum HANDLERS { READY, PROCESS, BUMP, INTERACT }
 @export var interact_instructions_handler : InteractInstructionsHandler = null
 
 
+var owner_object : Entity
 var priority_handler : Handler #Handler used to override dynamically other handler's instructions (trainer, ...)
 @onready var HANDLERS_CORRESPONDANCE_TABLE : Dictionary = {
 	HANDLERS.READY: ready_instructions_handler,
@@ -25,9 +26,11 @@ signal restart_processing
 
 func _ready() -> void:
 	await owner.ready
+	owner_object = owner as Entity
+	assert(owner_object != null, "Moveable's owner should be an Entity!")
 
 	priority_handler = Handler.new()
-	priority_handler.object_to_handle = owner
+	priority_handler.object_to_handle = owner_object
 	
 	for handler in [ready_instructions_handler, process_instructions_handler, bump_instructions_handler, interact_instructions_handler]:
 		if handler != null:

@@ -11,7 +11,7 @@ class_name InstructionIf
 var instructions_to_process : Array[Instruction]
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	var evaluation : bool = Callable(_object_to_instruct, condition_func).call(args_for_condition_func)
 	instructions_to_process = instructions if evaluation else else_instructions
 	after_consumed_callback(instructions_to_process.duplicate())

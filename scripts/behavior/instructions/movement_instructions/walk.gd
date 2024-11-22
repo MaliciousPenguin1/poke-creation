@@ -7,7 +7,7 @@ class_name InstructionWalk
 @export var need_to_collide_if_cant_move : bool = true #automatically set to false if random_direction
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	var callback_in_case_of_collision = after_consumed_callback
 	
 	if random_direction:

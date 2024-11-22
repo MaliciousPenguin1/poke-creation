@@ -14,5 +14,5 @@ func _ready() -> void:
 		instructions_to_process.append_array(instructions)
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	after_consumed_callback(instructions_to_process)

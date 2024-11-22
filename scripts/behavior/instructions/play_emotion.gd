@@ -14,7 +14,7 @@ const EMOTIONS_TO_ANIMATION_NAME : Dictionary = {
 }
 
 
-func consume(_object_to_instruct) -> void:
+func consume(_object_to_instruct : Entity) -> void:
 	var emotion_scene : Node2D = load("res://scenes/overworld/animations/emotions.tscn").instantiate()
 	_object_to_instruct.add_child(emotion_scene)
 	emotion_scene.play_emotion(EMOTIONS_TO_ANIMATION_NAME[emotion])
