@@ -1,6 +1,6 @@
 @tool
-extends Button
-class_name SoundButton
+extends TextureButton
+class_name TextureSoundButton
 
 
 @export var hover_sound : AudioStream

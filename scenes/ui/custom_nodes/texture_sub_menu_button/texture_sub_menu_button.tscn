@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw4ve124mehti"]
+
+[ext_resource type="PackedScene" uid="uid://duqfyp5pg6nhq" path="res://scenes/ui/custom_nodes/texture_sound_button/texture_sound_button.tscn" id="1_4hdpl"]
+[ext_resource type="Script" path="res://scenes/ui/custom_nodes/texture_sub_menu_button/texture_sub_menu_button.gd" id="2_iccr3"]
+
+[node name="TextureSubMenuButton" instance=ExtResource("1_4hdpl")]
+script = ExtResource("2_iccr3")

@@ -1,4 +1,4 @@
-extends Control
+extends MenuBase
 
 
 @onready var difficulty_button: TextureButton = $CanvasLayer/Background/VBoxContainer/DifficultyButton

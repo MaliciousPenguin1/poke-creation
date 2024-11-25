@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dol0of47lfepn"]
+[gd_scene load_steps=4 format=3 uid="uid://dol0of47lfepn"]
 
 [ext_resource type="Script" path="res://scenes/ui/custom_nodes/sound_button/sound_button.gd" id="1_4igaf"]
+[ext_resource type="AudioStream" uid="uid://hj3nmtkdqjhe" path="res://assets/audio/se/Choose.WAV" id="2_bs2g3"]
+[ext_resource type="AudioStream" uid="uid://cewkvylqdr7og" path="res://assets/audio/se/select.WAV" id="3_0nnpa"]
 
 [node name="SoundButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_4igaf")
+hover_sound = ExtResource("2_bs2g3")
+click_sound = ExtResource("3_0nnpa")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

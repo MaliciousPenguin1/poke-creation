@@ -8,6 +8,7 @@ class_name MenuBase
 
 var parent_menu : MenuBase
 var child_menu : MenuBase
+var last_active_button
 
 
 #Code can be added to add an opening animation or opening sound for example.
@@ -26,7 +27,10 @@ func _unhandled_input(event: InputEvent) -> void:
 func close() -> void:
 	await closing_animation
 	if parent_menu:
-		parent_menu.grab_first_button_focus()
+		if parent_menu.last_active_button != null:
+			parent_menu.last_active_button.grab_focus()
+		else:
+			parent_menu.grab_first_button_focus()
 	queue_free()
 
 

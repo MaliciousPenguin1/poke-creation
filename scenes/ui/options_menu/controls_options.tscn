@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtl5kreylj4m5"]
+
+[ext_resource type="PackedScene" uid="uid://dnvqsdf7kio0q" path="res://scenes/ui/custom_nodes/menu_base/menu_base.tscn" id="1_gmrjf"]
+[ext_resource type="Texture2D" uid="uid://imqx55xkyedp" path="res://assets/graphics/ui/options_menu/footer_background.png" id="2_e47iv"]
+
+[node name="ControlsOptions" instance=ExtResource("1_gmrjf")]
+
+[node name="FooterBackground" type="TextureRect" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_e47iv")
+stretch_mode = 1

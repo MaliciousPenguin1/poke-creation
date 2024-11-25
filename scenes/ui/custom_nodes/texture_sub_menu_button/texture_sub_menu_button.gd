@@ -1,6 +1,6 @@
 @tool
-extends SoundButton
-class_name SubMenuButton
+extends TextureSoundButton
+class_name TextureSubMenuButton
 
 
 @export var menu : PackedScene
