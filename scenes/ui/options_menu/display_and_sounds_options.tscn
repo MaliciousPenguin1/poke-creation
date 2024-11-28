@@ -1,27 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55niqs5uymab"]
+[gd_scene load_steps=8 format=3 uid="uid://c55niqs5uymab"]
 
 [ext_resource type="PackedScene" uid="uid://dnvqsdf7kio0q" path="res://scenes/ui/custom_nodes/menu_base/menu_base.tscn" id="1_uel5b"]
 [ext_resource type="Theme" uid="uid://cp8djtsmv1mqv" path="res://themes/default_theme.tres" id="2_gpe0q"]
 [ext_resource type="Texture2D" uid="uid://imqx55xkyedp" path="res://assets/graphics/ui/options_menu/footer_background.png" id="2_kbwyg"]
+[ext_resource type="Texture2D" uid="uid://dlipewrfs2j07" path="res://assets/graphics/ui/options_menu/Options-frame_EN.png" id="3_h4ht7"]
 [ext_resource type="Texture2D" uid="uid://bovb8gkk8q1pe" path="res://assets/graphics/ui/options_menu/description.png" id="3_kjx61"]
+[ext_resource type="Texture2D" uid="uid://d0xxeeyq0qe7i" path="res://assets/graphics/ui/options_menu/option_elem.png" id="6_pn4cx"]
+[ext_resource type="PackedScene" uid="uid://6dqtnmkkunlb" path="res://scenes/ui/custom_nodes/h_box_options_container.tscn" id="7_ipsti"]
 
 [node name="DisplayAndSoundsOptions" instance=ExtResource("1_uel5b")]
 theme = ExtResource("2_gpe0q")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="0"]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h4ht7")
+
+[node name="FooterBackground" type="TextureRect" parent="CanvasLayer" index="1"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_kbwyg")
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" index="2"]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_top = -171.0
+offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SideScrollTexture" type="TextureRect" parent="HBoxContainer" index="0"]
+[node name="SideScrollTexture" type="TextureRect" parent="CanvasLayer/HBoxContainer" index="0"]
 layout_mode = 2
 texture = ExtResource("3_kjx61")
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/SideScrollTexture" index="0"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/SideScrollTexture" index="0"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,17 +65,17 @@ theme_override_constants/margin_top = 36
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SideScrollTexture/MarginContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/SideScrollTexture/MarginContainer" index="0"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="SectionNameLabel" type="Label" parent="HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="0"]
+[node name="SectionNameLabel" type="Label" parent="CanvasLayer/HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="0"]
 layout_mode = 2
 theme = ExtResource("2_gpe0q")
 theme_type_variation = &"LabelWhite"
 text = "Section Name"
 
-[node name="SectionDesciptionLabel" type="Label" parent="HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="1"]
+[node name="SectionDesciptionLabel" type="Label" parent="CanvasLayer/HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme = ExtResource("2_gpe0q")
@@ -51,25 +83,369 @@ theme_type_variation = &"LabelBlack"
 text = "Section Description Section Description Section Description Section Description Section Description "
 autowrap_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/HBoxContainer/MarginContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
-[node name="FooterBackground" type="TextureRect" parent="." index="1"]
+[node name="ScreenSizeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/TextureRect" index="0"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -46.0
-offset_top = -49.0
 grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_kbwyg")
-stretch_mode = 1
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "SCREENSIZE"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="0"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×1 (960×540)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="1"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×4/3 (1280×720)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×3/2 (1440×810)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×2 (1920×1080)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="4"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×5/2 (2400×1350)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="5"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×8/3 (2560×1440)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="6"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×3 (2880×1620)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="7"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "×4 (3840×2160)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"LabelWhite"
+text = "FULLSCREEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextSpeedContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "TEXTSPEED"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="MasterVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "MASTERVOLUME"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="MusicVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MusicVolumeContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MusicVolumeContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MusicVolumeContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "MUSIC"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MusicVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="SoundEffectsVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/SoundEffectsVolumeContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/SoundEffectsVolumeContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/SoundEffectsVolumeContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "SOUND_EFFECTS"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/SoundEffectsVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="PokemonCriesContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PokemonCriesContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PokemonCriesContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PokemonCriesContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "POKEMON_CRIES"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PokemonCriesContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[node name="BattleEffectsContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="6"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -34
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_pn4cx")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"LabelBrown"
+text = "BATTLE_EFFECTS"
+
+[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer" index="1" instance=ExtResource("7_ipsti")]
+layout_mode = 2
+
+[editable path="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer"]

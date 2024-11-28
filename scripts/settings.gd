@@ -15,7 +15,6 @@ enum TextSpeed{SLOW,NORMAL,FAST,INSTANT}
 
 
 #region Variables meant to be accessed by other scripts.
-static var autosave : bool = false
 static var text_speed : int
 #endregion
 
@@ -79,8 +78,7 @@ static func language_setup() -> void:
 	TranslationServer.set_locale(language)
 
 
-static func _set_general_settings() -> void: #SaveManager pas encore implémenté.
-	autosave = config_file.get_value("General", "autosave")
+static func _set_general_settings() -> void:
 	text_speed = config_file.get_value("General", "text_speed")
 
 
@@ -94,6 +92,7 @@ static func _set_audio_settings() -> void:
 	_set_bus_audio(0, config_file.get_value("Audio", "master"))
 	_set_bus_audio(1, config_file.get_value("Audio", "music"))
 	_set_bus_audio(2, config_file.get_value("Audio", "sounds"))
+	_set_bus_audio(3, config_file.get_value("Audio", "pokemon_cries"))
 
 
 static func _set_bus_audio(bus_id : int, value : int) -> void:
