@@ -9,6 +9,7 @@ class_name TextureSubMenuButton
 
 
 func _on_pressed() -> void:
+	super()
 	if menu == null or parent_menu == null:
 		push_error("The \"", name, "\" button of the \"", owner.name, "\" scene doesn't seem to have a menu or a parent menu associated with it.")
 		return

@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://c55niqs5uymab"]
+[gd_scene load_steps=10 format=3 uid="uid://c55niqs5uymab"]
 
 [ext_resource type="PackedScene" uid="uid://dnvqsdf7kio0q" path="res://scenes/ui/custom_nodes/menu_base/menu_base.tscn" id="1_uel5b"]
 [ext_resource type="Theme" uid="uid://cp8djtsmv1mqv" path="res://themes/default_theme.tres" id="2_gpe0q"]
 [ext_resource type="Texture2D" uid="uid://imqx55xkyedp" path="res://assets/graphics/ui/options_menu/footer_background.png" id="2_kbwyg"]
+[ext_resource type="Script" path="res://scenes/ui/options_menu/options_sub_menu.gd" id="3_7j54f"]
 [ext_resource type="Texture2D" uid="uid://dlipewrfs2j07" path="res://assets/graphics/ui/options_menu/Options-frame_EN.png" id="3_h4ht7"]
 [ext_resource type="Texture2D" uid="uid://bovb8gkk8q1pe" path="res://assets/graphics/ui/options_menu/description.png" id="3_kjx61"]
 [ext_resource type="Texture2D" uid="uid://d0xxeeyq0qe7i" path="res://assets/graphics/ui/options_menu/option_elem.png" id="6_pn4cx"]
 [ext_resource type="PackedScene" uid="uid://6dqtnmkkunlb" path="res://scenes/ui/custom_nodes/h_box_options_container.tscn" id="7_ipsti"]
+[ext_resource type="Script" path="res://scenes/ui/options_menu/screen_size_options_container.gd" id="8_i43e0"]
 
 [node name="DisplayAndSoundsOptions" instance=ExtResource("1_uel5b")]
 theme = ExtResource("2_gpe0q")
+script = ExtResource("3_7j54f")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -75,7 +78,7 @@ theme = ExtResource("2_gpe0q")
 theme_type_variation = &"LabelWhite"
 text = "Section Name"
 
-[node name="SectionDesciptionLabel" type="Label" parent="CanvasLayer/HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="1"]
+[node name="SectionDescriptionLabel" type="Label" parent="CanvasLayer/HBoxContainer/SideScrollTexture/MarginContainer/VBoxContainer" index="1"]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme = ExtResource("2_gpe0q")
@@ -131,10 +134,16 @@ size_flags_vertical = 1
 theme_type_variation = &"LabelBrown"
 text = "SCREENSIZE"
 
-[node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer" index="1" instance=ExtResource("7_ipsti")]
+[node name="ScreenSizeOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("8_i43e0")
+cfg_section = "Graphics"
+cfg_key = "resolution"
+values = [Vector2i(960, 540), Vector2i(1280, 720), Vector2i(1440, 810), Vector2i(1920, 1080), Vector2i(2400, 1350), Vector2i(2560, 1440), Vector2i(2880, 1620), Vector2i(3840, 2160), Vector2i(-1, -1)]
+section_name = "SCREEN_SIZE"
+section_description = "SCREEN_SIZE_DESCRIPTION"
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="0"]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="0"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -147,7 +156,7 @@ text = "×1 (960×540)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="1"]
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="1"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -160,7 +169,7 @@ text = "×4/3 (1280×720)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="2"]
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="2"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -173,7 +182,7 @@ text = "×3/2 (1440×810)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="3"]
+[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="3"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -186,7 +195,7 @@ text = "×2 (1920×1080)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="4"]
+[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="4"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -199,7 +208,7 @@ text = "×5/2 (2400×1350)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="5"]
+[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="5"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -212,7 +221,7 @@ text = "×8/3 (2560×1440)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="6"]
+[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="6"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -225,7 +234,7 @@ text = "×3 (2880×1620)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="7"]
+[node name="Label8" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="7"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -238,7 +247,8 @@ text = "×4 (3840×2160)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label9" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer/OptionsList" index="8"]
+[node name="Label9" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="8"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -448,4 +458,4 @@ text = "BATTLE_EFFECTS"
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
 
-[editable path="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/HBoxOptionsContainer"]
+[editable path="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer"]

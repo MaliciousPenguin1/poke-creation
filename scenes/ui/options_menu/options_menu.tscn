@@ -17,7 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dtl5kreylj4m5" path="res://scenes/ui/options_menu/controls_options.tscn" id="14_ceie4"]
 [ext_resource type="FontFile" uid="uid://3ysn3tgsnso1" path="res://assets/fonts/Sherwood.ttf" id="16_huh1k"]
 
-[node name="OptionsMenu" type="Control"]
+[node name="OptionsMenu" type="Control" node_paths=PackedStringArray("first_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +28,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_7soin")
+first_button = NodePath("CanvasLayer/Background/VBoxContainer/DisplaySoundButton")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -192,3 +194,9 @@ theme_override_font_sizes/font_size = 24
 text = "MOBILE_SUB_MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/DisplaySoundButton" to="CanvasLayer/Background/VBoxContainer/DisplaySoundButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/DifficultyButton" to="CanvasLayer/Background/VBoxContainer/DifficultyButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/LanguageButton" to="CanvasLayer/Background/VBoxContainer/LanguageButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/ControlsButton" to="CanvasLayer/Background/VBoxContainer/ControlsButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/PhoneButton" to="CanvasLayer/Background/VBoxContainer/PhoneButton" method="_on_pressed"]

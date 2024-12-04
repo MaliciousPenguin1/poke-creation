@@ -5,3 +5,4 @@
 
 [node name="TextureSubMenuButton" instance=ExtResource("1_4hdpl")]
 script = ExtResource("2_iccr3")
+menu = null

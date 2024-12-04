@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7jgqwvi7esru"]
+[gd_scene load_steps=7 format=3 uid="uid://b7jgqwvi7esru"]
 
 [ext_resource type="PackedScene" uid="uid://dnvqsdf7kio0q" path="res://scenes/ui/custom_nodes/menu_base/menu_base.tscn" id="1_274ik"]
+[ext_resource type="Script" path="res://scenes/ui/options_menu/options_sub_menu.gd" id="2_gegvq"]
 [ext_resource type="Texture2D" uid="uid://imqx55xkyedp" path="res://assets/graphics/ui/options_menu/footer_background.png" id="2_l72eh"]
 [ext_resource type="Texture2D" uid="uid://dlipewrfs2j07" path="res://assets/graphics/ui/options_menu/Options-frame_EN.png" id="2_lg72x"]
 [ext_resource type="Texture2D" uid="uid://bovb8gkk8q1pe" path="res://assets/graphics/ui/options_menu/description.png" id="4_csh2v"]
 [ext_resource type="Theme" uid="uid://cp8djtsmv1mqv" path="res://themes/default_theme.tres" id="5_aysos"]
 
 [node name="DifficultyOptions" instance=ExtResource("1_274ik")]
+script = ExtResource("2_gegvq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 

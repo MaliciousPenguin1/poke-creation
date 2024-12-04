@@ -22,7 +22,7 @@ static var config_file : ConfigFile  = ConfigFile.new()
 
 
 static func set_settings() -> void:
-	_check_config_file()
+	check_config_file()
 	_set_general_settings()
 	_set_graphics_settings()
 	_set_audio_settings()
@@ -30,7 +30,7 @@ static func set_settings() -> void:
 	_set_phone_settings()
 
 
-static func _check_config_file() -> void:
+static func check_config_file() -> void:
 	if not FileAccess.file_exists(USER_SETTINGS_DIRECTORY):
 		DirAccess.copy_absolute(DEFAULT_SETTINGS_DIRECTORY,USER_SETTINGS_DIRECTORY)
 		language_setup()
@@ -42,7 +42,7 @@ static func _check_config_file() -> void:
 		return
 
 
-func change_setting(setting_name : String, new_value : Variant) -> void:
+static func change_setting(setting_name : String, new_value : Variant) -> void:
 	for section in config_file.get_sections():
 		if setting_name in config_file.get_section_keys(section):
 			config_file.set_value(section, setting_name, new_value)
@@ -86,7 +86,8 @@ static func _set_graphics_settings() -> void:
 	DisplayServer.window_set_size(config_file.get_value("Graphics", "resolution"))
 	if config_file.get_value("Graphics", "fullscreen") == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 static func _set_audio_settings() -> void:
 	_set_bus_audio(0, config_file.get_value("Audio", "master"))

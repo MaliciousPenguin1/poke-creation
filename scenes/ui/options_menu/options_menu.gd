@@ -9,6 +9,7 @@ var phone_os : Array[String] = ["Android", "iOS"]
 
 
 func _ready() -> void:
+	super()
 	if GlobalVar.in_game:
 		difficulty_button.show()
 	else:

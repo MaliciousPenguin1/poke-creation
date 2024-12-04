@@ -17,15 +17,15 @@ var current_option : Node :
 var last_option : Node
 var current_option_index : int = 0
 
-
-#Use the _ready() function to set the option it is meant to show.
+var selected : bool = false :
+	set(value):
+		selected = value
+		_on_selected()
 
 
 func _set_current_option() -> void:
 	_set_buttons_state()
 	current_option_index = current_option.get_index()
-	#Use an array of possible values and a statement like "screen_res = array[current_option_index]"
-	pass
 
 
 func _set_buttons_state() -> void:
@@ -65,3 +65,26 @@ func _on_button_right_pressed() -> void:
 	
 	last_option.hide()
 	current_option.show()
+
+
+func _on_selected() -> void:
+	pass
+
+
+func _on_focus_entered() -> void:
+	selected = true
+
+
+func _on_mouse_entered() -> void:
+	selected = true
+
+
+func _input(event: InputEvent) -> void:
+	if not selected or event is InputEventMouseMotion:
+		return
+	
+	if event.is_action_pressed("ui_left") or event.is_action_pressed("move_left"):
+		_on_button_left_pressed()
+	
+	if event.is_action_pressed("ui_right") or event.is_action_pressed("move_right"):
+		_on_button_right_pressed()

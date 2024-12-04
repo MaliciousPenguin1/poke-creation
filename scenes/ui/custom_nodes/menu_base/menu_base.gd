@@ -3,7 +3,7 @@ extends Control
 class_name MenuBase
 
 
-@export var first_button : Button
+@export var first_button : Control
 
 
 var parent_menu : MenuBase
@@ -11,9 +11,8 @@ var child_menu : MenuBase
 var last_active_button
 
 
-#Code can be added to add an opening animation or opening sound for example.
 func _ready() -> void:
-	await opening_animation
+	await opening_animation()
 	grab_first_button_focus()
 
 
@@ -25,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func close() -> void:
-	await closing_animation
+	await closing_animation()
 	if parent_menu:
 		if parent_menu.last_active_button != null:
 			parent_menu.last_active_button.grab_focus()

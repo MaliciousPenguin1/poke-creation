@@ -54,5 +54,7 @@ script = ExtResource("2_ux2t3")
 hover_sound = ExtResource("3_ge2td")
 click_sound = ExtResource("4_8qnbo")
 
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
 [connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]
