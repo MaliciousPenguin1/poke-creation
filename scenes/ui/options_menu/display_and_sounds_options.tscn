@@ -132,133 +132,26 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"LabelBrown"
-text = "SCREENSIZE"
+text = "SCREEN_SIZE"
 
 [node name="ScreenSizeOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
 script = ExtResource("8_i43e0")
 cfg_section = "Graphics"
 cfg_key = "resolution"
-values = [Vector2i(960, 540), Vector2i(1280, 720), Vector2i(1440, 810), Vector2i(1920, 1080), Vector2i(2400, 1350), Vector2i(2560, 1440), Vector2i(2880, 1620), Vector2i(3840, 2160), Vector2i(-1, -1)]
 section_name = "SCREEN_SIZE"
 section_description = "SCREEN_SIZE_DESCRIPTION"
-
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="0"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×1 (960×540)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="1"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×4/3 (1280×720)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="2"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×3/2 (1440×810)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="3"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×2 (1920×1080)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="4"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×5/2 (2400×1350)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="5"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×8/3 (2560×1440)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="6"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×3 (2880×1620)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label8" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="7"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "×4 (3840×2160)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label9" type="Label" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer/OptionsList" index="8"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"LabelWhite"
-text = "FULLSCREEN"
-horizontal_alignment = 1
-vertical_alignment = 1
+values = {
+"×1 (960×540)": Vector2i(960, 540),
+"×2 (1920×1080)": Vector2i(1920, 1080),
+"×3 (2880×1620)": Vector2i(2880, 1620),
+"×3/2 (1440×810)": Vector2i(1440, 810),
+"×4 (3840×2160)": Vector2i(3840, 2160),
+"×4/3 (1280×720)": Vector2i(1280, 720),
+"×5/2 (2400×1350)": Vector2i(2400, 1350),
+"×8/3 (2560×1440)": Vector2i(2560, 1440)
+}
+keys_array = Array[String](["×1 (960×540)", "×4/3 (1280×720)", "×3/2 (1440×810)", "×2 (1920×1080)", "×5/2 (2400×1350)", "×8/3 (2560×1440)", "×3 (2880×1620)", "×4 (3840×2160)", "FULLSCREEN"])
 
 [node name="TextSpeedContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
 layout_mode = 2
@@ -288,7 +181,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"LabelBrown"
-text = "TEXTSPEED"
+text = "TEXT_SPEED"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
@@ -457,5 +350,3 @@ text = "BATTLE_EFFECTS"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
-
-[editable path="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer"]
