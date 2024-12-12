@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c55niqs5uymab"]
+[gd_scene load_steps=11 format=3 uid="uid://c55niqs5uymab"]
 
 [ext_resource type="PackedScene" uid="uid://dnvqsdf7kio0q" path="res://scenes/ui/custom_nodes/menu_base/menu_base.tscn" id="1_uel5b"]
 [ext_resource type="Theme" uid="uid://cp8djtsmv1mqv" path="res://themes/default_theme.tres" id="2_gpe0q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xxeeyq0qe7i" path="res://assets/graphics/ui/options_menu/option_elem.png" id="6_pn4cx"]
 [ext_resource type="PackedScene" uid="uid://6dqtnmkkunlb" path="res://scenes/ui/custom_nodes/h_box_options_container.tscn" id="7_ipsti"]
 [ext_resource type="Script" path="res://scenes/ui/options_menu/screen_size_options_container.gd" id="8_i43e0"]
+[ext_resource type="Script" path="res://scenes/ui/options_menu/settings_h_box_options_container.gd" id="10_yq1qe"]
 
 [node name="DisplayAndSoundsOptions" instance=ExtResource("1_uel5b")]
 theme = ExtResource("2_gpe0q")
@@ -292,6 +293,18 @@ text = "TEXTSPEED"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/TextSpeedContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("10_yq1qe")
+cfg_section = "General"
+cfg_key = "text_speed"
+section_name = "TEXT_SPEED"
+section_description = "TEXT_SPEED_DESCRIPTION"
+values = {
+"TEXT_SPEED_FAST": 2,
+"TEXT_SPEED_INSTANTANEOUS": 3,
+"TEXT_SPEED_NORMAL": 1,
+"TEXT_SPEED_SLOW": 0
+}
+keys_array = Array[String](["TEXT_SPEED_SLOW", "TEXT_SPEED_NORMAL", "TEXT_SPEED_FAST", "TEXT_SPEED_INSTANTANEOUS"])
 
 [node name="MasterVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 layout_mode = 2
@@ -321,10 +334,30 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"LabelBrown"
-text = "MASTERVOLUME"
+text = "MASTER_VOLUME"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("10_yq1qe")
+cfg_section = "Audio"
+cfg_key = "master"
+section_name = "MASTER_VOLUME"
+section_description = "MASTER_VOLUME_DESCRIPTION"
+values = {
+"0%": 0,
+"10%": 10,
+"100%": 100,
+"20%": 20,
+"30%": 30,
+"40%": 40,
+"50%": 50,
+"60%": 60,
+"70%": 70,
+"80%": 80,
+"90%": 90
+}
+keys_array = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+infinite_scroll = false
 
 [node name="MusicVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="3"]
 layout_mode = 2
@@ -358,6 +391,26 @@ text = "MUSIC"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/MusicVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("10_yq1qe")
+cfg_section = "Audio"
+cfg_key = "music"
+section_name = "MUSIC"
+section_description = "MUSIC_DESCRIPTION"
+values = {
+"0%": 0,
+"10%": 10,
+"100%": 100,
+"20%": 20,
+"30%": 30,
+"40%": 40,
+"50%": 50,
+"60%": 60,
+"70%": 70,
+"80%": 80,
+"90%": 90
+}
+keys_array = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+infinite_scroll = false
 
 [node name="SoundEffectsVolumeContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
 layout_mode = 2
@@ -391,6 +444,26 @@ text = "SOUND_EFFECTS"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/SoundEffectsVolumeContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("10_yq1qe")
+cfg_section = "Audio"
+cfg_key = "sounds"
+section_name = "SOUND_EFFECTS"
+section_description = "SOUND_EFFECTS_DESCRIPTION"
+values = {
+"0%": 0,
+"10%": 10,
+"100%": 100,
+"20%": 20,
+"30%": 30,
+"40%": 40,
+"50%": 50,
+"60%": 60,
+"70%": 70,
+"80%": 80,
+"90%": 90
+}
+keys_array = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+infinite_scroll = false
 
 [node name="PokemonCriesContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="5"]
 layout_mode = 2
@@ -424,6 +497,26 @@ text = "POKEMON_CRIES"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PokemonCriesContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+script = ExtResource("10_yq1qe")
+cfg_section = "Audio"
+cfg_key = "pokemon_cries"
+section_name = "POKEMON_CRIES"
+section_description = "POKEMON_CRIES_DESCRIPTION"
+values = {
+"0%": 0,
+"10%": 10,
+"100%": 100,
+"20%": 20,
+"30%": 30,
+"40%": 40,
+"50%": 50,
+"60%": 60,
+"70%": 70,
+"80%": 80,
+"90%": 90
+}
+keys_array = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+infinite_scroll = false
 
 [node name="BattleEffectsContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="6"]
 layout_mode = 2
@@ -457,5 +550,18 @@ text = "BATTLE_EFFECTS"
 
 [node name="HBoxOptionsContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/BattleEffectsContainer" index="1" instance=ExtResource("7_ipsti")]
 layout_mode = 2
+<<<<<<< Updated upstream
 
 [editable path="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/ScreenSizeContainer/ScreenSizeOptionsContainer"]
+=======
+script = ExtResource("10_yq1qe")
+cfg_section = "General"
+cfg_key = "battle_effects"
+section_name = "BATTLE_EFFECTS"
+section_description = "BATTLE_EFFECTS_DESCRIPTION"
+values = {
+"BATTLE_EFFECTS_OFF": false,
+"BATTLE_EFFECTS_ON": true
+}
+keys_array = Array[String](["BATTLE_EFFECTS_ON", "BATTLE_EFFECTS_OFF"])
+>>>>>>> Stashed changes
