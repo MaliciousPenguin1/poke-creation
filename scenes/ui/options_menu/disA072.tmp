@@ -153,6 +153,7 @@ values = {
 "×8/3 (2560×1440)": Vector2i(2560, 1440)
 }
 keys_array = Array[String](["×1 (960×540)", "×4/3 (1280×720)", "×3/2 (1440×810)", "×2 (1920×1080)", "×5/2 (2400×1350)", "×8/3 (2560×1440)", "×3 (2880×1620)", "×4 (3840×2160)", "FULLSCREEN"])
+infinite_scroll = null
 
 [node name="TextSpeedContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
 layout_mode = 2

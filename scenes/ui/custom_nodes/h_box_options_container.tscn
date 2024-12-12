@@ -37,9 +37,13 @@ script = ExtResource("2_ux2t3")
 hover_sound = ExtResource("3_ge2td")
 click_sound = ExtResource("4_8qnbo")
 
-[node name="OptionsList" type="Control" parent="."]
+[node name="OptionsLabel" type="Label" parent="."]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
+theme_type_variation = &"LabelWhite"
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonRight" type="TextureButton" parent="."]
 layout_mode = 2
