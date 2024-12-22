@@ -32,14 +32,17 @@ func _on_current_option_index_changed() -> void:
 	
 	if current_option_index == values_to_use.size() - 2: #It sucks to do it that way but I don't know why it doesn't work the normal way. -Sulucnal
 		DisplayServer.window_set_size(values[keys_array[-2]])
+	
+	if current_option_index == 0: #It sucks to do it that way but I don't know why it doesn't work the normal way. -Sulucnal
+		DisplayServer.window_set_size(values[keys_array[0]])
 
-
+##Hides options for screen resolutions that are above the users screen resolution.
 func _hide_unused_values() -> void:
 	var screen_size : Vector2i = DisplayServer.screen_get_size()
 	for value in values.values():
 		if value > screen_size:
 			values_to_use.erase(values_to_use.find_key(value))
 
-
+##Makes sure that the last value of the selectable is the one to go fullscreen.
 func _set_last_value() -> void:
 	values_to_use[FULLSCREEN_KEY] = values_to_use[values_to_use.find_key(values_to_use.values()[-2])]

@@ -33,7 +33,6 @@ func _set_current_option() -> void:
 		push_error("The option selected isn't part of the values available.")
 		return
 	
-	super()
 	Settings.config_file.set_value(cfg_section, cfg_key, values[current_option_index])
 	Settings.change_setting(cfg_key, values[current_option_index])
 

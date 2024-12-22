@@ -1,16 +1,22 @@
 extends Node
 class_name Settings
 
-
+##The path to the default settings file.
 const DEFAULT_SETTINGS_DIRECTORY : String = "res://settings.cfg"
+##The path to the user's settings file.
 const USER_SETTINGS_DIRECTORY : String = "user://settings.cfg"
 
+##List of the actions found in Project->Project Settings...->Input Map.
 const ACTIONS_LIST : Array[String] = ["interact", "cancel", "pause", "move_up", "move_down", "move_left", "move_right", "run"]
+##The maximum amount of decibels by which the volume of the game can be amplified. 
 const VOLUME_MAX : int = 32
+##Codes of all of the locales of the languages available in your game based on the list of available locales 
+##found [url=https://docs.godotengine.org/en/stable/tutorials/i18n/locales.html#doc-locales]here[/url].
 const VALID_LANGUAGES : Array[String] = ["en", "es", "fr"]
+##The default language that should be used by your game.
 const DEFAULT_LANGUAGE : String = "en"
 
-
+##The various text speed available.
 enum TextSpeed{SLOW,NORMAL,FAST,INSTANT}
 
 
@@ -20,7 +26,7 @@ static var text_speed : int
 
 static var config_file : ConfigFile  = ConfigFile.new()
 
-
+##Set all of the settings.
 static func set_settings() -> void:
 	check_config_file()
 	_set_general_settings()
@@ -29,7 +35,7 @@ static func set_settings() -> void:
 	_set_controls_settings()
 	_set_phone_settings()
 
-
+##Check if the user already has a config file and create a default one when they don't.
 static func check_config_file() -> void:
 	if not FileAccess.file_exists(USER_SETTINGS_DIRECTORY):
 		DirAccess.copy_absolute(DEFAULT_SETTINGS_DIRECTORY,USER_SETTINGS_DIRECTORY)
@@ -41,7 +47,7 @@ static func check_config_file() -> void:
 		push_error("There was a problem with the settings.cfg file.")
 		return
 
-
+##Takes a settings based on its setting_name in the settings.cfg file and gives it a new_value.
 static func change_setting(setting_name : String, new_value : Variant) -> void:
 	for section in config_file.get_sections():
 		if setting_name in config_file.get_section_keys(section):
@@ -61,7 +67,7 @@ static func change_setting(setting_name : String, new_value : Variant) -> void:
 	
 	push_error("Couldn't find a setting called \"" + setting_name +"\".")
 
-
+##Sets the game's current language.
 static func language_setup() -> void:
 	var error = config_file.load(USER_SETTINGS_DIRECTORY)
 
@@ -95,7 +101,7 @@ static func _set_audio_settings() -> void:
 	_set_bus_audio(2, config_file.get_value("Audio", "sounds"))
 	_set_bus_audio(3, config_file.get_value("Audio", "pokemon_cries"))
 
-
+##Set the value of the audio level for the a bus defined by its bus_id.
 static func _set_bus_audio(bus_id : int, value : int) -> void:
 	var volume : int = roundi(((value / 100.0 * VOLUME_MAX * 2) - VOLUME_MAX))
 	
@@ -120,7 +126,7 @@ static func _set_controls_settings() -> void:
 	
 	_set_joypad_movement()
 
-
+##Manages how the movement are implemented when the player uses a joypad.
 static func _set_joypad_movement() -> void: #TODO: Make it shorter by using a loop and Dictionaries/Arrays.
 	var move_forward_input : InputEventJoypadMotion = InputEventJoypadMotion.new()
 	move_forward_input.axis = JOY_AXIS_LEFT_Y

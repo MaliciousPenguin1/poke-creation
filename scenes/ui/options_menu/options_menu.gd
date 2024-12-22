@@ -4,7 +4,8 @@ extends MenuBase
 @onready var difficulty_button: TextureButton = $CanvasLayer/Background/VBoxContainer/DifficultyButton
 @onready var phone_button: TextureSubMenuButton = $CanvasLayer/Background/VBoxContainer/PhoneButton
 
-
+##The names of the OS found on mobile devices, used to know if the button to access the phone settings 
+##should be visible.
 var phone_os : Array[String] = ["Android", "iOS"]
 
 
