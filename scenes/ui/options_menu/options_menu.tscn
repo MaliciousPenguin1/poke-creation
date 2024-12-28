@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2awgragbo3a7"]
+[gd_scene load_steps=18 format=3 uid="uid://b2awgragbo3a7"]
 
 [ext_resource type="Script" path="res://scenes/ui/options_menu/options_menu.gd" id="1_7soin"]
 [ext_resource type="Texture2D" uid="uid://dlipewrfs2j07" path="res://assets/graphics/ui/options_menu/Options-frame_EN.png" id="1_w42od"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dgo8xq782u4s3" path="res://scenes/ui/options_menu/language_options.tscn" id="12_bdnwd"]
 [ext_resource type="PackedScene" uid="uid://dtl5kreylj4m5" path="res://scenes/ui/options_menu/controls_options.tscn" id="14_ceie4"]
 [ext_resource type="FontFile" uid="uid://3ysn3tgsnso1" path="res://assets/fonts/Sherwood.ttf" id="16_huh1k"]
+[ext_resource type="PackedScene" uid="uid://bv6ego0k04ikp" path="res://scenes/ui/custom_nodes/selection_arrow/selection_arrow.tscn" id="17_wkbow"]
 
 [node name="OptionsMenu" type="Control" node_paths=PackedStringArray("first_button")]
 process_mode = 3
@@ -194,6 +195,9 @@ theme_override_font_sizes/font_size = 24
 text = "MOBILE_SUB_MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SelectionArrow" parent="CanvasLayer" node_paths=PackedStringArray("buttons_list") instance=ExtResource("17_wkbow")]
+buttons_list = NodePath("../Background/VBoxContainer")
 
 [connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/DisplaySoundButton" to="CanvasLayer/Background/VBoxContainer/DisplaySoundButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Background/VBoxContainer/DifficultyButton" to="CanvasLayer/Background/VBoxContainer/DifficultyButton" method="_on_pressed"]

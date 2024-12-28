@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv6ego0k04ikp"]
+
+[ext_resource type="Texture2D" uid="uid://37rgbk7gkhkk" path="res://assets/graphics/ui/options_menu/arrow.png" id="1_3iisu"]
+[ext_resource type="Script" path="res://scenes/ui/custom_nodes/selection_arrow/selection_arrow.gd" id="2_fukht"]
+
+[node name="SelectionArrow" type="TextureRect"]
+process_mode = 3
+mouse_filter = 2
+texture = ExtResource("1_3iisu")
+script = ExtResource("2_fukht")
